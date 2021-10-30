@@ -19,16 +19,14 @@
 
 ## Overview
 
-_**On the Move** is 
+**On the Move** is a blog app for all those people out there who love to, or have to, move around a lot. This app will provide resources, added for the users by the users, that will make moving to and from their desired location(s) easier. Some resources include finding the best deals on moving material/equipment in the current area, finding companies that can help them with the move if needed, getting to know the area through posts from locals, and learning about events that might not always show up through a Google search. Users can create an account, add posts, edit or delete their own posts, and comment on other posts.
 
 
 <br>
 
 ## MVP
 
-> The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
-
-_The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+The **On the Move** MVP will consist of full CRUD implementation through the ability to create a user account, create readable posts within the blog, and allowing the user to update or delete their posts.
 
 <br>
 
@@ -50,9 +48,13 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 | :--------------: | :----------------------------------------- |
 |      React       | _Lorem ipsum dolor sit amet, consectetur._ |
 |   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
+| React Router Dom | _Lorem ipsum dolor sit amet, consectetur._ |
 | React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+|   React Icons    | _Lorem ipsum dolor sit amet, consectetur._ |
+|      Rails       | _Lorem ipsum dolor sit amet, consectetur._ |
+|  JSON Web Token  | _Lorem ipsum dolor sit amet, consectetur._ |
+|      Cors        | _Lorem ipsum dolor sit amet, consectetur._ |
+|Styled Components | _Lorem ipsum dolor sit amet, consectetur._ |
 
 <br>
 
@@ -105,7 +107,51 @@ src
       |__ images
       |__ mockups
 |__ components/
-      |__ Header.jsx
+      |__ Footer/
+        |__ Footer.css
+        |__ Footer.jsx
+      |__ Form/
+        |__ Form.css
+        |__ Form.jsx
+      |__ Layout
+        |__ Layout.css 
+        |__ Layout.jsx
+      |__ Nav/
+        |__ Nav.jsx
+        |__ NavBar.jsx
+        |__ NavBurger.jsx
+      |__ PostsDelete/
+        |__ PostsDelete.css
+        |__ PostsDelete.jsx
+      |__ Users/
+        |__ Users.css
+        |__ Users.jsx
+|__ containers/
+      |__ CommentsContainer.jsx
+      |__ PostsContainer.jsx
+      |__ UsersContainer.jsx
+|__ screens/
+      |__ Events/
+        |__ Events.css
+        |__ Events.jsx
+      |__ Posts/
+        |__ Posts.css
+        |__ Posts.jsx
+      |__ PostsCreate/
+        |__ PostsCreate.css
+        |__ PostsCreate.jsx
+      |__ PostsEdit/
+        |__ PostsEdit.css
+        |__ PostsEdit.jsx
+      |__ Resources/
+        |__ Resources.css
+        |__ Resources.jsx
+      |__ SignIn/
+        |__ SignIn.css
+        |__ SignIn.jsx
+      |__ SignUp/
+        |__ SignUp.css
+        |__ SignUp.jsx
 |__ services/
 
 ```
