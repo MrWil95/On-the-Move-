@@ -32,29 +32,33 @@ The **On the Move** MVP will consist of full CRUD implementation through the abi
 
 ### Goals
 
-- _Lorem ipsum, dolor sit amet,_
-- _consectetur adipiscing elit._
-- _Phasellus dapibus fermentum risus vitae bibendum._
-- _Integer vel ipsum mollis odio sollicitudin ornare eu vel ex._
-- _etc._
+- _Complete full CRUD on the backend_
+- _Complete full CRUD on the fontend_
+- _User comments on posts_
+- _Beautifully styled and responsive site with vanilla CSS & Styled Components_
+- _User authentication_
+- _Multiple routes/screens to send posts to(similar to Reddit)_
+- _Allow only the user to edit or delete his/her posts_
+- _Allow user & post owner to delete comments on posts(user can only delete his/her comments)_
 
 <br>
 
 ### Libraries and Dependencies
 
-> Use this section to list all supporting libraries and dependencies, and their role in the project. Below is an example - this needs to be replaced!
+|     Library       | Description                                                               |
+| :--------------:  | :-----------------------------------------                                |
+|      React        | _Open-source JS library for building user interfaces_                     |
+|   React Icons     | _Used to import icons for visual effect_                                  |
+|   React Router    | _A standard library for routing in React_                                 |
+| React Router Dom  | _Enables you to implement dynamic routing in a web app_                   |
+|      Axios        | _A promise-based HTTP Client for node.js and the browser,_                |
+|                   | _makes it easy to send asynchronous HTTP request_                         |
+| Styled Components | _A react library that allows you to write css in JavaScript files_        |
+|      Rails        | _A ruby library used to build out the backend of an app_                  |
+|  JSON Web Token   | _A secure way to transmit user info as a JSON object_                     |
+|      Cors         | _Allows a server to indicate any origins (domain, scheme, or port),_      |  
+|                   | _other than its own from which a browser should permit loading resources_ |           |                                                                                               |
 
-|     Library      | Description                                |
-| :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React Router Dom | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Icons    | _Lorem ipsum dolor sit amet, consectetur._ |
-|      Rails       | _Lorem ipsum dolor sit amet, consectetur._ |
-|  JSON Web Token  | _Lorem ipsum dolor sit amet, consectetur._ |
-|      Cors        | _Lorem ipsum dolor sit amet, consectetur._ |
-|Styled Components | _Lorem ipsum dolor sit amet, consectetur._ |
 
 <br>
 
@@ -96,16 +100,9 @@ The **On the Move** MVP will consist of full CRUD implementation through the abi
 
 #### Component Architecture
 
-> Use this section to define your React components and the data architecture of your app. This should be a reflection of how you expect your directory/file tree to look like. 
-
 ``` structure
 
-src
-|__ assets/
-      |__ fonts
-      |__ graphics
-      |__ images
-      |__ mockups
+src/
 |__ components/
       |__ Footer/
         |__ Footer.css
@@ -134,9 +131,9 @@ src
       |__ Events/
         |__ Events.css
         |__ Events.jsx
-      |__ Posts/
-        |__ Posts.css
-        |__ Posts.jsx
+      |__ Home/
+        |__ Home.css
+        |__ Home.jsx
       |__ PostsCreate/
         |__ PostsCreate.css
         |__ PostsCreate.jsx
@@ -153,6 +150,9 @@ src
         |__ SignUp.css
         |__ SignUp.jsx
 |__ services/
+      |__apiConfigs.js
+      |__posts.js
+      |__comments.js
 
 ```
 
@@ -162,7 +162,7 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
+| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |     TBD     |
 | Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
 | TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
 
