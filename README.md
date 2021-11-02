@@ -58,6 +58,7 @@ The **On the Move** MVP will consist of full CRUD implementation through the abi
 | Cors              | _Allows a server to indicate any origins (domain, scheme, or port), other than its own from which a browser should permit loading resources_                                                                                                                              |  
 | Bcrypt            | _Bcrypt is a password-hashing function used for encryption_                                                               |
 | Faker             | _Faker is a dependency used to create fake data in the backend_                                                           |
+| Cloudinary        | _Cloudinary is a resource that will let the user easily uppload images to the cloud without the need for a url_           |
 
 <br>
 
@@ -200,6 +201,7 @@ src/
 
 ## Post-MVP
  
+- Sub Comments
 - Edit user's comments
 - Impliment sections within each section(Home(general posts), Resources, Events) to check specific areas
 - User's profile
