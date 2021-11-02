@@ -179,6 +179,7 @@ src/
 | responsive styling   |    H     |     3.5 hrs    |        hrs     |     TBD     |
 | animation            |    L     |     3.5 hrs    |        hrs     |     TBD     |
 | create sections      |    L     |       2 hrs    |        hrs     |     TBD     |
+| sub comments         |    L     |       2 hrs    |        hrs     |     TBD     |
 | edit user's comments |    L     |       2 hrs    |        hrs     |     TBD     |
 | favorite posts       |    L     |       3 hrs    |        hrs     |     TBD     |
 | favorite comments    |    L     |       3 hrs    |        hrs     |     TBD     |
