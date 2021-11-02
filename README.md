@@ -80,7 +80,7 @@ The **On the Move** MVP will consist of full CRUD implementation through the abi
 
 <br>SignIn/Up</br>
 
-![SignIn](url)
+<br>![SignIn](url)</br>
 ![SignUp](url)
 
 <br>About</br>
@@ -89,9 +89,9 @@ The **On the Move** MVP will consist of full CRUD implementation through the abi
 
 <br>SignedIn Pages</br>
 
-![SignedIn Home](url)
+<br>![SignedIn Home](url)</br>
 ![SignedIn Resources](url)
-![SignedIn Events](url)
+<br>![SignedIn Events](url)</br>
 
 
 #### [Component Tree](https://whimsical.com/on-the-move-FDTEBNx8Kj4xQKEUTubwtu)
