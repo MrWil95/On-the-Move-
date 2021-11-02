@@ -91,7 +91,7 @@ The **On the Move** MVP will consist of full CRUD implementation through the abi
 
 #### [Component Tree](https://whimsical.com/on-the-move-FDTEBNx8Kj4xQKEUTubwtu)
 
-![Whimsical](https://res.cloudinary.com/dedlhqhuk/image/upload/v1635830379/2021-11-02_vwgtfl.png)
+![Whimsical](https://res.cloudinary.com/dedlhqhuk/image/upload/v1635830379/On%20the%20Move/2021-11-02_vwgtfl.png)
 
 #### Component Architecture
 
