@@ -45,21 +45,19 @@ The **On the Move** MVP will consist of full CRUD implementation through the abi
 
 ### Libraries and Dependencies
 
-|     Library       | Description                                                               |
-| :--------------:  | :-----------------------------------------                                |
-| React             | _Open-source JS library for building user interfaces_                     |
-| React Icons       | _Used to import icons for visual effect_                                  |
-| React Router      | _A standard library for routing in React_                                 |
-| React Router Dom  | _Enables you to implement dynamic routing in a web app_                   |
-| Axios             | _A promise-based HTTP Client for node.js and the browser,_                |
-|                     _makes it easy to send asynchronous HTTP request_                         |
-| Styled Components | _A react library that allows you to write css in JavaScript files_        |
-| Rails             | _A ruby library used to build out the backend of an app_                  |
-| JSON Web Token    | _A secure way to transmit user info as a JSON object_                     |
-| Cors              | _Allows a server to indicate any origins (domain, scheme, or port),_      |  
-|                     _other than its own from which a browser should permit loading resources_ |
-| Bcrypt            | _Bcrypt is a password-hashing function used for encryption_               |
-| Faker             | _Faker is a dependency used to create fake data in the backend_           |
+|     Library       | Description                                                                                                               |
+| :--------------:  | :-----------------------------------------                                                                                |
+| React             | _Open-source JS library for building user interfaces_                                                                     |
+| React Icons       | _Used to import icons for visual effect_                                                                                  |
+| React Router      | _A standard library for routing in React_                                                                                 |
+| React Router Dom  | _Enables you to implement dynamic routing in a web app_                                                                   |
+| Axios             | _A promise-based HTTP Client for node.js and the browser, makes it easy to send asynchronous HTTP request_                |
+| Styled Components | _A react library that allows you to write css in JavaScript files_                                                        |
+| Rails             | _A ruby library used to build out the backend of an app_                                                                  |
+| JSON Web Token    | _A secure way to transmit user info as a JSON object_                                                                     |
+| Cors              | _Allows a server to indicate any origins (domain, scheme, or port), other than its own from which a browser should permit loading resources_                                                                                                                              |  
+| Bcrypt            | _Bcrypt is a password-hashing function used for encryption_                                                               |
+| Faker             | _Faker is a dependency used to create fake data in the backend_                                                           |
 
 <br>
 
@@ -200,6 +198,7 @@ src/
  
 - Edit user's comments
 - Impliment sections within each section(Home(general posts), Resources, Events) to check specific areas
+- User's profile
 - Favorite posts/comments
 - Allow user to flag comments & posts
 - Hide other user's posts
