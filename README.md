@@ -47,24 +47,25 @@ The **On the Move** MVP will consist of full CRUD implementation through the abi
 
 |     Library       | Description                                                               |
 | :--------------:  | :-----------------------------------------                                |
-|      React        | _Open-source JS library for building user interfaces_                     |
-|   React Icons     | _Used to import icons for visual effect_                                  |
-|   React Router    | _A standard library for routing in React_                                 |
+| React             | _Open-source JS library for building user interfaces_                     |
+| React Icons       | _Used to import icons for visual effect_                                  |
+| React Router      | _A standard library for routing in React_                                 |
 | React Router Dom  | _Enables you to implement dynamic routing in a web app_                   |
-|      Axios        | _A promise-based HTTP Client for node.js and the browser,_                |
+| Axios             | _A promise-based HTTP Client for node.js and the browser,_                |
 |                     _makes it easy to send asynchronous HTTP request_                         |
 | Styled Components | _A react library that allows you to write css in JavaScript files_        |
-|      Rails        | _A ruby library used to build out the backend of an app_                  |
-|  JSON Web Token   | _A secure way to transmit user info as a JSON object_                     |
-|      Cors         | _Allows a server to indicate any origins (domain, scheme, or port),_      |  
-|                     _other than its own from which a browser should permit loading resources_ |           |                                                                                               |
-
+| Rails             | _A ruby library used to build out the backend of an app_                  |
+| JSON Web Token    | _A secure way to transmit user info as a JSON object_                     |
+| Cors              | _Allows a server to indicate any origins (domain, scheme, or port),_      |  
+|                     _other than its own from which a browser should permit loading resources_ |
+| Bcrypt            | _Bcrypt is a password-hashing function used for encryption_               |
+| Faker             | _Faker is a dependency used to create fake data in the backend_           |
 
 <br>
 
 ### Client (Front End)
 
-#### Wireframes
+#### [Wireframes](https://www.figma.com/file/EFZLYWVqB2ND5vHqfwpUQh/On-the-Move?node-id=0%3A1)
 
 ![Dummy Link](url)
 
@@ -90,9 +91,9 @@ The **On the Move** MVP will consist of full CRUD implementation through the abi
 
 - Mobile Resource Index
 
-#### Component Tree
+#### [Component Tree](https://whimsical.com/on-the-move-FDTEBNx8Kj4xQKEUTubwtu)
 
-[Component Tree Sample](https://gist.git.generalassemb.ly/davidtwhitlatch/414107e2560ae0bb65e233570f2fe056#file-component-tree-png)
+![Whimsical](https://res.cloudinary.com/dedlhqhuk/image/upload/v1635830379/2021-11-02_vwgtfl.png)
 
 #### Component Architecture
 
@@ -115,18 +116,18 @@ src/
         |__ Nav.jsx
         |__ NavBar.jsx
         |__ NavBurger.jsx
-      |__Posts/
-        |__Posts.jsx
       |__ PostsDelete/
         |__ PostsDelete.css
         |__ PostsDelete.jsx
+      |__ SignIn/
+        |__ SignIn.css
+        |__ SignIn.jsx
+      |__ SignUp/
+        |__ SignUp.css
+        |__ SignUp.jsx
       |__ Users/
         |__ Users.css
         |__ Users.jsx
-|__ containers/
-      |__ CommentsContainer.jsx
-      |__ PostsContainer.jsx
-      |__ UsersContainer.jsx
 |__ screens/
       |__ About/
         |__ About.css
@@ -146,26 +147,43 @@ src/
       |__ Resources/
         |__ Resources.css
         |__ Resources.jsx
-      |__ SignIn/
-        |__ SignIn.css
-        |__ SignIn.jsx
-      |__ SignUp/
-        |__ SignUp.css
-        |__ SignUp.jsx
+      |__ SignIn/Up
+        |__ SignIn/Up.css
+        |__ SignIn/Up.jsx
 |__ services/
       |__apiConfigs.js
+      |__auth.js
       |__posts.js
       |__comments.js
+      |__categories.js
 
 ```
 
 #### Time Estimates
 
-| Task                | Priority | Estimated Time | Time Invested | Actual Time |
-| ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |     TBD     |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
+| Task                 | Priority | Estimated Time | Time Invested  | Actual Time |
+| -------------------  | :------: | :------------: | :-----------:  | :---------: |
+| rails new            |    H     |     .25 hrs    |        hrs     |     TBD     |   
+| rails db:create      |    H     |     .25 hrs    |        hrs     |     TBD     |
+| set up scaffold      |    H     |       1 hr     |        hrs     |     TBD     |
+| set up backend auth  |    M     |       2 hrs    |        hrs     |     TBD     |
+| backend routes       |    H     |       2 hrs    |        hrs     |     TBD     |
+| create-react-app     |    H     |     .25 hrs    |        hrs     |     TBD     |
+| frontend auth        |    M     |       2 hrs    |        hrs     |     TBD     |
+| frontend routes      |    H     |       2 hrs    |        hrs     |     TBD     |
+| append page data     |    H     |       4 hrs    |        hrs     |     TBD     |
+| basic styling        |    H     |       7 hrs    |        hrs     |     TBD     |
+| responsive styling   |    H     |     3.5 hrs    |        hrs     |     TBD     |
+| animation            |    L     |     3.5 hrs    |        hrs     |     TBD     |
+| create sections      |    L     |       2 hrs    |        hrs     |     TBD     |
+| edit user's comments |    L     |       2 hrs    |        hrs     |     TBD     |
+| favorite posts       |    L     |       3 hrs    |        hrs     |     TBD     |
+| favorite comments    |    L     |       3 hrs    |        hrs     |     TBD     |
+| flag comments/posts  |    L     |       3 hrs    |        hrs     |     TBD     |
+| Hide user's posts    |    L     |       3 hrs    |        hrs     |     TBD     |
+| Clean code           |    H     |       5 hrs    |        hrs     |     TBD     |
+| Debugging            |    H     |       8 hrs    |        hrs     |     TBD     |
+| TOTAL                |          |   56.75 hrs    |        hrs     |     TBD     |
 
 <br>
 
@@ -179,11 +197,12 @@ src/
 ***
 
 ## Post-MVP
-
-- Stop user from editing comments not belonging to them on their posts and other's posts 
-- Allow user to edit/delete their comment on other's post(s)
+ 
+- Edit user's comments
 - Impliment sections within each section(Home(general posts), Resources, Events) to check specific areas
-- Allow user to flag any comment on their post
+- Favorite posts/comments
+- Allow user to flag comments & posts
+- Hide other user's posts
 
 ***
 
