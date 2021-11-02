@@ -65,29 +65,33 @@ The **On the Move** MVP will consist of full CRUD implementation through the abi
 
 #### [Wireframes](https://www.figma.com/file/EFZLYWVqB2ND5vHqfwpUQh/On-the-Move?node-id=0%3A1)
 
-![Dummy Link](url)
+<br>Home Page</br>
 
-- Desktop Landing
+![Home](url)
 
-![Dummy Link](url)
+<br>Resources</br>
 
-- Desktop Hero
+![Resources](url)
 
-![Dummy Link](url)
+<br>Events</br>
 
-- Resource Index
+![Events](url)
 
-![Dummy Link](url)
+<br>SignIn/Up</br>
 
-- Resource Show
+![SignIn](url)
+![SignUp](url)
 
-![Dummy Link](url)
+<br>About</br>
 
-- Tablet Resource Index
+![About](url)
 
-![Dummy Link](url)
+<br>SignedIn Pages</br>
 
-- Mobile Resource Index
+![SignedIn Home](url)
+![SignedIn Resources](url)
+![SignedIn Events](url)
+
 
 #### [Component Tree](https://whimsical.com/on-the-move-FDTEBNx8Kj4xQKEUTubwtu)
 
