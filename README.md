@@ -189,9 +189,9 @@ src/
 
 ### Server (Back End)
 
-#### ERD Model
+#### [ERD Model](https://drive.google.com/file/d/1b9VxoX8n9pMDqEhFOw3rTuJcxzhGAFY2/view?usp=sharing)
 
-[ERD Sample](https://drive.google.com/file/d/1kLyQTZqfcA4jjKWQexfEkG2UspyclK8Q/view)
+![ERD](https://res.cloudinary.com/dedlhqhuk/image/upload/v1635835249/On%20the%20Move/2021-11-02_4_ccf1ny.png)
 <br>
 
 ***
