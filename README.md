@@ -89,7 +89,7 @@ The **On the Move** MVP will consist of full CRUD implementation through the abi
 <br>SignedIn Pages</br>
 
 <br>![SignedIn Home](url)</br>
-<br>![SignedIn Resources](url)</br>
+![SignedIn Resources](url)
 ![SignedIn Events](url)
 
 
