@@ -24,7 +24,7 @@ puts "#{User.count} users created"
 
 puts "#{Category.count} categories created"
 
-@post0 = Post.create!(content: 'Welcome to On the Move, here you can find everything you\'ll need to make your move more enjoyable and easier', category: @category.all, user: @admin0)
+@post0 = Post.create!(content: 'Welcome to On the Move, here you can find everything you\'ll need to make your move more enjoyable and easier', category: @general, user: @admin0)
 @post1 = Post.create!(content: 'It\'s official! Got the call today that I will be starting at Amazon in a few weeks. Time to start packing! Watch out Seattle, here we come. #seeyouinseattle #onthemove', category: @general, user: @admin1)
 @post2 = Post.create!(content: 'I have lived all over and this blog has helped make each and every move ten times easier than I ever could have imagined. Thanks to all my fellow movers for all the support!', category: @general, user: @admin2)
 @post3 = Post.create!(content: 'Bark, bark, bark bark, bark. #traveling', category: @general, user: @admin3)
