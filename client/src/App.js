@@ -1,11 +1,8 @@
 import './App.css'
-import { Route } from 'react-router-dom'
+import {Route, Routes} from 'react-router-dom'
 import About from './screens/About/About'
-import Comments from './screens/Comments/Comments'
 import Events from './screens/Events/Events'
 import Home from './screens//Home/Home'
-import PostCreate from './screens/PostCreate/PostCreate'
-import PostEdit from './screens/PostEdit/PostEdit'
 import Resources from './screens/Resources/Resources'
 import SignInUp from './screens/SignInUp/SignInUp'
 
@@ -13,9 +10,23 @@ import SignInUp from './screens/SignInUp/SignInUp'
 export default function App() {
   return (
     <div className='App'>
-      <Route exact path='/'>
-        
-      </Route>
+      <Routes>
+        <Route exact path='/home'>
+          <Home />
+        </Route>
+        <Route exact path='/resources'>
+          <Resources />
+        </Route>
+        <Route exact path='/events'>
+          <Events />
+        </Route>
+        <Route exact path='/about'>
+          <About />
+        </Route>
+        <Route exact path='/register'>
+          <SignInUp />
+        </Route>
+      </Routes>
     </div>
   )
 }
