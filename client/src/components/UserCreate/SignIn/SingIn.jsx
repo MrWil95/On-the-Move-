@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 
 export default function SingIn(props) {
   const [formData, setFormData] = useState({
