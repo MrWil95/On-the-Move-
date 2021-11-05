@@ -1,11 +1,15 @@
 import Nav from '../Nav/Nav'
 
 export default function Layout(props) {
+  const { children, currentUser, handleLogout } = props
   return (
     <div>
-      <Nav />
+      <Nav 
+        currentUser={currentUser}
+        handleLogout={handleLogout}
+      />
       <div className='layout-children'>
-        {props.children}
+        {children}
       </div>
     </div>
   )

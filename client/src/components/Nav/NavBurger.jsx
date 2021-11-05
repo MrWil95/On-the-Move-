@@ -29,7 +29,8 @@ const Ul = styled.ul`
   }
 `;
 
-export default function NavBar({ open }) {
+export default function NavBar(props, { open }) {
+  const { currentUser, handleLogout } = props
   return (
     <>
       <Link to='/'>
@@ -46,9 +47,14 @@ export default function NavBar({ open }) {
           <li>About</li>
         </Link>
       </Ul>
-      <Link to='/user'>
-        <button>SignIn/Up</button>
-      </Link>
+      {currentUser ? (
+          <div>
+            <p>{currentUser.username}</p>
+            <button onClick={handleLogout}>Logout</button>
+          </div>
+        ) : (
+          <Link to='/user'>Signin/Signup</Link>
+        )}
     </>
   )
 }

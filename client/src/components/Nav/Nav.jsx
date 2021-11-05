@@ -12,11 +12,15 @@ const StyledNav = styled.nav`
   background-color: #084C61;
 `;
 
-export default function Nav() {
+export default function Nav(props) {
+  const {currentUser, handleLogout } = props
   return (
     <div>
       <StyledNav clsasName='NavContainer'>
-        <NavBurger />
+        <NavBurger 
+          currentUser={currentUser}
+          handleLogout={handleLogout}
+        />
       </StyledNav>
     </div>
   )
