@@ -5,8 +5,8 @@ export const getAllPosts = async () => {
   return res.data
 }
 
-export const getCategory = async (category_id) => {
-  const res = await api.get(`/categories/${category_id}`)
+export const getCategory = async (id) => {
+  const res = await api.get(`/categories/${id}`)
   return res.data
 }
 
@@ -29,7 +29,3 @@ export const deletePost = async (id) => {
   const res = await api.delete(`/posts/${id}`)
   return res
 }
-
-// export const addCommentToPost = async (commentData, id) => {
-//   const res = await api.post(``)
-// }

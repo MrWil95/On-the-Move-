@@ -41,24 +41,14 @@ class PostsController < ApplicationController
     @post.destroy
   end
 
-  # def findgeneralposts
-  #   @posts = Post.find(post_params).where(:category_id == 22)
+  def find_general_posts
+    @posts = Post.find(post_params).where(:category_id == 22)
 
-  #   render json: @posts
-  # end
-
-  # def add_comment
-  #   @comment = Comment.new(comment_params)
-  #   @post = Post.find(params[:id])
-
-  #   @post.comments << @comment
-
-  #   render json: @post, include: :comments
-  # end
+    render json: @posts
+  end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_post
     @post = Post.find(params[:id])
   end
@@ -67,12 +57,7 @@ class PostsController < ApplicationController
     @post = @current_user.posts.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def post_params
     params.require(:post).permit(:content, :img_url, :link_url, :category_id, :user_id)
   end
-
-  # def comment_params
-  #   params.require(:comment).permit(:content, :post_id, :user_id)
-  # end
 end

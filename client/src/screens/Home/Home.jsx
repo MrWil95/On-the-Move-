@@ -1,6 +1,6 @@
 import './Home.css'
 import Layout from '../../components/Layout/Layout'
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { getAllPosts, getCategory } from '../../services/posts'
 
 export default function Home() {
@@ -15,8 +15,8 @@ export default function Home() {
     }, [])
 
     useEffect(() => {
-      const fetchData = async (id) => {
-        const res = await getCategory(id)
+      const fetchData = async () => {
+        const res = await getCategory()
         console.log(res)
       }
       fetchData()
