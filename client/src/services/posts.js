@@ -1,12 +1,12 @@
 import {api} from './apiConfig'
 
-export const getAllPosts = async () => {
+export const fetchAllPosts = async () => {
   const res = await api.get('/posts')
   return res.data
 }
 
-export const getCategory = async (id) => {
-  const res = await api.get(`/categories/${id}`)
+export const getCategories = async () => {
+  const res = await api.get(`/categories`)
   return res.data
 }
 

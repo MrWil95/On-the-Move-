@@ -41,12 +41,6 @@ class PostsController < ApplicationController
     @post.destroy
   end
 
-  def find_general_posts
-    @posts = Post.find(post_params).where(:category_id == 22)
-
-    render json: @posts
-  end
-
   private
 
   def set_post
