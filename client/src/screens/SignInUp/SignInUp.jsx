@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Route, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import Layout from '../../components/Layout/Layout'
 import SignIn from '../../components/UserCreate/SignIn/SingIn'
 import SignUp from '../../components/UserCreate/SignUp/SignUp'
@@ -46,12 +46,10 @@ export default function SignInUp() {
         currentUser={currentUser} 
         handleLogout={handleLogout}
       >
-        <Route path='/login'>
-          <SignIn handleLogin={handleLogin} />
-        </Route>
-        <Route path='/register'>
-          <SignUp handleRegister={handleRegister} />
-        </Route>
+        <button>Signin</button>
+        <button>Signup</button>
+        <SignIn handleLogin={handleLogin} />
+        <SignUp handleRegister={handleRegister} />
       </Layout>
     </div>
   )
