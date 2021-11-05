@@ -22,7 +22,7 @@ export default function App() {
         <Route exact path='/about'>
           <About />
         </Route>
-        <Route exact path='/register'>
+        <Route exact path='/user'>
           <SignInUp />
         </Route>
     </div>

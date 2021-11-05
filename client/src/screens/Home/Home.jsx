@@ -2,6 +2,7 @@ import './Home.css'
 import Layout from '../../components/Layout/Layout'
 import { useState, useEffect } from 'react'
 import { fetchAllPosts, getCategories } from '../../services/posts'
+import { FaRegCommentAlt } from 'react-icons/fa'
 
 export default function Home() {
   const [getPostsFromGeneral, setGetPostsFromGeneral] = useState([])
@@ -12,27 +13,39 @@ export default function Home() {
       const fetchData = async () => {
         const res = await fetchAllPosts()
         setGetAllPosts(res)
+      }
+      fetchData()
+    }, [])
 
-        const categoryRes = getCategories()
+    useEffect(() => {
+      const fetchCategoryData = async () => {
+        const categoryRes = await getCategories()
         const generalCategory = categoryRes.find((category)=>{
           return category.title === 'general'
         })
         setGetGeneralCategory(generalCategory)
-
-        if(getGeneralCategory.id) {
-          const allGeneralPosts = getAllPosts.filter((post)=>{
-            return post.category_id === getGeneralCategory.id
-          })
-          setGetPostsFromGeneral(allGeneralPosts)
-        }
       }
-      fetchData()
+      fetchCategoryData()
+    }, [])
+
+    useEffect(() => {
+      if(getGeneralCategory.id) {
+        const allGeneralPosts = getAllPosts.filter((post)=>{
+          return post.category_id === getGeneralCategory.id
+        })
+        setGetPostsFromGeneral(allGeneralPosts)
+      }
     }, [getAllPosts, getGeneralCategory])
 
   return (
     <Layout>
      {getPostsFromGeneral.map((generalPost) => (
-      <p>{generalPost.content}</p>
+       <div className='PostContainer'>
+        <p>{generalPost.content}</p>
+        <div className='buttoncontainer'>
+          <button><FaRegCommentAlt  /> Comment</button>
+        </div>
+      </div>
      ))}
     </Layout>
   )

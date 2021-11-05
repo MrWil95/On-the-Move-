@@ -46,7 +46,7 @@ export default function NavBar({ open }) {
           <li>About</li>
         </Link>
       </Ul>
-      <Link to='/register'>
+      <Link to='/user'>
         <button>SignIn/Up</button>
       </Link>
     </>
