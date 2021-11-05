@@ -3,6 +3,7 @@ import {Route} from 'react-router-dom'
 import About from './screens/About/About'
 import Events from './screens/Events/Events'
 import Home from './screens//Home/Home'
+import Layout from './components/Layout/Layout'
 import Resources from './screens/Resources/Resources'
 import SignInUp from './screens/SignInUp/SignInUp'
 import { useState, useEffect } from 'react'
@@ -46,6 +47,10 @@ export default function App() {
 
   return (
     <div className='App'>
+      <Layout
+        currentUser={currentUser} 
+        handleLogout={handleLogout}
+      >
         <Route exact path='/'>
           <Home />
         </Route>
@@ -66,6 +71,7 @@ export default function App() {
             handleLogout={handleLogout}
           />
         </Route>
+      </Layout>
     </div>
   )
 }

@@ -1,4 +1,3 @@
-import Layout from '../../components/Layout/Layout'
 import { useState, useEffect } from 'react'
 import { fetchAllPosts, getCategories } from '../../services/posts'
 import { FaRegCommentAlt } from 'react-icons/fa'
@@ -37,15 +36,15 @@ export default function Events() {
     }, [getAllPosts, getEventCategory])
 
   return (
-    <Layout>
-    {getPostsFromEvents.map((resourcePost) => (
-      <div className='PostContainer' key='events'>
-       <p>{resourcePost.content}</p>
-       <div className='buttoncontainer'>
-         <button><FaRegCommentAlt /> Comment</button>
-       </div>
-     </div>
-    ))}
-   </Layout>
+    <div>
+      {getPostsFromEvents.map((resourcePost) => (
+        <div className='PostContainer' key='events'>
+        <p>{resourcePost.content}</p>
+        <div className='buttoncontainer'>
+          <button><FaRegCommentAlt /> Comment</button>
+        </div>
+      </div>
+      ))}
+   </div>
   )
 }

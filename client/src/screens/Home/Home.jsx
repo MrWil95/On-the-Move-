@@ -1,5 +1,4 @@
 import './Home.css'
-import Layout from '../../components/Layout/Layout'
 import { useState, useEffect } from 'react'
 import { fetchAllPosts, getCategories } from '../../services/posts'
 import { FaRegCommentAlt } from 'react-icons/fa'
@@ -38,7 +37,7 @@ export default function Home() {
     }, [getAllPosts, getGeneralCategory])
 
   return (
-    <Layout>
+    <div>
      {getPostsFromGeneral.map((generalPost) => (
        <div className='PostContainer'>
         <p>{generalPost.content}</p>
@@ -47,6 +46,6 @@ export default function Home() {
         </div>
       </div>
      ))}
-    </Layout>
+    </div>
   )
 }
