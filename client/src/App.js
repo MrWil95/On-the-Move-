@@ -1,5 +1,5 @@
 import './App.css'
-import {Route, Routes} from 'react-router-dom'
+import {Route} from 'react-router-dom'
 import About from './screens/About/About'
 import Events from './screens/Events/Events'
 import Home from './screens//Home/Home'
@@ -10,8 +10,7 @@ import SignInUp from './screens/SignInUp/SignInUp'
 export default function App() {
   return (
     <div className='App'>
-      <Routes>
-        <Route exact path='/home'>
+        <Route exact path='/'>
           <Home />
         </Route>
         <Route exact path='/resources'>
@@ -26,7 +25,6 @@ export default function App() {
         <Route exact path='/register'>
           <SignInUp />
         </Route>
-      </Routes>
     </div>
   )
 }

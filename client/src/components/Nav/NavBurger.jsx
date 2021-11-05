@@ -32,7 +32,7 @@ const Ul = styled.ul`
 export default function NavBar({ open }) {
   return (
     <>
-      <Link to='/home'>
+      <Link to='/'>
         <img src='https://res.cloudinary.com/dedlhqhuk/image/upload/v1636059840/On%20the%20Move/6290871299_a12ded4b-aebd-4a54-8cba-f869b55139f0_rs9bfc.png' alt='logo' />
       </Link>
       <Ul open={open}>

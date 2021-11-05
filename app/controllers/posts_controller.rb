@@ -41,6 +41,12 @@ class PostsController < ApplicationController
     @post.destroy
   end
 
+  # def findgeneralposts
+  #   @posts = Post.find(post_params).where(:category_id == 22)
+
+  #   render json: @posts
+  # end
+
   # def add_comment
   #   @comment = Comment.new(comment_params)
   #   @post = Post.find(params[:id])
