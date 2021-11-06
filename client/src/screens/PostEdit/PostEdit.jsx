@@ -41,8 +41,8 @@ export default function PostEdit() {
 
   useEffect(() => {
     const fetchCategories = async () => {
-      const postList = await getCategories()
-      setCategories(postList);
+      const postCategories = await getCategories()
+      setCategories(postCategories);
     };
     fetchCategories()
   }, [])
