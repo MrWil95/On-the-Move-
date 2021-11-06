@@ -33,6 +33,9 @@ export default function NavBar(props, { open }) {
   const { currentUser, handleLogout } = props
   return (
     <>
+    <Link to='/create'>
+      <button>create</button>
+    </Link>
       <Link to='/'>
         <img src='https://res.cloudinary.com/dedlhqhuk/image/upload/v1636059840/On%20the%20Move/6290871299_a12ded4b-aebd-4a54-8cba-f869b55139f0_rs9bfc.png' alt='logo' />
       </Link>

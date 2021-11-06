@@ -6,6 +6,7 @@ import Home from './screens//Home/Home'
 import Layout from './components/Layout/Layout'
 import Resources from './screens/Resources/Resources'
 import SignInUp from './screens/SignInUp/SignInUp'
+import PostCreate from './screens/PostCreate/PostCreate'
 import { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { 
@@ -70,6 +71,9 @@ export default function App() {
             handleRegister={handleRegister}
             handleLogout={handleLogout}
           />
+        </Route>
+        <Route exact path='/create'>
+          <PostCreate />
         </Route>
       </Layout>
     </div>
