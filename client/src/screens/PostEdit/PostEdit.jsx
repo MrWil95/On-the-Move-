@@ -26,12 +26,12 @@ export default function PostEdit() {
 
   useEffect(() => {
     const prefillFormData = () => {
-      const post = posts.find(post => post.id === Number(id))
+      const postInfo = posts.find(post => post.id === Number(id))
       setFormData({
-        content: post.content,
-        img_url: post.img_url,
-        link_url: post.link_url,
-        category_id: post.category_id
+        content: postInfo.content,
+        img_url: postInfo.img_url,
+        link_url: postInfo.link_url,
+        category_id: postInfo.category_id
       })
     }
     if (posts.length) {
