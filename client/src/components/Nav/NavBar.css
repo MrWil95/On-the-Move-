@@ -7,10 +7,16 @@
 }
 
 a {
+  text-decoration: none;
+}
+
+li {
   color: #ffffff;
   font-family: 'Shadows Into Light Two', cursive;
-  font-size: 1.75em;
-  text-decoration: none;
+  font-size: 1.5em;
+  display: inline;
+  list-style: none;
+  margin: 1em;
 }
 
 .logo {
@@ -32,6 +38,7 @@ a {
   background-color: #E3B505;
   border-radius: 15px;
   color: #4F6D7A;
+  font-family: 'Shadows Into Light Two', cursive;
   height: 3.5em;
   margin: 4em 4em 2em 0;
   width: 10em;

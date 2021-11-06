@@ -10,26 +10,24 @@ export default function NavBar(props) {
           <img src='https://res.cloudinary.com/dedlhqhuk/image/upload/v1636059840/On%20the%20Move/6290871299_a12ded4b-aebd-4a54-8cba-f869b55139f0_rs9bfc.png' alt='logo' className='logo'/>
         </Link>
         <div className='navlinks'>
-            {currentUser ? (
-              <p>{currentUser.username}</p>
-            ) : (
-              Welcome
-            )}
-            <Link to='/resources'>
-              Resources
-            </Link>
-            <Link to='/events'>
-              Events<
-            </Link>
-            <Link to='/about'>
-              About
-            </Link>
-          </div> 
+          <Link to='/resources'>
+            <li className='resources'>Resources</li>
+          </Link>
+          <Link to='/events'>
+            <li className='events'>Events</li>
+          </Link>
+          <Link to='/about'>
+            <li className='about'>About</li>
+          </Link>
+          {currentUser ? (
+            <li className='userid'>{currentUser.username}</li>
+          ) : (<></>)}
+        </div> 
       </div>
       <div className='RegisterContainer'>
       {currentUser ? (
         <div className='logout'>
-          <button onClick={handleLogout}>Logout</button>
+          <button onClick={handleLogout} className='register'>Logout</button>
         </div>
         ) : (
         <Link to='/user' >
