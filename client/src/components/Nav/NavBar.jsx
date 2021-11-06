@@ -1,53 +1,42 @@
-import { useState } from 'react'
-import styled from 'styled-components'
-import NavBar from './NavBurger'
+import './NavBar.css'
+import { Link } from 'react-router-dom'
 
-const StyledBurger = styled.div`
-  width: 2em;
-  height: 2em;
-  margin-top: .75em;
-  margin-right: 2.5em;
-  right: 1.25em;
-  z-index: 10;
-  display: none;
-
-@media (max-width: 768px) {
-  display: flex;
-  justify-content: space-around;
-  flex-flow: column nowrap;
-}
-div {
-  width: 2em;
-  height: 0.25em;
-  background-color: #FFF;
-  border-radius: 10px;
-  transform-origin: 1px;
-  transition: all 0.3s linear;
-
-  &:nth-child(1) {
-    transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
-  }
-  &:nth-child(2) {
-    transform: ${({ open }) => open ? 'translateX(100%)' : 'translateX(0)'};
-    opacity: ${({ open }) => open ? 0 : 1};
-  }
-  &:nth-child(3) {
-    transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
-  }
-}
-`;
-
-export default function NavBar() {
-  const [open, setOpen] = useState(false)
-
+export default function NavBar(props) {
+  const { currentUser, handleLogout } = props
   return (
     <>
-      <StyledBurger open={open} onClick={() => setOpen(!open)}>
-        <div />
-        <div />
-        <div />
-      </StyledBurger>
-      <NavBar open={open} />
+      <div className='NavBarContainer'>
+        <Link to='/'>
+          <img src='https://res.cloudinary.com/dedlhqhuk/image/upload/v1636059840/On%20the%20Move/6290871299_a12ded4b-aebd-4a54-8cba-f869b55139f0_rs9bfc.png' alt='logo' className='logo'/>
+        </Link>
+        <div className='navlinks'>
+            {currentUser ? (
+              <p>{currentUser.username}</p>
+            ) : (
+              Welcome
+            )}
+            <Link to='/resources'>
+              Resources
+            </Link>
+            <Link to='/events'>
+              Events<
+            </Link>
+            <Link to='/about'>
+              About
+            </Link>
+          </div> 
+      </div>
+      <div className='RegisterContainer'>
+      {currentUser ? (
+        <div className='logout'>
+          <button onClick={handleLogout}>Logout</button>
+        </div>
+        ) : (
+        <Link to='/user' >
+          <button className='register'>Signin/Signup</button>
+        </Link>
+      )}
+      </div>
     </>
   )
 }

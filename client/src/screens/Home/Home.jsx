@@ -1,5 +1,6 @@
 import './Home.css'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { fetchAllPosts } from '../../services/posts'
 import { FaRegCommentAlt } from 'react-icons/fa'
 
@@ -17,7 +18,12 @@ export default function Home() {
     }, [])
 
   return (
-    <div>
+    <div className='HomeContainer'>
+      <div className='postinput'>
+        <Link to='/create'>
+          <input placeholder='Post' />
+        </Link>
+      </div>
      {getAllPosts.map((generalPost) => (
        <div className='PostContainer'>
         <h3>{generalPost.username}</h3>

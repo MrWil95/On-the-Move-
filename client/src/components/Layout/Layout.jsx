@@ -1,10 +1,10 @@
-import Nav from '../Nav/Nav'
+import NavBar from '../Nav/NavBar'
 
 export default function Layout(props) {
   const { children, currentUser, handleLogout } = props
   return (
     <div>
-      <Nav 
+      <NavBar 
         currentUser={currentUser}
         handleLogout={handleLogout}
       />

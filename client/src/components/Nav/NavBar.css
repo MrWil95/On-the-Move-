@@ -1,0 +1,38 @@
+.NavBarContainer {
+  align-items: center;
+  background-color: #084C61;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+a {
+  color: #ffffff;
+  font-family: 'Shadows Into Light Two', cursive;
+  font-size: 1.75em;
+  text-decoration: none;
+}
+
+.logo {
+  margin: .75em 1.25em;
+  width: 8vw;
+}
+
+.navlinks {
+  flex-flow: column;
+}
+
+.RegisterContainer {
+  display: flex;
+  justify-content: end;
+  width: 100vw;
+}
+
+.register {
+  background-color: #E3B505;
+  border-radius: 15px;
+  color: #4F6D7A;
+  height: 3.5em;
+  margin: 4em 4em 2em 0;
+  width: 10em;
+}

@@ -24,16 +24,16 @@ puts "#{User.count} users created"
 
 puts "#{Category.count} categories created"
 
-@post0 = Post.create!(content: 'Welcome to On the Move, here you can find everything you\'ll need to make your move more enjoyable and easier', category: @general, user: @admin0)
-@post1 = Post.create!(content: 'It\'s official! Got the call today that I will be starting at Amazon in a few weeks. Time to start packing! Watch out Seattle, here we come. #seeyouinseattle #onthemove', category: @general, user: @admin1)
-@post2 = Post.create!(content: 'I have lived all over and this blog has helped make each and every move ten times easier than I ever could have imagined. Thanks to all my fellow movers for all the support!', category: @general, user: @admin2)
-@post3 = Post.create!(content: 'Bark, bark, bark bark, bark. #traveling', category: @general, user: @admin3)
-@post4 = Post.create!(content: 'Anyone in the Seattle area know of any reliable movers that can help my wife and I once we arrive? We\'ve got a lot to move', category: @resources, user: @admin1)
-@post5 = Post.create!(content: 'Moving in two weeks! Anyone in Kansas City know the best deals on equipment rentals?', category: @resources, user: @admin2)
-@post6 = Post.create!(content: 'Bark, bark bark, bark. Bark bark. Bark', category: @resources, user: @admin3)
-@post7 = Post.create!(content: 'What are some fun activities to do in the Seattle area? We love exploring the outdoors, nigthlife, and city setting.', category: @events, user: @admin1)
-@post8 = Post.create!(content: 'If anyone coming to Kansas City is interested I\'m hosting a huge going away party before I move. Come make some connections to make your move better!', category: @events, user: @admin2)
-@post9 = Post.create!(content: 'Bark bark bark bark bark bark bark! #adayatthepark', category: @events, user: @admin3)
+@post0 = Post.create!(content: 'Welcome to On the Move, here you can find everything you\'ll need to make your move more enjoyable and easier', category: @general, user: @admin0, username: @admin0.username)
+@post1 = Post.create!(content: 'It\'s official! Got the call today that I will be starting at Amazon in a few weeks. Time to start packing! Watch out Seattle, here we come. #seeyouinseattle #onthemove', category: @general, user: @admin1, username: @admin1.username)
+@post2 = Post.create!(content: 'I have lived all over and this blog has helped make each and every move ten times easier than I ever could have imagined. Thanks to all my fellow movers for all the support!', category: @general, user: @admin2, username: @admin2.username)
+@post3 = Post.create!(content: 'Bark, bark, bark bark, bark. #traveling', category: @general, user: @admin3, username: @admin3.username)
+@post4 = Post.create!(content: 'Anyone in the Seattle area know of any reliable movers that can help my wife and I once we arrive? We\'ve got a lot to move', category: @resources, user: @admin1, username: @admin1.username)
+@post5 = Post.create!(content: 'Moving in two weeks! Anyone in Kansas City know the best deals on equipment rentals?', category: @resources, user: @admin2, username: @admin2.username)
+@post6 = Post.create!(content: 'Bark, bark bark, bark. Bark bark. Bark', category: @resources, user: @admin3, username: @admin3.username)
+@post7 = Post.create!(content: 'What are some fun activities to do in the Seattle area? We love exploring the outdoors, nigthlife, and city setting.', category: @events, user: @admin1, username: @admin1.username)
+@post8 = Post.create!(content: 'If anyone coming to Kansas City is interested I\'m hosting a huge going away party before I move. Come make some connections to make your move better!', category: @events, user: @admin2, username: @admin2.username)
+@post9 = Post.create!(content: 'Bark bark bark bark bark bark bark! #adayatthepark', category: @events, user: @admin3, username: @admin3.username)
 
 puts "#{Post.count} posts created"
 

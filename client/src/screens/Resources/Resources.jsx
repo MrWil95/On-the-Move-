@@ -19,6 +19,7 @@ export default function Resources() {
     <div>
       {getAllPosts.map((resourcePost) => (
         <div className='PostContainer' key='resources'>
+        <h3>{resourcePost.username}</h3>
         <p>{resourcePost.content}</p>
         <div className='buttoncontainer'>
           <button><FaRegCommentAlt /> Comment</button>

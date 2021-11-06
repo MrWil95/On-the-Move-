@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom'
 import { getCategories, createPost } from '../../services/posts'
 
 export default function PostCreate() {
-  const [posts, setPosts] = useState([])
   const [categories, setCategories] = useState([])
   const [formData, setFormData] = useState({
     content: '',
@@ -38,12 +37,6 @@ export default function PostCreate() {
     history.push(`/${category.title}`)
   }
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault()
-  //   const foodItem = await addFlavorToFood(selectedFlavor, id)
-  //   setFoodItem(foodItem)
-  // }
-
   return (
     <form
       onSubmit={(e) => {
@@ -51,6 +44,16 @@ export default function PostCreate() {
         handlePostCreate(formData)
       }}
     >
+      <select onChange={handleChange} name='category_id' defaultValue='default'>
+        <option disabled value='default'>
+          -- Select a Category --
+        </option>
+
+        {categories.map((category) => (
+          <option value={category.id}>{category.title}</option>
+        ))}
+      </select>
+      <br />
       <label>
         Message:
         <textarea type='text' name='content' value={content} onChange={handleChange} />
@@ -65,16 +68,7 @@ export default function PostCreate() {
         Link:
         <input type='text'name='link_url' value={link_url} onChange={handleChange} />
       </label>
-      <br />
-        <select onChange={handleChange} name='category_id' defaultValue='default'>
-          <option disabled value='default'>
-            -- Select a Category --
-          </option>
-
-          {categories.map((category) => (
-            <option value={category.id}>{category.title}</option>
-          ))}
-        </select>
+      <br />  
       <button>Submit</button>
     </form>
   );
