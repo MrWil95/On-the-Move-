@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
 
-    render json: @posts
+    render json: @posts, include: :category
   end
 
   # GET /posts/1
@@ -19,6 +19,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = @current_user
+    @post.username = @current_user.username
 
     if @post.save
       render json: @post, status: :created, location: @post
