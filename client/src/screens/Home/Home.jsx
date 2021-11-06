@@ -2,7 +2,7 @@ import './Home.css'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { fetchAllPosts } from '../../services/posts'
-import { FaRegCommentAlt } from 'react-icons/fa'
+import { FaRegCommentAlt, FaEdit } from 'react-icons/fa'
 
 export default function Home() {
   const [getAllPosts, setGetAllPosts] = useState([])
@@ -30,6 +30,10 @@ export default function Home() {
         <p>{generalPost.content}</p>
         <div className='buttoncontainer'>
           <button><FaRegCommentAlt  /> Comment</button>
+          <Link to='/edit'>
+            <button><FaEdit /> 
+            Edit</button>
+          </Link>
         </div>
       </div>
      ))}

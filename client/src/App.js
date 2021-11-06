@@ -15,6 +15,7 @@ import {
   removeToken, 
   verifyUser 
 } from './services/auth'
+import PostEdit from './screens/PostEdit/PostEdit'
 
 export default function App() {
   const [currentUser, setCurrentUser] = useState(null)
@@ -74,6 +75,9 @@ export default function App() {
         </Route>
         <Route exact path='/create'>
           <PostCreate />
+        </Route>
+        <Route exact path='/edit'>
+          <PostEdit />
         </Route>
       </Layout>
     </div>

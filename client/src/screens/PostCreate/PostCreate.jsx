@@ -71,5 +71,5 @@ export default function PostCreate() {
       <br />  
       <button>Submit</button>
     </form>
-  );
+  )
 }
