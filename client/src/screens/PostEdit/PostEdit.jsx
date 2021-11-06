@@ -18,21 +18,23 @@ export default function PostEdit() {
 
   useEffect(() => {
       const fetchPosts = async () => {
-        const postList = await fetchAllPosts();
+        const postList = await fetchAllPosts()
         setPosts(postList)
-      };
+        console.log(setPosts)
+      }
       fetchPosts()
     }, [])
 
   useEffect(() => {
     const prefillFormData = () => {
       const postInfo = posts.find(post => post.id === Number(id))
-      setFormData({
-        content: postInfo.content,
-        img_url: postInfo.img_url,
-        link_url: postInfo.link_url,
-        category_id: postInfo.category_id
-      })
+      console.log(postInfo)
+      // setFormData({
+      //   content: postInfo.content,
+      //   img_url: postInfo.img_url,
+      //   link_url: postInfo.link_url,
+      //   category_id: postInfo.category_id
+      // })
     }
     if (posts.length) {
       prefillFormData()
