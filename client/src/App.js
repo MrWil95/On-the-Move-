@@ -54,7 +54,7 @@ export default function App() {
         handleLogout={handleLogout}
       >
         <Route exact path='/'>
-          <Home />
+          <Home currentUser={currentUser}/>
         </Route>
         <Route exact path='/resources'>
           <Resources />

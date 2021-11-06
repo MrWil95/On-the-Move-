@@ -1,11 +1,12 @@
 import './Home.css'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { fetchAllPosts } from '../../services/posts'
+import { fetchAllPosts, deletePost } from '../../services/posts'
 import { FaRegCommentAlt, FaEdit } from 'react-icons/fa'
 
-export default function Home() {
+export default function Home(props) {
   const [getAllPosts, setGetAllPosts] = useState([])
+  const { currentUser } = props
 
     useEffect(() => {
       const fetchData = async () => {
@@ -17,6 +18,11 @@ export default function Home() {
       fetchData()
     }, [])
 
+    const handlePostDelete = async (id) => {
+      await deletePost(id);
+      setGetAllPosts((prevState) => prevState.filter((post) => post.id !== id))
+    }
+
   return (
     <div className='HomeContainer'>
       <div className='postinput'>
@@ -26,6 +32,7 @@ export default function Home() {
       </div>
      {getAllPosts.map((generalPost) => (
        <div className='PostContainer'>
+        {currentUser ? (<button onClick={() => handlePostDelete(generalPost.id)}>Delete</button>) : (<></>)}
         <h3>{generalPost.username}</h3>
         <p>{generalPost.content}</p>
         <div className='buttoncontainer'>
