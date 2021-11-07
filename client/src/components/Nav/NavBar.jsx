@@ -28,8 +28,8 @@ export default function NavBar(props) {
       {currentUser ? (
         <div className='conatiner' style={{width: "65%"}}>
           <div className='content' style={{width: "100%", display: "grid", gridTemplateColumns: "50% 50%"}}>
-            <Link to='/create'>
-              <input placeholder='Post' className='input' />
+            <Link to='/create' className='postbarlink'>
+              <input placeholder='Post' className='input' style={{boxShadow: "0 0 5 0 black"}} />
             </Link>
             <button onClick={handleLogout} className='register'>Logout</button>
           </div>
