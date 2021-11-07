@@ -16,8 +16,8 @@ export default function PostCreate() {
   useEffect(() => {
     const fetchCategories = async () => {
       const postList = await getCategories()
-      setCategories(postList);
-    };
+      setCategories(postList)
+    }
     fetchCategories()
   }, [])
 
@@ -43,7 +43,7 @@ export default function PostCreate() {
         e.preventDefault()
         handlePostCreate(formData)
       }}
-    >
+    className='formdata'>
       <select onChange={handleChange} name='category_id' defaultValue='default'>
         <option disabled value='default'>
           -- Select a Category --
