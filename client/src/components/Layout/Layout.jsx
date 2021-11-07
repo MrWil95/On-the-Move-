@@ -8,7 +8,7 @@ export default function Layout(props) {
         currentUser={currentUser}
         handleLogout={handleLogout}
       />
-      <div className='layoutchildren'>
+      <div className='layoutchildren' style={{position: "absolute", top: "8.5em", zIndex: "-5"}}>
         {children}
       </div>
     </div>

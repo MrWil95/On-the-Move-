@@ -1,10 +1,10 @@
-import './Home.css'
+import './General.css'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { fetchAllPosts, deletePost } from '../../services/posts'
 import { FaRegCommentAlt, FaEdit } from 'react-icons/fa'
 
-export default function Home(props) {
+export default function General(props) {
   const [getAllPosts, setGetAllPosts] = useState([])
   const { currentUser } = props
 
@@ -26,7 +26,7 @@ export default function Home(props) {
   return (
     <>
       <img src='https://res.cloudinary.com/dedlhqhuk/image/upload/v1636257157/On%20the%20Move/vwbus_ob5ucd.png' alt='VW Bus' className='vwbus' />
-      <div className='HomeContainer' style={{width: "100vw"}}>
+      <div className='GeneralContainer'>
         {getAllPosts.map((generalPost) => (
           <div className='postContainer'>
             {currentUser ? (<button onClick={() => handlePostDelete(generalPost.id)}>Delete</button>) : (<></>)}

@@ -60,12 +60,22 @@ li {
   width: 30vw;
 }
 
-.register {
+.logout {
   background-color: #E3B505;
   border-radius: 15px;
   color: #4F6D7A;
   font-family: 'Shadows Into Light Two', cursive;
   height: 3.5em;
   margin-left: 26em;
+  width: 10em;
+}
+
+.register {
+  background-color: #E3B505;
+  border-radius: 15px;
+  color: #4F6D7A;
+  font-family: 'Shadows Into Light Two', cursive;
+  margin-top: 2em;
+  height: 3.5em;
   width: 10em;
 }

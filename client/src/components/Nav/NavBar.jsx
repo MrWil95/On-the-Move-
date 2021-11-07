@@ -10,6 +10,9 @@ export default function NavBar(props) {
           <img src='https://res.cloudinary.com/dedlhqhuk/image/upload/v1636059840/On%20the%20Move/6290871299_a12ded4b-aebd-4a54-8cba-f869b55139f0_rs9bfc.png' alt='logo' className='logo'/>
         </Link>
         <div className='navlinks'>
+        <Link to='/'>
+            <li className='home'>Home</li>
+          </Link>
           <Link to='/resources'>
             <li className='resources'>Resources</li>
           </Link>
@@ -31,11 +34,11 @@ export default function NavBar(props) {
             <Link to='/create' className='postbarlink'>
               <input placeholder='Post' className='input' style={{boxShadow: "0 0 5 0 black"}} />
             </Link>
-            <button onClick={handleLogout} className='register'>Logout</button>
+            <button onClick={handleLogout} className='logout'>Logout</button>
           </div>
         </div>
         ) : (
-        <Link to='/user' >
+        <Link to='/user' className='resgisterlink' style={{ width: "10em"}}>
           <button className='register'>Signin/Signup</button>
         </Link>
       )}

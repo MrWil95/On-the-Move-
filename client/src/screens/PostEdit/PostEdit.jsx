@@ -29,12 +29,12 @@ export default function PostEdit() {
     const prefillFormData = () => {
       const postInfo = posts.find(post => post.id === Number(id))
       console.log(postInfo)
-      // setFormData({
-      //   content: postInfo.content,
-      //   img_url: postInfo.img_url,
-      //   link_url: postInfo.link_url,
-      //   category_id: postInfo.category_id
-      // })
+      setFormData({
+        content: postInfo.content,
+        img_url: postInfo.img_url,
+        link_url: postInfo.link_url,
+        category_id: postInfo.category_id
+      })
     }
     if (posts.length) {
       prefillFormData()
@@ -63,9 +63,10 @@ export default function PostEdit() {
   }
 
   const handleChange = (e) => {
-    const { value } = e.target;
+    const { name, value } = e.target;
     setFormData({
-      name: value,
+      ...formData,
+      [name]: value,
     });
   };
 

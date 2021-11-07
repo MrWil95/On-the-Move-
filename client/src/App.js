@@ -2,6 +2,7 @@ import './App.css'
 import {Route} from 'react-router-dom'
 import About from './screens/About/About'
 import Events from './screens/Events/Events'
+import General from './screens/General/General'
 import Home from './screens//Home/Home'
 import Layout from './components/Layout/Layout'
 import Resources from './screens/Resources/Resources'
@@ -56,6 +57,9 @@ export default function App() {
         <Route exact path='/'>
           <Home currentUser={currentUser}/>
         </Route>
+        <Route exact path='/general'>
+          <General currentUser={currentUser}/>
+        </Route>
         <Route exact path='/resources'>
           <Resources />
         </Route>
@@ -76,7 +80,7 @@ export default function App() {
         <Route exact path='/create'>
           <PostCreate />
         </Route>
-        <Route exact path='/edit'>
+        <Route exact path='/edit/:id'>
           <PostEdit />
         </Route>
       </Layout>

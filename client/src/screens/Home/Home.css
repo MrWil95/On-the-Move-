@@ -1,5 +1,19 @@
+
 .HomeContainer {
   display: grid;
   justify-content: center;
+}
+
+.vwbus {
+  width: max-content;
+}
+.postContainer {
+  background-color: #56A3A6;
+  border-radius: 20px;
+  box-shadow: 2 2 7 3 black;
+  width: 40vw;
+  height: 20em;
+  margin-top: 2em;
+  padding: 1.75em;
 }
 
