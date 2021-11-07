@@ -3,12 +3,12 @@ import NavBar from '../Nav/NavBar'
 export default function Layout(props) {
   const { children, currentUser, handleLogout } = props
   return (
-    <div>
+    <div className='LayoutContianer'>
       <NavBar 
         currentUser={currentUser}
         handleLogout={handleLogout}
       />
-      <div className='layout-children'>
+      <div className='layoutchildren'>
         {children}
       </div>
     </div>

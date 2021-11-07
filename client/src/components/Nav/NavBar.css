@@ -31,7 +31,23 @@ li {
 .RegisterContainer {
   display: flex;
   justify-content: flex-end;
-  width: 100vw;
+  width: 100%;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.content {
+  align-items: center;
+  margin-top: 2em;
+}
+
+.input {
+  border-radius: 10px;
+  height: 2em;
+  width: 30vw;
 }
 
 .register {
@@ -40,6 +56,6 @@ li {
   color: #4F6D7A;
   font-family: 'Shadows Into Light Two', cursive;
   height: 3.5em;
-  margin: 4em 4em 2em 0;
+  margin-left: 26em;
   width: 10em;
 }

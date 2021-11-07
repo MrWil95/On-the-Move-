@@ -1,0 +1,9 @@
+.LayoutContainer {
+  position: relative;
+}
+
+.layoutchildren {
+  position: absolute;
+  top: -30em;
+  width: 100%;
+}

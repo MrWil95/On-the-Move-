@@ -26,8 +26,13 @@ export default function NavBar(props) {
       </div>
       <div className='RegisterContainer'>
       {currentUser ? (
-        <div className='logout'>
-          <button onClick={handleLogout} className='register'>Logout</button>
+        <div className='conatiner' style={{width: "65%"}}>
+          <div className='content' style={{width: "100%", display: "grid", gridTemplateColumns: "50% 50%"}}>
+            <Link to='/create'>
+              <input placeholder='Post' className='input' />
+            </Link>
+            <button onClick={handleLogout} className='register'>Logout</button>
+          </div>
         </div>
         ) : (
         <Link to='/user' >

@@ -1,0 +1,9 @@
+.vwbus {
+  width: fit-content;
+}
+
+.HomeContainer {
+  display: grid;
+  justify-content: center;
+}
+
