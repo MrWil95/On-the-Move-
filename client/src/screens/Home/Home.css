@@ -1,11 +1,10 @@
-
 .HomeContainer {
   display: grid;
   justify-content: center;
 }
 
 .vwbus {
-  width: max-content;
+  width: 100vw;
 }
 .postContainer {
   background-color: #56A3A6;
