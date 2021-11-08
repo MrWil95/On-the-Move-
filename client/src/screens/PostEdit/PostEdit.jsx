@@ -29,8 +29,8 @@ export default function PostEdit() {
       const postInfo = posts.find(post => post.id === Number(id))
       setFormData({
         content: postInfo.content,
-        img_url: postInfo.img_url,
-        link_url: postInfo.link_url,
+        img_url: '',
+        link_url: '',
         category_id: postInfo.category_id
       })
     }
@@ -76,13 +76,12 @@ export default function PostEdit() {
           e.preventDefault()
           handlePostUpdate(id, formData)
         }}>
-        <select onChange={handleChange} name='category_id' defaultValue='default' className='selectbar'>
-          <option disabled value='default'>
+        <select onChange={handleChange} name='category_id' defaultValue='category_id' className='selectbar'>
+          <option disabled value={category_id}>
             -- Select a Category --
           </option>
-
-          {categories.map((category) => (
-            <option value={category.id}>{category.title}</option>
+          {categories.map((category, index) => (
+            <option value={category.id} key={index}>{category.title}</option>
           ))}
         </select>
         <br />

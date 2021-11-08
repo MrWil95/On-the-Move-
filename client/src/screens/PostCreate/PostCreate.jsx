@@ -48,12 +48,12 @@ export default function PostCreate() {
           }}
         >
           <select onChange={handleChange} name='category_id' defaultValue='default' className='selectbar'>
-            <option disabled value='default'>
+            <option disabled value={category_id}>
               -- Select a Category --
             </option>
 
-            {categories.map((category) => (
-              <option value={category.id}>{category.title}</option>
+            {categories.map((category, index) => (
+              <option value={category.id} key={index}>{category.title}</option>
             ))}
           </select>
           <br />
