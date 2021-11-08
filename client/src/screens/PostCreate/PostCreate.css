@@ -1,0 +1,76 @@
+.MainContainer {
+  display: grid;
+  align-content: center; 
+  justify-content: center; 
+  width: 100vw; 
+  height: 100vh;
+}
+
+.Form {
+  background-color: #DB504A;
+  border-radius: 10px;
+  display: grid; 
+  align-content: center;
+  height: 22em; 
+  padding: 1.75em;
+  justify-content: center;
+  width: 40vw; 
+}
+
+.selectbar {
+  border-radius: 5px;
+  color: #4F6D7A;
+  font-family: 'Shadows Into Light Two', cursive;
+  height: 2em;
+  margin-bottom: 3em;
+  width: 10vw;
+}
+
+.textarea {
+  border-radius: 5px;
+  color: #4F6D7A;
+  font-family: 'Shadows Into Light Two', cursive;
+  height: 10em;
+  margin-bottom: 1em;
+  width: 30vw;
+}
+
+.forminput {
+  border-radius: 5px;
+  color: #4F6D7A;
+  font-family: 'Shadows Into Light Two', cursive;
+  height: 2em;
+  margin-bottom: 1em;
+  width: 30vw;
+}
+
+.submit {
+  background-color: #E3B505;
+  border-radius: 15px;
+  color: #4F6D7A;
+  font-family: 'Shadows Into Light Two', cursive;
+  height: 3.5em;
+  margin-left: 12.5em;
+  width: 10em;
+}
+
+.messagecontent {
+  color: #4F6D7A;
+  font-family: 'Shadows Into Light Two', cursive;
+  position: absolute;
+  left: 29.5em;
+}
+
+.imageurl {
+  color: #4F6D7A;
+  font-family: 'Shadows Into Light Two', cursive;
+  position: absolute;
+  left: 31em;
+}
+
+.linkurl {
+  color: #4F6D7A;
+  font-family: 'Shadows Into Light Two', cursive;
+  position: absolute;
+  left: 31.5em;
+}

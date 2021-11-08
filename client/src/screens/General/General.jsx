@@ -1,10 +1,10 @@
-import './Home.css'
+import './General.css'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { fetchAllPosts, deletePost } from '../../services/posts'
 import { FaRegCommentAlt, FaEdit, FaTimes } from 'react-icons/fa'
 
-export default function Home(props) {
+export default function General(props) {
   const [getAllPosts, setGetAllPosts] = useState([])
   const { currentUser } = props
 
@@ -26,7 +26,7 @@ export default function Home(props) {
   return (
     <>
       <img src='https://res.cloudinary.com/dedlhqhuk/image/upload/v1636257157/On%20the%20Move/vwbus_ob5ucd.png' alt='VW Bus' className='vwbus' />
-      <div className='Container' >
+      <div className='Container' style={{width: "100vw"}}>
         {getAllPosts.map((generalPost) => (
           <div className='postscontainer'>
             {currentUser ? (<button onClick={() => handlePostDelete(generalPost.id)} className='deletebutton'><FaTimes /></button>) : (<></>)}
@@ -38,7 +38,7 @@ export default function Home(props) {
               </div>
             <div className='buttoncontainer'>
               <Link to={`/general/${generalPost.id}`}>
-                <button className='commentbutton' style={{background: "none", border: "none", color: "#4F6D7A", fontFamily: "Shadows Into Light Two, cursive", marginRight: ".75em", marginLeft: ".75em",}}>
+                <button className='commentbutton' style={{background: "none", border: "none", color: "#4F6D7A", fontfamily: "Shadows Into Light Two", marginRight: ".75em", marginLeft: ".75em",}}>
                   <FaRegCommentAlt  /> Comment
                 </button>
               </Link>

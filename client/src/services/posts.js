@@ -1,7 +1,12 @@
-import api from './apiConfig'
+import {api} from './apiConfig'
 
-export const getAllPosts = async () => {
+export const fetchAllPosts = async () => {
   const res = await api.get('/posts')
+  return res.data
+}
+
+export const getCategories = async () => {
+  const res = await api.get(`/categories`)
   return res.data
 }
 
@@ -24,7 +29,3 @@ export const deletePost = async (id) => {
   const res = await api.delete(`/posts/${id}`)
   return res
 }
-
-// export const addCommentToPost = async (commentData, id) => {
-//   const res = await api.post(``)
-// }

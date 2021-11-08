@@ -1,0 +1,65 @@
+.Container {
+  display: grid;
+  justify-content: center;
+}
+
+.vwbus {
+  width: 100vw;
+}
+
+.postscontainer {
+  background-color: #56A3A6;
+  border-radius: 10px;
+  width: 40vw;
+  height: 22em;
+  margin-top: 2em;
+  padding: 1.75em;
+}
+
+.deletebutton {
+  background: none;
+  border: none;
+  float: right;
+}
+
+.username {
+  font-family: 'Shadows Into Light Two', cursive;
+}
+
+.postscontent {
+  background-color: #ffffff;
+  border-radius: 10px;
+  color: #4F6D7A;
+  font-family: 'Shadows Into Light Two', cursive;
+  height: 12em;
+  margin: 1em;
+  padding: 1em;
+  scroll-behavior: auto;
+}
+
+.buttoncontainer {
+  background-color: #ffffff;
+  border-radius: 5px;
+  color: #4F6D7A;
+  font-family: 'Shadows Into Light Two', cursive;
+  height: 2em;
+  margin-left: 1em;
+  padding: 0 0 .25em 1em;
+}
+
+.commentcontainer {
+  background: none;
+  border: none;
+  color: #4F6D7A;
+  margin: .75em;
+}
+
+.editbutton {
+  background: none; 
+  border: none; 
+  color: #4F6D7A; 
+  font-family: 'Shadows Into Light Two', cursive;
+  margin: .75em;
+}
+
+@media (max-width: )

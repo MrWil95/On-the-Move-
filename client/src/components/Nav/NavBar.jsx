@@ -1,7 +1,48 @@
-export default function NavBar() {
+import './NavBar.css'
+import { Link } from 'react-router-dom'
+
+export default function NavBar(props) {
+  const { currentUser, handleLogout } = props
   return (
-    <div>
-      
-    </div>
+    <>
+      <div className='NavBarContainer'>
+        <Link to='/'>
+          <img src='https://res.cloudinary.com/dedlhqhuk/image/upload/v1636059840/On%20the%20Move/6290871299_a12ded4b-aebd-4a54-8cba-f869b55139f0_rs9bfc.png' alt='logo' className='logo'/>
+        </Link>
+        <div className='navlinks'>
+        <Link to='/'>
+            <li className='home'>Home</li>
+          </Link>
+          <Link to='/resources'>
+            <li className='resources'>Resources</li>
+          </Link>
+          <Link to='/events'>
+            <li className='events'>Events</li>
+          </Link>
+          <Link to='/about'>
+            <li className='about'>About</li>
+          </Link>
+          {currentUser ? (
+            <li className='userid'>{currentUser.username}</li>
+          ) : (<></>)}
+        </div> 
+      </div>
+      <div className='RegisterContainer'>
+      {currentUser ? (
+        <div className='conatiner' style={{width: "65%"}}>
+          <div className='content' style={{width: "100%", display: "grid", gridTemplateColumns: "50% 50%"}}>
+            <Link to='/create' className='postbarlink'>
+              <input placeholder='Post' className='input' style={{boxShadow: "0 0 5 0 black"}} />
+            </Link>
+            <button onClick={handleLogout} className='logout'>Logout</button>
+          </div>
+        </div>
+        ) : (
+        <Link to='/user' className='resgisterlink' style={{ width: "10em"}}>
+          <button className='register'>Signin/Signup</button>
+        </Link>
+      )}
+      </div>
+    </>
   )
 }

@@ -10,12 +10,12 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1
   def show
-    render json: @category
+    render json: @category, include: :posts
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category
-      @category = Category.find(params[:id])
+      @category = Category.find(params[:title])
     end
 end
