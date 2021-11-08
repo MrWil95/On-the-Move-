@@ -31,8 +31,8 @@ export default function Resources(props) {
         <img src='https://res.cloudinary.com/dedlhqhuk/image/upload/v1636253434/On%20the%20Move/movers_100777072-300x261_zs3juy.jpg' alt='Moving Material' className='moving' />
       </div>
       <div className='Container' style={{width: "100vw"}}>
-        {getAllPosts.map((resourcePost) => (
-          <div className='postscontainer'>
+        {getAllPosts.map((resourcePost, index) => (
+          <div className='postscontainer' key={index}>
             {currentUser ? (<button onClick={() => handlePostDelete(resourcePost.id)} className='deletebutton'><FaTimes /></button>) : (<></>)}
               <div className='username'>
                 <h3>{resourcePost.username}</h3>

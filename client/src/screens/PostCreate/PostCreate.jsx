@@ -52,8 +52,8 @@ export default function PostCreate() {
               -- Select a Category --
             </option>
 
-            {categories.map((category) => (
-              <option value={category.id}>{category.title}</option>
+            {categories.map((category, index) => (
+              <option value={category.id} key={index}>{category.title}</option>
             ))}
           </select>
           <br />
