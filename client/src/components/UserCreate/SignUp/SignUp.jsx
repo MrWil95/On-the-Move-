@@ -19,43 +19,50 @@ export default function SignUp(props) {
   }
 
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault()
-        handleRegister(formData)
-      }}
-    >
-      <label>
-        Username:
-        <input 
-          type='text'
-          name='username'
-          value={username}
-          onChange={handleChange}
-        /> 
-      </label>
-      <br />
-      <label>
-        Email:
-        <input 
-          type='text'
-          name='email'
-          value={email}
-          onChange={handleChange}
-        />
-      </label>
-      <br />
-      <label>
-        Password:
-        <input 
-          type='password'
-          name='password'
-          value={password}
-          onChange={handleChange}
-        />
-     </label>
-     <br />
-     <button>Signup</button>
-    </form>
+    <div className='MainContainer'>
+      <div className='Form'>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault()
+            handleRegister(formData)
+          }}
+        >
+          <label className='messagecontent'>
+            Username:
+          </label>
+            <input 
+              type='text'
+              name='username'
+              value={username}
+              onChange={handleChange}
+              className='forminput'
+            /> 
+          <br />
+          <label className='messagecontent'>
+            Email:
+          </label>
+          <input 
+            type='text'
+            name='email'
+            value={email}
+            onChange={handleChange}
+            className='forminput'
+          />
+          <br />
+          <label className='messagecontent'>
+            Password:
+          </label>
+          <input 
+            type='password'
+            name='password'
+            value={password}
+            onChange={handleChange}
+            className='forminput'
+          />
+        <br />
+        <button className='submit'>Signup</button>
+        </form>
+      </div>
+    </div>
   )
 }

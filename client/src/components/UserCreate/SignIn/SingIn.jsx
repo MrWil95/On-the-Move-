@@ -17,35 +17,39 @@ export default function SingIn(props) {
   }
 
   return (
-    <div className='SigninForm' style={{display: "flex"}}>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault()
-          handleLogin(formData)
-        }} 
-      >
-        <label>
-          Username:
+    <div className='MainContainer'>
+      <div className='Form'>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault()
+            handleLogin(formData)
+          }} 
+        >
+          <label className='messagecontent'>
+            Username:
+          </label>
           <input 
             type='text'
             name='username'
             value={username}
             onChange={handleChange}
+            className='forminput'
           />
-        </label>
-        <br />
-        <label>
-          Password:
+          <br />
+          <label className='messagecontent'>
+            Password:
+          </label>
           <input 
             type='password'
             name='password'
             value={password}
             onChange={handleChange}
+            className='forminput'
           />
-        </label>
-        <br />
-        <button>Login</button>
-      </form>
+          <br />
+          <button className='submit'>Login</button>
+        </form>
+      </div>
     </div>
   )
 }
