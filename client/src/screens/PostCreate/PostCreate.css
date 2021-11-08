@@ -19,6 +19,8 @@
 
 .selectbar {
   border-radius: 5px;
+  color: #4F6D7A;
+  font-family: 'Shadows Into Light Two', cursive;
   height: 2em;
   margin-bottom: 3em;
   width: 10vw;
@@ -26,6 +28,8 @@
 
 .textarea {
   border-radius: 5px;
+  color: #4F6D7A;
+  font-family: 'Shadows Into Light Two', cursive;
   height: 10em;
   margin-bottom: 1em;
   width: 30vw;
@@ -33,6 +37,8 @@
 
 .forminput {
   border-radius: 5px;
+  color: #4F6D7A;
+  font-family: 'Shadows Into Light Two', cursive;
   height: 2em;
   margin-bottom: 1em;
   width: 30vw;
@@ -44,6 +50,27 @@
   color: #4F6D7A;
   font-family: 'Shadows Into Light Two', cursive;
   height: 3.5em;
-  margin-left: 15em;
+  margin-left: 12.5em;
   width: 10em;
+}
+
+.messagecontent {
+  color: #4F6D7A;
+  font-family: 'Shadows Into Light Two', cursive;
+  position: absolute;
+  left: 29.5em;
+}
+
+.imageurl {
+  color: #4F6D7A;
+  font-family: 'Shadows Into Light Two', cursive;
+  position: absolute;
+  left: 31em;
+}
+
+.linkurl {
+  color: #4F6D7A;
+  font-family: 'Shadows Into Light Two', cursive;
+  position: absolute;
+  left: 31.5em;
 }

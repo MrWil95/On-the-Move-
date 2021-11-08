@@ -38,7 +38,7 @@ export default function Home(props) {
               </div>
             <div className='buttoncontainer'>
               <Link to={`/general/${generalPost.id}`}>
-                <button className='commentbutton' style={{background: "none", border: "none", color: "#4F6D7A", fontfamily: "Shadows Into Light Two", marginRight: ".75em", marginLeft: ".75em",}}>
+                <button className='commentbutton' style={{background: "none", border: "none", color: "#4F6D7A", fontFamily: "Shadows Into Light Two, cursive", marginRight: ".75em", marginLeft: ".75em",}}>
                   <FaRegCommentAlt  /> Comment
                 </button>
               </Link>

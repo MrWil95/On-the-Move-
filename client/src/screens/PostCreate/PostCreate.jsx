@@ -57,20 +57,20 @@ export default function PostCreate() {
             ))}
           </select>
           <br />
-          <label>
+          <label className='messagecontent'>
             Message:
-            <textarea type='text' name='content' value={content} onChange={handleChange} className='textarea' />
           </label>
+          <textarea type='text' name='content' value={content} onChange={handleChange} className='textarea' />
           <br />
-          <label>
+          <label className='imageurl'>
             Image:
-            <input type='text' name='img_url' value={img_url} onChange={handleChange} className='forminput' />
           </label>
+          <input type='text' name='img_url' value={img_url} onChange={handleChange} className='forminput' />
           <br />
-          <label>
+          <label className='linkurl'>
             Link:
-            <input type='text'name='link_url' value={link_url} onChange={handleChange} className='forminput' />
           </label>
+          <input type='text'name='link_url' value={link_url} onChange={handleChange} className='forminput' />
           <br />
           <button className='submit'>Submit</button>
         </form>
