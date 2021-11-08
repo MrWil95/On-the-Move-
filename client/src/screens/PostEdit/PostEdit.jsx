@@ -17,18 +17,16 @@ export default function PostEdit() {
   const history = useHistory()
 
   useEffect(() => {
-      const fetchPosts = async () => {
-        const postList = await fetchAllPosts()
-        setPosts(postList)
-        console.log(setPosts)
-      }
-      fetchPosts()
-    }, [])
+    const fetchPosts = async () => {
+      const postList = await fetchAllPosts()
+      setPosts(postList)
+    }
+    fetchPosts()
+  }, [])
 
   useEffect(() => {
     const prefillFormData = () => {
       const postInfo = posts.find(post => post.id === Number(id))
-      console.log(postInfo)
       setFormData({
         content: postInfo.content,
         img_url: postInfo.img_url,
@@ -71,38 +69,39 @@ export default function PostEdit() {
   };
 
   return (
-    <form
-    onSubmit={(e) => {
-      e.preventDefault()
-      handlePostUpdate(id, formData)
-    }}
-  >
-    <select onChange={handleChange} name='category_id' defaultValue='default'>
-      <option disabled value='default'>
-        -- Select a Category --
-      </option>
+    <div className='EditForm' style={{display: "grid", alignContent: "center", justifyContent: "center", width: "100vw", height: "100vh"}}>
+      <form
+      onSubmit={(e) => {
+        e.preventDefault()
+        handlePostUpdate(id, formData)
+      }}>
+      <select onChange={handleChange} name='category_id' defaultValue='default'>
+        <option disabled value='default'>
+          -- Select a Category --
+        </option>
 
-      {categories.map((category) => (
-        <option value={category.id}>{category.title}</option>
-      ))}
-    </select>
-    <br />
-    <label>
-      Message:
-      <textarea type='text' name='content' value={content} onChange={handleChange} />
-    </label>
-    <br />
-    <label>
-      Image:
-      <input type='text' name='img_url' value={img_url} onChange={handleChange} />
-    </label>
-    <br />
-    <label>
-      Link:
-      <input type='text'name='link_url' value={link_url} onChange={handleChange} />
-    </label>
-    <br />  
-    <button>Submit</button>
-  </form>
+        {categories.map((category) => (
+          <option value={category.id}>{category.title}</option>
+        ))}
+      </select>
+      <br />
+      <label>
+        Message:
+        <textarea type='text' name='content' value={content} onChange={handleChange} />
+      </label>
+      <br />
+      <label>
+        Image:
+        <input type='text' name='img_url' value={img_url} onChange={handleChange} />
+      </label>
+      <br />
+      <label>
+        Link:
+        <input type='text'name='link_url' value={link_url} onChange={handleChange} />
+      </label>
+      <br />  
+      <button>Submit</button>
+    </form>
+  </div>
   )
 }
