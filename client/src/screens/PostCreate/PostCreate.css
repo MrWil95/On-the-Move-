@@ -18,5 +18,15 @@
 }
 
 .selectbar {
-  width: 25vw;
+  border-radius: 5px;
+  height: 2em;
+  margin-bottom: 3em;
+  width: 10vw;
+}
+
+.textarea {
+  border-radius: 10px;
+  height: 10em;
+  margin-bottom: 1em;
+  width: 30vw;
 }
