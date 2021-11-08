@@ -12,11 +12,11 @@ export default function SignInUp(props) {
   }
 
   return (
-    <div className='UserContainer' style={{display: "grid", alignContent: "center", justifyContent: "center ", height: "100vh", width: "100vw"}}>
-      <div className='btncontainer' style={{gridRow: "2 / 3"}}>
+    <div className='UserContainer'>
+      {/* <div className='btncontainer' style={{gridRow: "2 / 3"}}>
         <button onClick={toggleState} className='togglebtn' style={{background: "none", border: "none"}}>Signin</button>
         <button onClick={toggleState} className='togglebtn' style={{background: "none", border: "none"}}>Signup</button>
-      </div>
+      </div> */}
       <div className='logincomponent' style={{height: "20em"}}>
         <SignIn handleLogin={handleLogin} className={toggleClass ? 'Disabled' : null}/>
       </div>
