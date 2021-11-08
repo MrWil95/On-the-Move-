@@ -16,7 +16,7 @@ export default function Comments() {
   }, [id])
 
   return (
-    <div className='CommentsContainer' style={{width: "100vw"}}>
+    <div className='Container' style={{width: "100vw"}}>
       <div className='postcontainer'>
         <div className='username'>
           <h3>{post?.username}</h3>
@@ -25,7 +25,7 @@ export default function Comments() {
           <p>{post?.content}</p>
         </div>
         {post?.comments?.map(comment => (
-          <div className='commentcontainer' style={{padding: ".02em .5em .02em 0"}}>
+          <div className='commentcontainer' style={{backgroundColor: "white", padding: ".02em 0 .02em 1em"}}>
             <p>{comment.content}</p>
           </div>
         ))}

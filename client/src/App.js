@@ -1,16 +1,13 @@
 import './App.css'
 import {Route} from 'react-router-dom'
 import About from './screens/About/About'
-
+import Comments from './screens/Comments/Comments'
 import Events from './screens/Events/Events'
 import General from './screens/General/General'
 import Home from './screens//Home/Home'
-import Comments from './screens/Comments/Comments'
 import Layout from './components/Layout/Layout'
 import Resources from './screens/Resources/Resources'
 import SignInUp from './screens/SignInUp/SignInUp'
-import SingIn from './components/UserCreate/SignIn/SingIn'
-import SignUp from './components/UserCreate/SignUp/SignUp'
 import PostCreate from './screens/PostCreate/PostCreate'
 import { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
@@ -65,13 +62,13 @@ export default function App() {
           <General currentUser={currentUser}/>
         </Route>
         <Route exact path='/general/:id'>
-          <Comments />
+          <Comments currentUser={currentUser}/>
         </Route>
         <Route exact path='/resources'>
-          <Resources />
+          <Resources currentUser={currentUser}/>
         </Route>
         <Route exact path='/events'>
-          <Events />
+          <Events currentUser={currentUser}/>
         </Route>
         <Route exact path='/about'>
           <About />

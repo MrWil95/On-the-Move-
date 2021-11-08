@@ -26,8 +26,11 @@
 }
 
 .commentcontainer {
-  background-color: white;
   border-radius: 10px;
   font-family: 'Shadows Into Light Two', cursive;
   height: 3em;
+}
+
+.commentcontainer {
+  margin-left: ;
 }

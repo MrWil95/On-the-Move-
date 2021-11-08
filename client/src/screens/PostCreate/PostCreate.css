@@ -1,3 +1,22 @@
-.CreateData {
-  
+.MainContainer {
+  display: grid;
+  align-content: center; 
+  justify-content: center; 
+  width: 100vw; 
+  height: 100vh;
+}
+
+.Form {
+  background-color: #DB504A;
+  border-radius: 10px;
+  display: grid; 
+  align-content: center;
+  height: 22em; 
+  padding: 1.75em;
+  justify-content: center;
+  width: 40vw; 
+}
+
+.selectbar {
+  width: 25vw;
 }
