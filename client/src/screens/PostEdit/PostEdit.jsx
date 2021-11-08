@@ -76,8 +76,8 @@ export default function PostEdit() {
           e.preventDefault()
           handlePostUpdate(id, formData)
         }}>
-        <select onChange={handleChange} name='category_id' defaultValue='default' className='selectbar'>
-          <option disabled value='default'>
+        <select onChange={handleChange} name='category_id' defaultValue='category_id' className='selectbar'>
+          <option disabled value={category_id}>
             -- Select a Category --
           </option>
 

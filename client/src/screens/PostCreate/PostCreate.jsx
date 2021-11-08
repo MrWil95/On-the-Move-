@@ -48,7 +48,7 @@ export default function PostCreate() {
           }}
         >
           <select onChange={handleChange} name='category_id' defaultValue='default' className='selectbar'>
-            <option disabled value='default'>
+            <option disabled value={category_id}>
               -- Select a Category --
             </option>
 
