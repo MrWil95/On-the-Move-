@@ -17,7 +17,7 @@ export default function SingIn(props) {
   }
 
   return (
-    <div className='SigninForm'>
+    <div className='SigninForm' style={{display: "flex"}}>
       <form
         onSubmit={(e) => {
           e.preventDefault()

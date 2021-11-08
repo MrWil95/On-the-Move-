@@ -1,12 +1,3 @@
-/* .Disabled {
-  display: none;
-} */
-
-.togglebtn {
-  background: none;
-  border: none;
-}
-
-.btncontainer {
-  grid-row: 2;
+.btnContainer {
+  
 }
