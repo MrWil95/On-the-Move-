@@ -25,8 +25,25 @@
 }
 
 .textarea {
-  border-radius: 10px;
+  border-radius: 5px;
   height: 10em;
   margin-bottom: 1em;
   width: 30vw;
+}
+
+.forminput {
+  border-radius: 5px;
+  height: 2em;
+  margin-bottom: 1em;
+  width: 30vw;
+}
+
+.submit {
+  background-color: #E3B505;
+  border-radius: 15px;
+  color: #4F6D7A;
+  font-family: 'Shadows Into Light Two', cursive;
+  height: 3.5em;
+  margin-left: 15em;
+  width: 10em;
 }

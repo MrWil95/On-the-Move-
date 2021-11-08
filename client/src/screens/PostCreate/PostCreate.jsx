@@ -64,15 +64,15 @@ export default function PostCreate() {
           <br />
           <label>
             Image:
-            <input type='text' name='img_url' value={img_url} onChange={handleChange} className='input' />
+            <input type='text' name='img_url' value={img_url} onChange={handleChange} className='forminput' />
           </label>
           <br />
           <label>
             Link:
-            <input type='text'name='link_url' value={link_url} onChange={handleChange} className='input' />
+            <input type='text'name='link_url' value={link_url} onChange={handleChange} className='forminput' />
           </label>
-          <br />  
-          <button>Submit</button>
+          <br />
+          <button className='submit'>Submit</button>
         </form>
       </div>
     </div>
