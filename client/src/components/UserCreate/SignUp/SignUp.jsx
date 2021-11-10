@@ -19,7 +19,7 @@ export default function SignUp(props) {
   }
 
   return (
-    <div className='MainContainer'>
+    <div className='SignupContainer'>
       <div className='Form'>
         <form
           onSubmit={(e) => {
