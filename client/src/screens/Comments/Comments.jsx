@@ -24,9 +24,9 @@ export default function Comments() {
         <div className='postcontent'>
           <p>{post?.content}</p>
         </div>
-        {post?.comments?.map(comment => (
-          <div className='commentcontainer' style={{backgroundColor: "white", padding: ".02em 0 .02em 1em"}}>
-            <p>{comment.content}</p>
+        {post?.comments?.map((comment, index) => (
+          <div className='commentcontainer' key={index} style={{backgroundColor: "white", padding: ".02em 0 .02em 1em"}}>
+            <p >{comment.content}</p>
           </div>
         ))}
       </div>
