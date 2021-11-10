@@ -11,6 +11,7 @@
 .btncontainer {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
+  height: max-content;
   justify-self: center;
   position: relative;
   z-index: 2;
@@ -30,7 +31,6 @@ hr {
   height: 2em;
   left: 4.05em;
   position: absolute;
-  
   top: 1em;
   width: 0;
 }
