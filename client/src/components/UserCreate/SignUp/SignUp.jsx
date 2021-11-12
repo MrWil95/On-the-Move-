@@ -1,3 +1,4 @@
+import './SignUp.css'
 import { useState } from 'react'
 
 

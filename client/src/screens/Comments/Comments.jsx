@@ -16,7 +16,7 @@ export default function Comments() {
   }, [id])
 
   return (
-    <div className='Container' style={{width: "100vw"}}>
+    <div className='Container'>
       <div className='postcontainer'>
         <div className='username'>
           <h3>{post?.username}</h3>

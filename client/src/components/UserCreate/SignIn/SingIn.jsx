@@ -18,7 +18,7 @@ export default function SingIn(props) {
   }
 
   return (
-    <div className='MainContainer'>
+    <div className='SigninContainer'>
       <div className='Form'>
         <form
           onSubmit={(e) => {
