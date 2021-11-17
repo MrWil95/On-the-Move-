@@ -11,7 +11,6 @@ import SignInUp from './screens/SignInUp/SignInUp'
 import PostCreate from './screens/PostCreate/PostCreate'
 import { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
-import { fetchAllPosts, getCategories } from './services/posts'
 import { 
   loginUser, 
   registerUser, 

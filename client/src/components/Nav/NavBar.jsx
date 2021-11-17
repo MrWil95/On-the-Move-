@@ -1,9 +1,9 @@
 import './NavBar.css'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function NavBar(props) {
   const { currentUser, handleLogout } = props
-  const location1 = useLocation('/')
+  // const location1 = useLocation('/')
 
   return (
     <>
