@@ -23,6 +23,10 @@ export default function Home(props) {
     setGetAllPosts((prevState) => prevState.filter((post) => post.id !== id))
   }
 
+  // let element = document.getElementsByClassName('postscontainer')
+
+  // element.scrollIntoView()
+
   return (
     <>
       <img src='https://res.cloudinary.com/dedlhqhuk/image/upload/v1636257157/On%20the%20Move/vwbus_ob5ucd.png' alt='VW Bus' className='vwbus' />

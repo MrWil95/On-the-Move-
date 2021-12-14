@@ -50,7 +50,7 @@ export default function App() {
     }
 
   return (
-    <div className='App'>
+    <>
       <Layout
         currentUser={currentUser} 
         handleLogout={handleLogout}
@@ -88,7 +88,7 @@ export default function App() {
           <PostEdit />
         </Route>
       </Layout>
-    </div>
+    </>
   )
 }
 
