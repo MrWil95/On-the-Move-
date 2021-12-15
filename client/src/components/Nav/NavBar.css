@@ -3,7 +3,6 @@
   background-color: #084C61;
   -mos-background-color: #084C61;
   display: flex;
-  flex-flow: row wrap;
   height: max-content;
   justify-content: space-between;
   position: relative;
@@ -89,7 +88,7 @@ li {
   position: absolute;
   transition: transform 1s ease;
   width: 100%;
-  z-index: 1;
+  z-index: -1;
 }
 
 .navlinks {
@@ -134,22 +133,33 @@ li {
   transition: opacity 2s linear;
 }
 
+.maincontainermobile {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  z-index: 5;
+}
+
 .containermobile {
   align-items: center;
   background-color: rgb(206, 206, 206);
-  border-radius: 30px;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   height: 3em;
   margin: 1em;
   position: relative;
   width: 75%;
+  max-width: 25em;
+  min-width: 14em;
   z-index: 0;
 }
 
 .contentmobile {
   align-items: center;
-  border-radius: 30px;
+  border-radius: 10px;
   display: flex;
   height: 100%;
   justify-content: center;
@@ -162,35 +172,17 @@ li {
 
 .inputmobile {
   border: none;
-  border-radius: 30px;
+  border-radius: 10px;
   height: 2em;
   padding: 0 1em;
+  width: 86%;
+  max-width: 25em;
+  min-width: 14em;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: 50% 50%;
-}
-
-.content {
-  align-items: center;
-  margin-top: 2em;
-}
-
-.postbarlink {
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 10px;
-  height: 2em;
-  padding: .75em .5em .5em .5em;
-}
-
-.input {
-  border: none;
-  border-radius: 10px;
-  box-shadow: inset 0 0 5 0 black;
-  height: 2em;
-  width: 30vw;
+.logout {
+  display: none;
+  position: absolute;
 }
 
 .logout,
@@ -201,6 +193,11 @@ li {
   font-family: 'Shadows Into Light Two', cursive;
   height: 3.5em;
   width: 10em;
+}
+
+.register {
+  display: none;
+  position: absolute;
 }
 
 .register,
@@ -214,12 +211,87 @@ li {
 }
 
 @media (min-width: 360px) {
-  .linksmobile:nth-child(2) {
+  .linksmobile {
     margin: 1em 0 1em 3em;
   }
 
   .linksopen {
     margin: unset;
+  }
+}
+
+@media (min-width: 768px) {
+  .logo {
+    margin: 0.75em 1em 0.75em 2em;
+    min-width: 8em;
+  }
+
+  .linksmobile {
+    display: none;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .navlinks {
+    align-items: center;
+    background-color: #084C61;
+    display: flex;
+    flex-flow: row;
+    margin-right: 1em;
+    position: unset;
+    transform: translateY(0%);
+    transition: unset;
+    width: 72%;
+    z-index: unset;
+  }
+
+  .links {
+    opacity: unset;
+    transition: unset;
+  }
+
+  .links:nth-child(5) {
+    position: unset;
+  }
+
+  .RegisterContainerMobile {
+    display: none;
+    opacity: unset;
+    position: absolute;
+    transition: unset;
+  }
+
+  .maincontainermobile {
+    justify-content: space-evenly;
+  }
+
+  .containermobile {
+    margin: 1em 1em 1em 10em;
+  }
+
+  .inputmobile {
+    min-width: 25em;
+  }
+
+  .logout {
+    display: unset;
+    position: unset;
+  }
+
+  .registerlink {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    width: 100%;
+    z-index: 5;
+  }
+
+  .register {
+    display: unset;
+    margin: 1.25em 1.5em;
+    position: unset;
   }
 }
 

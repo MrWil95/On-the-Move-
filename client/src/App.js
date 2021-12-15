@@ -1,4 +1,3 @@
-import './App.css'
 import {Route} from 'react-router-dom'
 import About from './screens/About/About'
 import Comments from './screens/Comments/Comments'

@@ -80,3 +80,21 @@
     min-width: 16em;
   }
 }
+
+@media (min-width: 375px) {
+  .postscontainer {
+    min-width: 18em;
+  }
+}
+
+@media (min-width: 411px) {
+  .postscontainer {
+    min-width: 20em;
+  }
+}
+
+@media (min-width: 768px) {
+  .postscontainer {
+    min-width: 20em;
+  }
+}

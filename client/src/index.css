@@ -23,3 +23,33 @@ code {
   margin: 0;
   width: 100%;
 }
+
+@media (min-width: 375px) {
+  @media (min-height: 812px) {
+    html, body {
+      height: 152%;
+    }
+  }
+}
+
+@media (min-width: 411px) {
+  @media (min-height: 731px) {
+    html, body {
+      height: 158%;
+    }
+  }
+}
+
+@media (min-width: 411px) {
+  @media (min-height: 823px) {
+    html, body {
+      height: 152%;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  html, body {
+    height: 154%;
+  }
+}

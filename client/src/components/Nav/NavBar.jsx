@@ -42,7 +42,7 @@ export default function NavBar(props) {
           </Link>
           {currentUser ? (
             <li className='links'>{currentUser.username}</li>
-          ) : (<></>)}
+          ) : (<li className='links'>Welcome</li>)}
           <div className={open ? 'RegisterContainerMobileOpen' : 'RegisterContainerMobile'}>
           {currentUser ? (
             <button onClick={handleLogout} className='logoutmobile'>Logout</button>
@@ -55,30 +55,19 @@ export default function NavBar(props) {
         </div>
       </div>
       {currentUser ? (
-        <div className='containermobile'>
-          <div className='contentmobile'>
-            <Link to='/create' className='postbarlinkmobile'>
-              <input placeholder='Post' className='inputmobile' />
-            </Link>
+        <div className='maincontainermobile'>
+          <div className='containermobile'>
+            <div className='contentmobile'>
+              <Link to='/create' className='postbarlinkmobile'>
+                <input placeholder='Post' className='inputmobile' />
+              </Link>
+            </div>
           </div>
+          <button onClick={handleLogout} className='logout'>Logout</button>
         </div>
-      ) : (<></>)}
-      <div className='RegisterContainer'>
-      {currentUser ? (
-        <div className='container'>
-          <div className='content'>
-            <Link to='/create' className='postbarlink'>
-              <input placeholder='Post' className='input' />
-            </Link>
-            <button onClick={handleLogout} className='logout'>Logout</button>
-          </div>
-        </div>
-        ) : (
-        <Link to='/user' className='resgisterlink'>
+      ) : (<Link to='/user' className='registerlink'>
           <button className='register'>Signin/Signup</button>
-        </Link>
-      )}
-      </div>
+        </Link>)}
     </>
   )
 }
