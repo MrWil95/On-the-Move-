@@ -41,19 +41,56 @@ form {
 }
 
 .textarea {
+  border: none;
   border-radius: 5px;
   color: #4F6D7A;
   font-family: 'Shadows Into Light Two', cursive;
   height: 10em;
+  opacity: 1;
+  transform: translateY(0%);
+  transition: transform 500ms linear;
   width: 75vw;
 }
 
+.textarea:valid + label {
+  opacity: 0;
+}
+
+.textarea:focus {
+  border: 2px solid #E3B505;
+  outline: none;
+  padding: 1em;
+}
+
+.textarea:focus + label {
+  background-color: #E3B505;
+  margin: 0;
+  transform: translateX(-6%) translateY(585%);
+  transition: transform 500ms linear;
+  width: 99%;
+}
+
 .forminput {
+  border: none;
   border-radius: 5px;
   color: #4F6D7A;
   font-family: 'Shadows Into Light Two', cursive;
   height: 2em;
   width: 75vw;
+}
+
+.forminput:focus {
+  border: 2px solid #E3B505;
+  outline: none;
+  padding: 1em;
+}
+
+.forminput:focus + label {
+  background-color: #E3B505;
+  margin: 0;
+  transform: translateX(-6%) translateY(125%);
+  transition: transform 500ms linear;
+  width: 99%;
 }
 
 .label {

@@ -53,29 +53,52 @@ export default function PostCreate() {
             </option>
 
             {categories.map((category, index) => (
-              <option value={category.id} key={index}>{category.title}</option>
+              <option 
+                value={category.id} 
+                key={index}
+              >
+                {category.title}
+              </option>
             ))}
           </select>
           <br />
           <div className='input'>
-            <textarea type='text' name='content' value={content} onChange={handleChange} className='textarea' />
-            <label className='label'>
-              Message:
-            </label>
+            <textarea 
+              type='text'
+              required 
+              name='content' 
+              value={content} 
+              onChange={handleChange} 
+              className='textarea'
+              id='msg'
+            />
+            <label className='label'>Message:</label>
           </div>
           <br />
           <div className='input'>
-            <input type='text' name='img_url' value={img_url} onChange={handleChange} className='forminput' />
-            <label className='label'>
-              Image:
-            </label>
+            <input 
+              type='text'
+              required
+              name='img_url' 
+              value={img_url} 
+              onChange={handleChange} 
+              className='forminput'
+              id='img'
+            />
+            <label className='label'>Image:</label>
           </div>
           <br />
           <div className='input'>
-            <input type='text'name='link_url' value={link_url} onChange={handleChange} className='forminput' />
-            <label className='label'>
-              Link:
-            </label>
+            <input 
+              type='text'
+              required
+              name='link_url' 
+              value={link_url} 
+              onChange={handleChange} 
+              className='forminput'
+              id='link'
+            />
+            <label className='label'>Link:</label>
           </div>
           <br />
           <button className='submit'>Submit</button>
