@@ -17,7 +17,7 @@
   display: flex;
   flex-flow: column;
   height: 22em;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-top: 2em;
   padding: 1.75em;
   width: 40vw;
@@ -29,11 +29,15 @@
   align-self: flex-end;
   background: none;
   border: none;
-  float: right;
+  position: relative;
+  top: 5em;
 }
 
 .username {
   font-family: 'Shadows Into Light Two', cursive;
+  left: 1em;
+  position: relative;
+  top: 1.25em;
 }
 
 .postscontent {
@@ -42,7 +46,8 @@
   border-radius: 10px;
   color: #4F6D7A;
   font-family: 'Shadows Into Light Two', cursive;
-  height: 12em;
+  height: 17em;
+  min-height: 17em;
   margin: 1em 0;
   overflow: auto;
   padding: 0 1em;
@@ -106,5 +111,15 @@
 
   .buttoncontainer {
     width: 94%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .postscontainer {
+    min-width: 25em;
+  }
+
+  .buttoncontainer {
+    width: 92%;
   }
 }

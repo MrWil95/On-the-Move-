@@ -67,3 +67,9 @@ code {
     }
   }
 }
+
+@media (min-width: 1280px) {
+  html, body {
+    height: 181%;
+  }
+}

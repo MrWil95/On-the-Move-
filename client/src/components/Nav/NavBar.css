@@ -303,18 +303,98 @@ li {
 }
 
 @media (min-width: 1024px) {
-  @media (min-height: 1366px) {
-    .navlinks {
-      width: 63%;
-    }
+  .navlinks {
+    width: 53%;
+  }
 
-    .containermobile {
-      margin: 1em 1em 1em 13em;
-    }
+  .containermobile {
+    margin: 1em 1em 1em 17em;
+  }
 
-    .logout {
-      margin-left: 2em;
-    }
+  .logout {
+    margin-left: 12em;
   }
 }
 
+@media (min-width: 1280px) {
+  .navlinks {
+    width: 42%;
+  }
+
+  .containermobile {
+    margin: 1em 1em 1em 28em;
+  }
+
+  .logout {
+    margin-left: 16em;
+  }
+}
+
+@media (min-width: 1400px) {
+  .navlinks {
+    width: 39%;
+  }
+
+  .containermobile {
+    margin: 1em 1em 1em 32em;
+  }
+
+  .logout {
+    margin-left: 20em;
+  }
+}
+
+@media (min-width: 1500px) {
+  .navlinks {
+    width: 36%;
+  }
+
+  .containermobile {
+    margin: 1em 1em 1em 35em;
+  }
+
+  .logout {
+    margin-left: 25em;
+  }
+}
+
+@media (min-width: 1600px) {
+  .navlinks {
+    width: 34%;
+  }
+
+  .containermobile {
+    margin: 1em 1em 1em 37em;
+  }
+
+  .logout {
+    margin-left: 27em;
+  }
+}
+
+@media (min-width: 1900px) {
+  li {
+    font-size: 2em;
+  }
+
+  .navlinks {
+    width: 38%;
+  }
+
+  .containermobile {
+    height: 5em;
+    margin: 1em 1em 1em 40em;
+    max-width: 38em;
+  }
+
+  .inputmobile {
+    height: 3em;
+    min-width: 38em
+  }
+
+  .logout {
+    height: 4.5em;
+    margin-left: 30em;
+    width: 12em;
+  }
+}
