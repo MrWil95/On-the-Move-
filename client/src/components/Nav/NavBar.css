@@ -7,7 +7,7 @@
   justify-content: space-between;
   position: relative;
   width: 100%;
-  z-index: 2;
+  z-index: 6;
 }
 
 a {
@@ -220,6 +220,16 @@ li {
   }
 }
 
+@media (min-width: 540px) {
+  .linksmobile {
+    margin: 1em 0 1em 10em;
+  }
+
+  .inputmobile {
+    min-width: 25em;
+  }
+}
+
 @media (min-width: 768px) {
   .logo {
     margin: 0.75em 1em 0.75em 2em;
@@ -235,9 +245,6 @@ li {
   }
 
   .navlinks {
-    align-items: center;
-    background-color: #084C61;
-    display: flex;
     flex-flow: row;
     margin-right: 1em;
     position: unset;
@@ -292,6 +299,22 @@ li {
     display: unset;
     margin: 1.25em 1.5em;
     position: unset;
+  }
+}
+
+@media (min-width: 1024px) {
+  @media (min-height: 1366px) {
+    .navlinks {
+      width: 63%;
+    }
+
+    .containermobile {
+      margin: 1em 1em 1em 13em;
+    }
+
+    .logout {
+      margin-left: 2em;
+    }
   }
 }
 

@@ -48,8 +48,22 @@ code {
   }
 }
 
+@media (min-width: 540px) {
+  html, body {
+    height: 163%;
+  }
+}
+
 @media (min-width: 768px) {
   html, body {
     height: 154%;
+  }
+}
+
+@media (min-width: 1024px) {
+  @media (min-height: 1366px) {
+    html, body {
+      height: 147%;
+    }
   }
 }

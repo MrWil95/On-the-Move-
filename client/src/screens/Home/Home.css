@@ -93,8 +93,18 @@
   }
 }
 
+@media (min-width: 540px) {
+  .buttoncontainer {
+    width: 96%;
+  }
+}
+
 @media (min-width: 768px) {
   .postscontainer {
-    min-width: 20em;
+    min-width: 25em;
+  }
+
+  .buttoncontainer {
+    width: 94%;
   }
 }
