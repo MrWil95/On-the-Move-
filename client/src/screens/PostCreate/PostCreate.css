@@ -46,7 +46,6 @@ form {
   color: #4F6D7A;
   font-family: 'Shadows Into Light Two', cursive;
   height: 10em;
-  opacity: 1;
   transform: translateY(0%);
   transition: transform 500ms linear;
   width: 75vw;
@@ -77,6 +76,10 @@ form {
   font-family: 'Shadows Into Light Two', cursive;
   height: 2em;
   width: 75vw;
+}
+
+.forminput:valid + label {
+  opacity: 0;
 }
 
 .forminput:focus {
