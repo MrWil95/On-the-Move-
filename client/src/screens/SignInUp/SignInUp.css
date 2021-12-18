@@ -45,3 +45,11 @@
     top: 8.25em;
   }
 }
+
+@media (min-width: 375px) {
+  @media (min-height: 667px) {
+    .btnContainer {
+      top: 9em;
+    }
+  }
+}

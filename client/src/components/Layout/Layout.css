@@ -4,3 +4,11 @@
   top: 6em;
   width: 100%;
 }
+
+@media (min-width: 375px) {
+  @media (min-height: 812px) {
+    .layoutchildren {
+      height: 80%;
+    }
+  }
+}
