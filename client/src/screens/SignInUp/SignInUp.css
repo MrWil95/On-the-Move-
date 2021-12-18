@@ -1,19 +1,21 @@
 .UserContainer {
-  display: grid; 
-  align-content: center; 
-  grid-template-rows: 100%; 
-  height: 100vh; 
+  align-items: center; 
+  display: flex; 
+  flex-flow: column;
+  height: 100%; 
   justify-content: center;
-  margin: 10em 0 0 0;
-  width: 100vw;
+  position: relative;
+  width: 100%;
 }
 
-.btncontainer {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
+.btnContainer {
+  align-items: flex-end;
+  display: flex;
   height: max-content;
-  justify-self: center;
-  position: relative;
+  justify-content: center;
+  position: absolute;
+  top: 9em;
+  width: 100%;
   z-index: 2;
 }
 
@@ -26,23 +28,20 @@
   margin: 1em 0 0 0;
 }
 
-hr {
-  border-color: #4F6D7A;
+.line {
+  background-color: #4F6D7A;
+  border: 2px solid #4F6D7A;
   height: 2em;
-  left: 4.05em;
-  position: absolute;
-  top: 1em;
-  width: 0;
 }
 
-.logincomponent {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  height: max-content;
+@media (min-width: 320px) {
+  .btnContainer {
+    top: 6.25em;
+  }
 }
 
-.signupcomponent {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  height: max-content;
+@media (min-width: 360px) {
+  .btnContainer {
+    top: 8.25em;
+  }
 }

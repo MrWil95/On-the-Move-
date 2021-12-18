@@ -1,4 +1,76 @@
 .SignupContainer {
-  height: max-content;
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.addzindex {
+  position: absolute;
+  z-index: 1;
+}
+
+.signupForm {
+  align-items: center;
+  background-color: #DB504A;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: column;
+  height: 22em;
+  justify-content: center;
+  width: 40vw;
+  max-width: 40em;
+  min-width: 16.5em;
+}
+
+.usersignupcontainer {
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  position: relative;
   width: max-content;
+}
+
+.signupforminput {
+  background-color: #DB504A;
+  border: 2px solid #E3B505;
+  border-radius: 5px;
+  color: #4F6D7A;
+  font-family: 'Shadows Into Light Two', cursive;
+  height: 2em;
+  max-width: 25em;
+  min-width: 16em;
+  transition: transform 1s linear;
+  width: 75vw;
+}
+
+.signupforminput:focus {
+  outline: none;
+  padding: 0.5em;
+}
+
+.signupforminput:focus + label {
+  background-color: #DB504A;
+  transform: translateY(-100%);
+}
+
+.signupforminput:valid {
+  outline: none;
+  padding: 0.5em;
+}
+
+.signupforminput:valid + label {
+  background-color: #DB504A;
+  transform: translateY(-100%);
+}
+
+@media (min-width: 360px) {
+  .signupForm {
+    min-width: 20em;
+  }
 }

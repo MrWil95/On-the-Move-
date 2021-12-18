@@ -7,7 +7,7 @@ export default function SingIn(props) {
     password: '',
   })
   const { username, password } = formData
-  const { handleLogin } = props
+  const { handleLogin, toggle } = props
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -18,35 +18,42 @@ export default function SingIn(props) {
   }
 
   return (
-    <div className='SigninContainer'>
-      <div className='Form'>
+    <div className={`SigninContainer ${toggle ? 'subtractzindex' : ''}`}>
+      <div className='signinForm'>
         <form
           onSubmit={(e) => {
             e.preventDefault()
             handleLogin(formData)
-          }} 
+          }}
+          className={`form ${toggle ? 'flipout' : 'flipin'}`}
         >
-          <label className='messagecontent'>
-            Username:
-          </label>
-          <input 
-            type='text'
-            name='username'
-            value={username}
-            onChange={handleChange}
-            className='forminput'
-          />
+          <div className='userlogincontainer'>
+            <input 
+              type='text'
+              name='username'
+              required
+              value={username}
+              onChange={handleChange}
+              className='signinforminput'
+            />
+            <label className='labelcontent'>
+              Username:
+            </label>
+          </div>
           <br />
-          <label className='messagecontent'>
-            Password:
-          </label>
-          <input 
-            type='password'
-            name='password'
-            value={password}
-            onChange={handleChange}
-            className='forminput'
-          />
+          <div className='userlogincontainer'>
+            <input 
+              type='password'
+              name='password'
+              required
+              value={password}
+              onChange={handleChange}
+              className='signinforminput'
+            />
+            <label className='labelcontent'>
+              Password:
+            </label>
+          </div>
           <br />
           <button className='submit'>Login</button>
         </form>

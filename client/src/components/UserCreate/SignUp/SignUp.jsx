@@ -9,7 +9,7 @@ export default function SignUp(props) {
     password: '',
   })
   const { username, email, password } = formData
-  const { handleRegister } = props
+  const { handleRegister, toggle } = props
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -20,46 +20,56 @@ export default function SignUp(props) {
   }
 
   return (
-    <div className='SignupContainer'>
-      <div className='Form'>
+    <div className={`SignupContainer ${toggle ? 'addzindex' : ''}`}>
+      <div className='signupForm'>
         <form
           onSubmit={(e) => {
             e.preventDefault()
             handleRegister(formData)
           }}
+          className={`form ${toggle ? 'flipin' : 'flipout' }`}
         >
-          <label className='messagecontent'>
-            Username:
-          </label>
+          <div className='usersignupcontainer'>
             <input 
               type='text'
               name='username'
+              required
               value={username}
               onChange={handleChange}
-              className='forminput'
+              className='signupforminput'
             /> 
+            <label className='labelcontent'>
+              Username:
+            </label>
+          </div>
           <br />
-          <label className='messagecontent'>
-            Email:
-          </label>
-          <input 
-            type='text'
-            name='email'
-            value={email}
-            onChange={handleChange}
-            className='forminput'
-          />
+          <div className='usersignupcontainer'>
+            <input 
+              type='text'
+              name='email'
+              required
+              value={email}
+              onChange={handleChange}
+              className='signupforminput'
+            />
+            <label className='labelcontent'>
+              Email:
+            </label>
+          </div>
           <br />
-          <label className='messagecontent'>
-            Password:
-          </label>
-          <input 
-            type='password'
-            name='password'
-            value={password}
-            onChange={handleChange}
-            className='forminput'
-          />
+          <div className='usersignupcontainer'>
+            <input 
+              type='password'
+              name='password'
+              required
+              value={password}
+              onChange={handleChange}
+              className='signupforminput'
+            />
+            <label className='labelcontent'>
+              Password:
+            </label>
+          </div>
         <br />
         <button className='submit'>Signup</button>
         </form>

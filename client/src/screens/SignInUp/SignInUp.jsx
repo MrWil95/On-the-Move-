@@ -1,33 +1,32 @@
 import './SignInUp.css'
-import { Link, Route } from 'react-router-dom'
+import { useState } from 'react'
 import SignIn from '../../components/UserCreate/SignIn/SingIn'
 import SignUp from '../../components/UserCreate/SignUp/SignUp'
 
 
 export default function SignInUp(props) {
+  const [toggle, setToggle] = useState(false)
   const { handleLogin, handleRegister } = props
+
+  const toggleClass = () => {
+    setToggle(prevState => {
+      return !prevState
+    })
+  }
 
   return (
     <div className='UserContainer'>
-      <div className='btncontainer'>
-        <Link to='/user'>
-          <button className='togglebtn'>Signin</button>
-        </Link>
-        <hr/>
-        <Link to='/user/register'>
-          <button className='togglebtn'>Signup</button>
-        </Link>
+      <div className='btnContainer'>
+        <button onClick={toggleClass} className='togglebtn'>Signin</button>
+        <div className='line'></div>
+        <button onClick={toggleClass} className='togglebtn'>Signup</button>
       </div>
-      <div className='logincomponent'>
-        <Route exact path='/user'>
-          <SignIn handleLogin={handleLogin} />
-        </Route>
-      </div>
-      <div className='signupcomponent'>
-        <Route exact path='/user/register'>
-          <SignUp handleRegister={handleRegister} />
-        </Route>
-      </div>
+      <>
+        <SignIn handleLogin={handleLogin} toggle={toggle}/>
+      </>
+      <>
+        <SignUp handleRegister={handleRegister} toggle={toggle}/>
+      </>
     </div>
   )
 }

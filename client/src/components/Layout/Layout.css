@@ -1,5 +1,6 @@
 .layoutchildren {
   position: absolute;
+  height: 100%;
   top: 6em;
   width: 100%;
 }
