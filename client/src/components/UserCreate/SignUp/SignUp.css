@@ -90,6 +90,10 @@
 }
 
 @media (min-width: 768px) {
+  .SignupContainer {
+    height: 80%;
+  }
+
   .signupforminput {
     width: 36vw;
   }

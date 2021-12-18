@@ -3,7 +3,7 @@ html, body {
   font-family: 'Shadows Into Light Two', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;
+  height: max-content;
   width: 100%;
 }
 
@@ -22,7 +22,7 @@ code {
   width: 100%;
 }
 
-@media (min-width: 375px) {
+/* @media (min-width: 375px) {
   @media (min-height: 812px) {
     body {
       height: 152%;
@@ -70,4 +70,4 @@ code {
   body {
     height: 181%;
   }
-}
+} */

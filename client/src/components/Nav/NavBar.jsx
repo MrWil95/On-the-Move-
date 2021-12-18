@@ -47,7 +47,7 @@ export default function NavBar(props) {
             {currentUser ? (
               <button onClick={handleLogout} className='logoutmobile'>Logout</button>
               ) : (
-              <Link to='/user' className='resgisterlinkmobile' style={{ width: "10em"}}>
+              <Link to='/user' className='resgisterlinkmobile'>
                 <button className='registermobile'>Signin/Signup</button>
               </Link>
             )}

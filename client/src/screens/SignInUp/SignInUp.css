@@ -77,7 +77,11 @@
 }
 
 @media (min-width: 768px) {
+  .UserContainer {
+    justify-content: flex-start;
+  }
+
   .btnContainer {
-    top: 14em;
+    top: 9em;
   }
 }
