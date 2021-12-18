@@ -3,6 +3,8 @@ import NavBar from '../Nav/NavBar'
 
 export default function Layout(props) {
   const { children, currentUser, handleLogout } = props
+
+
   return (
     <>
       <NavBar 

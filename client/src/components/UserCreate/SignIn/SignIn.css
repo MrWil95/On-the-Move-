@@ -123,3 +123,23 @@
     min-width: 20em;
   }
 }
+
+@media (min-width: 411px) {
+  @media (min-height: 731px) {
+    .signinforminput {
+      width: 70vw;
+    }
+  }
+}
+
+@media (min-width: 540px) {
+  .signinforminput {
+    width: 52vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .signinforminput {
+    width: 36vw;
+  }
+}

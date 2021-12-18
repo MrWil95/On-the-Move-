@@ -53,3 +53,31 @@
     }
   }
 }
+
+@media (min-width: 411px) {
+  @media (min-height: 731px) {
+    .btnContainer {
+      top: 11em;
+    }
+  }
+}
+
+@media (min-width: 411px) {
+  @media (min-height: 823px) {
+    .btnContainer {
+      top: 9em;
+    }
+  }
+}
+
+@media (min-width: 540px) {
+  .btnContainer {
+    top: 11em;
+  }
+}
+
+@media (min-width: 768px) {
+  .btnContainer {
+    top: 14em;
+  }
+}

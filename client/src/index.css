@@ -24,7 +24,7 @@ code {
 
 @media (min-width: 375px) {
   @media (min-height: 812px) {
-    html, body {
+    body {
       height: 152%;
     }
   }
@@ -32,7 +32,7 @@ code {
 
 @media (min-width: 411px) {
   @media (min-height: 731px) {
-    html, body {
+    body {
       height: 158%;
     }
   }
@@ -40,34 +40,34 @@ code {
 
 @media (min-width: 411px) {
   @media (min-height: 823px) {
-    html, body {
+    body {
       height: 152%;
     }
   }
 }
 
 @media (min-width: 540px) {
-  html, body {
+  body {
     height: 163%;
   }
 }
 
 @media (min-width: 768px) {
-  html, body {
+  body {
     height: 154%;
   }
 }
 
 @media (min-width: 1024px) {
   @media (min-height: 1366px) {
-    html, body {
+    body {
       height: 147%;
     }
   }
 }
 
 @media (min-width: 1280px) {
-  html, body {
+  body {
     height: 181%;
   }
 }

@@ -1,11 +1,11 @@
 import './NavBar.css'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 export default function NavBar(props) {
   const [open, setOpen] = useState(false)
   const { currentUser, handleLogout } = props
-  // const location1 = useLocation('/')
+  const location = useLocation()
 
   const toggleOpen = () => {
     setOpen(prevState => {
@@ -43,18 +43,18 @@ export default function NavBar(props) {
           {currentUser ? (
             <li className='links'>{currentUser.username}</li>
           ) : (<li className='links'>Welcome</li>)}
-          <div className={open ? 'RegisterContainerMobileOpen' : 'RegisterContainerMobile'}>
-          {currentUser ? (
-            <button onClick={handleLogout} className='logoutmobile'>Logout</button>
-            ) : (
-            <Link to='/user' className='resgisterlinkmobile' style={{ width: "10em"}}>
-              <button className='registermobile'>Signin/Signup</button>
-            </Link>
-          )}
-          </div>
+          {location.pathname === '/user' || location.pathname === '/about' ? (<></>) : (<div className={open ? 'RegisterContainerMobileOpen' : 'RegisterContainerMobile'}>
+            {currentUser ? (
+              <button onClick={handleLogout} className='logoutmobile'>Logout</button>
+              ) : (
+              <Link to='/user' className='resgisterlinkmobile' style={{ width: "10em"}}>
+                <button className='registermobile'>Signin/Signup</button>
+              </Link>
+            )}
+          </div>)}
         </div>
       </div>
-      {currentUser ? (
+      {location.pathname === '/user' || location.pathname === '/about' ? (<></>) : (<>{currentUser ? (
         <div className='maincontainermobile'>
           <div className='containermobile'>
             <div className='contentmobile'>
@@ -66,8 +66,9 @@ export default function NavBar(props) {
           <button onClick={handleLogout} className='logout'>Logout</button>
         </div>
       ) : (<Link to='/user' className='registerlink'>
-          <button className='register'>Signin/Signup</button>
-        </Link>)}
+            <button className='register'>Signin/Signup</button>
+          </Link>
+      )}</>)}
     </>
   )
 }
