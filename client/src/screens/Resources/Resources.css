@@ -6,16 +6,9 @@
 }
 
 .moving {
+  animation: fade 12s linear infinite;
+  -webkit-animation: fade 12s linear infinite;
   width: 100vw;
-}
-
-.moving:first-child {
-  animation-delay: 17s, 4s;
-  animation-duration: 1s;
-  animation-fill-mode: both;
-  animation-name: fadein, fadeout;
-  animation-timing-function: linear;
-  opacity: 1;
 }
 
 .moving:first-child,
@@ -25,42 +18,119 @@
 
 .moving:nth-child(2),
 .moving:nth-child(3) {
-  opacity: 0;
   position: absolute;
 }
 
 .moving:nth-child(2) {
-  animation-delay: 6s, 10s;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-name: fadein, fadeout;
-  animation-timing-function: linear;
-  z-index: -1;
+  animation-delay: -2s;
+  -webkit-animation-delay: -2s;
 }
 
 .moving:nth-child(3) {
-  animation-delay: 12s, 16s;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-name: fadein, fadeout;
-  animation-timing-function: linear;
-  z-index: -2;
+  animation-delay: -4s;
+  -webkit-animation-delay: -4s;
 }
 
-@keyframes fadein {
+@keyframes fade {
   0% {
     opacity: 0;
   }
-  100% {
+  20% {
     opacity: 1;
   }
-}
-
-@keyframes fadeout {
-  0% {
+  33% {
     opacity: 1;
+  }
+  43% {
+    opacity: 1;
+  }
+  53% {
+    opacity: 0;
   }
   100% {
     opacity: 0;
+  }
+}
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+  }
+  53% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 320px) {
+  .moving:first-child, 
+  .moving:nth-child(2) {
+    height: 17.25em;
+  }
+}
+
+@media (min-width: 360px) {
+  .moving:first-child, 
+  .moving:nth-child(2) {
+    height: 19.5em;
+  }
+}
+
+@media (min-width: 375px) {
+  .moving:first-child, 
+  .moving:nth-child(2) {
+    height: 20.25em;
+  }
+}
+
+@media (min-width: 411px) {
+  .moving:first-child, 
+  .moving:nth-child(2) {
+    height: 22.25em;
+  }
+}
+
+@media (min-width: 414px) {
+  .moving:first-child, 
+  .moving:nth-child(2) {
+    height: 22.5em;
+  }
+}
+
+@media (min-width: 540px) {
+  .moving:first-child, 
+  .moving:nth-child(2) {
+    height: 29.5em;
+  }
+}
+
+@media (min-width: 768px) {
+  .ImageContainer {
+    flex-flow: row;
+    margin-top: 3em;
+  }
+
+  .moving {
+    animation: unset;
+    -webkit-animation: unset;
+    width: 33.3vw;
+  }
+
+  .moving:first-child, 
+  .moving:nth-child(2) {
+    height: unset;
+  }
+
+  .moving:nth-child(2), 
+  .moving:nth-child(3) {
+    position: unset;
   }
 }

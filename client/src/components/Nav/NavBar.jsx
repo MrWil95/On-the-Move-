@@ -43,7 +43,7 @@ export default function NavBar(props) {
           {currentUser ? (
             <li className='links'>{currentUser.username}</li>
           ) : (<li className='links'>Welcome</li>)}
-          {location.pathname === '/user' || location.pathname === '/about' ? (<></>) : (<div className={open ? 'RegisterContainerMobileOpen' : 'RegisterContainerMobile'}>
+          {location.pathname === '/user' || location.pathname === '/about' || location.pathname === '/create' ? (<></>) : (<div className={open ? 'RegisterContainerMobileOpen' : 'RegisterContainerMobile'}>
             {currentUser ? (
               <button onClick={handleLogout} className='logoutmobile'>Logout</button>
               ) : (
@@ -54,7 +54,7 @@ export default function NavBar(props) {
           </div>)}
         </div>
       </div>
-      {location.pathname === '/user' || location.pathname === '/about' ? (<></>) : (<>{currentUser ? (
+      {location.pathname === '/user' || location.pathname === '/about' || location.pathname === '/create' ? (<></>) : (<>{currentUser ? (
         <div className='maincontainermobile'>
           <div className='containermobile'>
             <div className='contentmobile'>

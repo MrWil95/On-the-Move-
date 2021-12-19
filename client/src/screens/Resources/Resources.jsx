@@ -26,9 +26,9 @@ export default function Resources(props) {
   return (
     <>
       <div className='ImageContainer'>
-        <img src='https://res.cloudinary.com/dedlhqhuk/image/upload/v1636253954/On%20the%20Move/packaging_supplies_mobile_mkigt4.jpg' alt='Moving Material' className='moving' />
-        <img src='https://res.cloudinary.com/dedlhqhuk/image/upload/v1636376915/On%20the%20Move/images_ecxcci.jpg' alt='Moving Material' className='moving' />
-        <img src='https://res.cloudinary.com/dedlhqhuk/image/upload/v1636253434/On%20the%20Move/movers_100777072-300x261_zs3juy.jpg' alt='Moving Material' className='moving' />
+        <img src='https://res.cloudinary.com/dedlhqhuk/image/upload/v1636253954/On%20the%20Move/packaging_supplies_mobile_mkigt4.jpg' alt='Moving Material' className='moving' id='img1' />
+        <img src='https://res.cloudinary.com/dedlhqhuk/image/upload/v1636376915/On%20the%20Move/images_ecxcci.jpg' alt='Moving Material' className='moving' id='img2' />
+        <img src='https://res.cloudinary.com/dedlhqhuk/image/upload/v1636253434/On%20the%20Move/movers_100777072-300x261_zs3juy.jpg' alt='Moving Material' className='moving' id='img3' />
       </div>
       <div className='Container'>
         {getAllPosts.map((resourcePost, index) => (
