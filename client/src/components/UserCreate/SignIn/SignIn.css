@@ -23,7 +23,7 @@
   height: 22em;
   justify-content: center;
   width: 40vw;
-  max-width: 40em;
+  max-width: 30em;
   min-width: 16.5em;
 }
 
@@ -145,5 +145,27 @@
 
   .signinforminput {
     width: 36vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  @media (min-height: 600px) {
+    .SigninContainer {
+      height: 100%;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  @media (min-height: 1366px) {
+    .SigninContainer {
+      height: 60%;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .SigninContainer {
+    height: 85%;
   }
 }

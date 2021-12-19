@@ -9,9 +9,8 @@ import Resources from './screens/Resources/Resources'
 import SignInUp from './screens/SignInUp/SignInUp'
 import PostCreate from './screens/PostCreate/PostCreate'
 import PostEdit from './screens/PostEdit/PostEdit'
-import styled from 'styled-components'
 import { useState, useEffect } from 'react'
-import { useHistory, useLocation } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { 
   loginUser, 
   registerUser, 
@@ -22,19 +21,6 @@ import {
 export default function App() {
   const [currentUser, setCurrentUser] = useState(null)
   const history = useHistory()
-  const location = useLocation()
-
-  const HTML = styled.html`
-    @media (min-width: 768px) {
-      height: ${location.pathname == '/about' || location.pathname === '/general/:id' || location.pathname === '/user' ? '100%' : '154%'};
-    }
-  `
-
-  const Body = styled.body`
-    @media (min-width: 768px) {
-      height: ${location.pathname == '/about' || location.pathname === '/general/:id' || location.pathname === '/user' ? '100%' : '154%'};
-    }
-  `;
 
   useEffect(() => {
     const handleVerify = async () => {
@@ -101,8 +87,6 @@ export default function App() {
           <PostEdit />
         </Route>
       </Layout>
-      <HTML />
-      <Body />
     </>
   )
 }

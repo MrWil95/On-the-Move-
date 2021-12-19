@@ -65,11 +65,12 @@
   width: 100%;
 }
 
-.commentcontainer {
+.commentbutton {
   background: none;
   border: none;
   color: #4F6D7A;
-  margin: .75em;
+  font-family: 'Shadows Into Light Two', cursive;
+  margin: 0 .75em;
 }
 
 .editbutton {

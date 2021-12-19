@@ -23,10 +23,6 @@ export default function Home(props) {
     setGetAllPosts((prevState) => prevState.filter((post) => post.id !== id))
   }
 
-  // let element = document.getElementsByClassName('postscontainer')
-
-  // element.scrollIntoView()
-
   return (
     <>
       <img src='https://res.cloudinary.com/dedlhqhuk/image/upload/v1636257157/On%20the%20Move/vwbus_ob5ucd.png' alt='VW Bus' className='vwbus' />
@@ -42,7 +38,7 @@ export default function Home(props) {
               </div>
             <div className='buttoncontainer'>
               <Link to={`/general/${generalPost.id}`}>
-                <button className='commentbutton' style={{background: "none", border: "none", color: "#4F6D7A", fontFamily: "Shadows Into Light Two, cursive", marginRight: ".75em", marginLeft: ".75em",}}>
+                <button className='commentbutton'>
                   <FaRegCommentAlt  /> Comment
                 </button>
               </Link>

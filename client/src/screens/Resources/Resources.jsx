@@ -30,7 +30,7 @@ export default function Resources(props) {
         <img src='https://res.cloudinary.com/dedlhqhuk/image/upload/v1636376915/On%20the%20Move/images_ecxcci.jpg' alt='Moving Material' className='moving' />
         <img src='https://res.cloudinary.com/dedlhqhuk/image/upload/v1636253434/On%20the%20Move/movers_100777072-300x261_zs3juy.jpg' alt='Moving Material' className='moving' />
       </div>
-      <div className='Container' style={{width: "100vw"}}>
+      <div className='Container'>
         {getAllPosts.map((resourcePost, index) => (
           <div className='postscontainer' key={index}>
             {currentUser ? (<button onClick={() => handlePostDelete(resourcePost.id)} className='deletebutton'><FaTimes /></button>) : (<></>)}
@@ -42,7 +42,7 @@ export default function Resources(props) {
               </div>
               <div className='buttoncontainer'>
               <Link to={`/general/${resourcePost.id}`}>
-                <button className='commentbutton' style={{background: "none", border: "none", color: "#4F6D7A", fontFamily: "Shadows Into Light Two, cursive", marginRight: ".75em", marginLeft: ".75em",}}>
+                <button className='commentbutton'>
                   <FaRegCommentAlt  /> Comment
                 </button>
               </Link>

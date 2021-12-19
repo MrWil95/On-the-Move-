@@ -85,3 +85,33 @@
     top: 9em;
   }
 }
+
+@media (min-width: 1024px) {
+  @media (min-height: 600px) {
+    .btnContainer {
+      top: 7em;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .btnContainer {
+    top: 10em;
+  }
+}
+
+@media (min-width: 1400px) {
+  .btnContainer {
+    top: 7em;
+  }
+}
+
+@media (min-width: 1500px) {
+  .UserContainer {
+    justify-content: center;
+  }
+
+  .btnContainer {
+    top: 12em;
+  }
+}

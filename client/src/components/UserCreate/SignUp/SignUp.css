@@ -23,7 +23,7 @@
   height: 22em;
   justify-content: center;
   width: 40vw;
-  max-width: 40em;
+  max-width: 30em;
   min-width: 16.5em;
 }
 
@@ -96,5 +96,27 @@
 
   .signupforminput {
     width: 36vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  @media (min-height: 600px) {
+    .SignupContainer {
+      height: 100%;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  @media (min-height: 1366px) {
+    .SignupContainer {
+      height: 60%;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .SignupContainer {
+    height: 85%;
   }
 }
