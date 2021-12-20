@@ -61,7 +61,7 @@
   background-color: #DB504A;
   border: 2px solid #E3B505;
   border-radius: 5px;
-  color: #4F6D7A;
+  color: white;
   font-family: 'Shadows Into Light Two', cursive;
   height: 2em;
   max-width: 25em;
@@ -91,8 +91,9 @@
 }
 
 .labelcontent {
-  color: #4F6D7A;
+  color: white;
   left: 1em;
+  letter-spacing: 0.15em;
   position: absolute;
 }
 

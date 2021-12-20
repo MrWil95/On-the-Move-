@@ -303,6 +303,28 @@ li {
 }
 
 @media (min-width: 1024px) {
+  .link {
+    transition: transform 500ms linear
+  }
+  
+  .link:hover,
+  .link:active {
+    transform: scale(1.2);
+  }
+  
+  li {
+    transition: color 1s linear
+  }
+
+  li:hover,
+  li:active {
+    color: #E3B505;
+  }
+  
+  li:hover {
+    cursor: pointer;
+  }
+
   .navlinks {
     width: 53%;
   }
@@ -317,8 +339,30 @@ li {
 }
 
 @media (min-width: 1280px) {
+  .link {
+    transition: transform 500ms linear
+  }
+  
+  .link:hover,
+  .link:visited {
+    transform: scale(1.2);
+  }
+  
+  li {
+    transition: color 1s linear
+  }
+
+  li:hover,
+  li:visited {
+    color: #E3B505;
+  }
+  
+  li:hover {
+    cursor: pointer;
+  }
+
   .navlinks {
-    width: 60%;
+    width: 42%;
   }
 
   .containermobile {
@@ -331,6 +375,22 @@ li {
 }
 
 @media (min-width: 1400px) {
+  .link {
+    transition: transform 500ms linear
+  }
+
+  .link:visited {
+    transform: scale(1.2);
+  }
+
+  li {
+    transition: color 1s linear
+  }
+
+  li:visited {
+    color: #E3B505;
+  }
+
   .navlinks {
     width: 39%;
   }
@@ -345,6 +405,22 @@ li {
 }
 
 @media (min-width: 1500px) {
+  .link {
+    transition: transform 500ms linear
+  }
+  
+  .link:visited {
+    transform: scale(1.2);
+  }
+  
+  li {
+    transition: color 1s linear
+  }
+  
+  li:visited {
+    color: #E3B505;
+  }
+
   .navlinks {
     width: 36%;
   }
@@ -359,6 +435,22 @@ li {
 }
 
 @media (min-width: 1600px) {
+  .link {
+    transition: transform 500ms linear
+  }
+  
+  .link:visited {
+    transform: scale(1.2);
+  }
+  
+  li {
+    transition: color 1s linear
+  }
+  
+  li:visited {
+    color: #E3B505;
+  }
+
   .navlinks {
     width: 34%;
   }
@@ -373,8 +465,21 @@ li {
 }
 
 @media (min-width: 1900px) {
+  .link {
+    transition: transform 500ms linear
+  }
+  
+  .link:visited {
+    transform: scale(1.2);
+  }
+  
   li {
     font-size: 2em;
+    transition: color 1s linear
+  }
+  
+  li:visited {
+    color: #E3B505;
   }
 
   .navlinks {

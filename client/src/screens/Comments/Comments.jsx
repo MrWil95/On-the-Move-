@@ -16,7 +16,7 @@ export default function Comments() {
   }, [id])
 
   return (
-    <div className='Container'>
+    <div className='CommentsContainer'>
       <div className='postcontainer'>
         <div className='username'>
           <h3>{post?.username}</h3>
@@ -25,8 +25,8 @@ export default function Comments() {
           <p>{post?.content}</p>
         </div>
         {post?.comments?.map((comment, index) => (
-          <div className='commentcontainer' key={index} style={{backgroundColor: "white", padding: ".02em 0 .02em 1em"}}>
-            <p >{comment.content}</p>
+          <div className='commentcontainer' key={index}>
+            <p className='commentcontent'>{comment.content}</p>
           </div>
         ))}
       </div>

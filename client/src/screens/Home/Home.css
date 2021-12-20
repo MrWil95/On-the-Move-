@@ -16,13 +16,12 @@
   border-radius: 10px;
   display: flex;
   flex-flow: column;
-  height: 22em;
   justify-content: flex-end;
   margin-top: 2em;
-  padding: 1.75em;
-  width: 40vw;
   max-width: 40em;
   min-width: 13em;
+  padding: 1.75em;
+  width: 40vw;
 }
 
 .deletebutton {
