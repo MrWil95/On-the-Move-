@@ -20,7 +20,7 @@
   margin-top: 2em;
   max-width: 40em;
   min-width: 13em;
-  padding: 1.75em;
+  padding: 0 1.75em 1.75em 1.75em;
   width: 40vw;
 }
 
@@ -33,6 +33,7 @@
 }
 
 .username {
+  align-self: baseline;
   font-family: 'Shadows Into Light Two', cursive;
   left: 1em;
   position: relative;

@@ -1,11 +1,19 @@
 import './Comments.css'
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 import { getOnePost } from '../../services/posts'
+import { createComment } from '../../services/comments'
 
 export default function Comments() {
   const [post, setPost] = useState(null)
+  const [formData, setFormData] = useState({
+    content: '',
+    post_id: '',
+    user_id: '',
+  })
+  const { content } = formData
   const { id } = useParams()
+  const history = useHistory()
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -15,6 +23,23 @@ export default function Comments() {
     fetchPost()
   }, [id])
 
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }))
+  }
+
+  const handleCommentCreate = async (formData) => {
+    await createComment(formData)
+    const pos = post.find(p => {
+      return p.id === Number
+      (formData.post_id)
+    })
+    history.push(`/${pos.id}`)
+  }
+
   return (
     <div className='CommentsContainer'>
       <div className='postcontainer'>
@@ -23,6 +48,28 @@ export default function Comments() {
         </div>
         <div className='postcontent'>
           <p>{post?.content}</p>
+        </div>
+        <div 
+          className='addcommentcontainer'
+        >
+          <form
+            onSubmit={(e) => {
+              e.preventDefault()
+              handleCommentCreate
+              (formData)
+            }}
+          >
+            <textarea
+              type='text'
+              required
+              name='content'
+              value={content}
+              onChange={handleChange}
+              className='commenttext' 
+            />
+            <label className='commentlabel'>Comment</label>
+            <button className='commentbtn'>Comment</button>
+          </form>
         </div>
         {post?.comments?.map((comment, index) => (
           <div className='commentcontainer' key={index}>

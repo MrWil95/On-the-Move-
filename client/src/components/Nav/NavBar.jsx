@@ -1,23 +1,23 @@
 import './NavBar.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-// import { fetchAllPosts } from '../../services/posts'
+import { fetchAllPosts } from '../../services/posts'
 
 export default function NavBar(props) {
-  // const [getAllPosts, setGetAllPosts] = useState([])
+  const [getAllPosts, setGetAllPosts] = useState([])
   const [open, setOpen] = useState(false)
   const { currentUser, handleLogout } = props
   const location = useLocation()
   
-  // useEffect(() => {
-  //     const fetchData = async () => {
-  //       const res = await fetchAllPosts()
-  //       setGetAllPosts(res.filter(post => {
-  //         return post.category.title === 'general'
-  //       }))
-  //     }
-  //     fetchData()
-  //   }, [])
+  useEffect(() => {
+      const fetchData = async () => {
+        const res = await fetchAllPosts()
+        setGetAllPosts(res.filter(post => {
+          return post.category.title === 'general' || post.category.title === 'resources' || post.category.title === 'events'
+        }))
+      }
+      fetchData()
+    }, [])
 
   const toggleOpen = () => {
     setOpen(prevState => {
@@ -27,7 +27,6 @@ export default function NavBar(props) {
 
   return (
     <>
-      
       <div className='NavBarContainer'>
         <Link to='/'>
           <img src='https://res.cloudinary.com/dedlhqhuk/image/upload/v1636059840/On%20the%20Move/6290871299_a12ded4b-aebd-4a54-8cba-f869b55139f0_rs9bfc.png' alt='logo' className='logo'/>
@@ -56,7 +55,7 @@ export default function NavBar(props) {
           {currentUser ? (
             <li className='links'>{currentUser.username}</li>
           ) : (<li className='links'>Welcome</li>)}
-          {location.pathname === '/user' || location.pathname === '/about' || location.pathname === '/create' || location.pathname === '/general/:id' ? (<></>) : (<div className={open ? 'RegisterContainerMobileOpen' : 'RegisterContainerMobile'}>
+          {getAllPosts.forEach((generalPost, resourcePost, eventsPost) => {return location.pathname === '/user' || location.pathname === '/about' || location.pathname === '/create' || location.pathname === `/general/${generalPost.id}` || location.pathname === `/general/${resourcePost.id}` || location.pathname === `/general/${eventsPost.id}` ? (<></>) : (<div className={open ? 'RegisterContainerMobileOpen' : 'RegisterContainerMobile'}>
             {currentUser ? (
               <button onClick={handleLogout} className='logoutmobile'>Logout</button>
               ) : (
@@ -64,11 +63,11 @@ export default function NavBar(props) {
                 <button className='registermobile'>Signin/Signup</button>
               </Link>
             )}
-          </div>)}
+          </div>)})}
         </div>
       </div>
-      {location.pathname === '/user' || location.pathname === '/about' || location.pathname === '/create' || location.pathname === '/general/:id' ? (<></>) : (<>{currentUser ? (
-        <div className='maincontainermobile'>
+      {getAllPosts.forEach((generalPost, resourcePost, eventsPost, index) => {return location.pathname === '/user' || location.pathname === '/about' || location.pathname === '/create' || location.pathname === `/general/${generalPost.id}` || location.pathname === `/general/${resourcePost.id}` || location.pathname === `/general/${eventsPost.id}` ? (<></>) : (<>{currentUser ? (
+        <div className='maincontainermobile' key={index}>
           <div className='containermobile'>
             <div className='contentmobile'>
               <Link to='/create' className='postbarlinkmobile'>
@@ -81,7 +80,7 @@ export default function NavBar(props) {
       ) : (<Link to='/user' className='registerlink'>
             <button className='register'>Signin/Signup</button>
           </Link>
-      )}</>)}
+      )}</>)})}
     </>
   )
 }
