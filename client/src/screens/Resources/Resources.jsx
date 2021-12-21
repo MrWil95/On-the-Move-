@@ -41,7 +41,7 @@ export default function Resources(props) {
                 <p>{resourcePost.content}</p>
               </div>
               <div className='buttoncontainer'>
-              <Link to={`/general/${resourcePost.id}`}>
+              <Link to={`/posts/${resourcePost.id}`}>
                 <button className='commentbutton'>
                   <FaRegCommentAlt  /> Comment
                 </button>

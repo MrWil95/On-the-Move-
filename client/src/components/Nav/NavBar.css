@@ -11,7 +11,9 @@
 }
 
 a {
+  position: relative;
   text-decoration: none;
+  z-index: 10;
 }
 
 li {

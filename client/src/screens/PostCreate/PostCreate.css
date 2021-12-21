@@ -11,7 +11,7 @@
   background-color: #DB504A;
   border-radius: 10px;
   display: flex;
-  height: 22em;
+  height: 24em;
   justify-content: center;
   max-width: 40em;
   min-width: 13em;
@@ -66,6 +66,7 @@ form {
 .textarea:focus + label {
   background-color: #DB504A;
   transform: translateY(-80%);
+  width: 5em;
 }
 
 .textarea:valid {
@@ -78,6 +79,7 @@ form {
 .textarea:valid + label {
   background-color: #DB504A;
   transform: translateY(-80%);
+  width: 5em;
 }
 
 .forminput {
@@ -89,7 +91,7 @@ form {
   height: 2em;
   max-width: 17em;
   min-width: 12em;
-  transition: transform 1s linear;
+  transition: opacity 1s linear;
   width: 75vw;
 }
 
@@ -100,20 +102,7 @@ form {
 }
 
 .forminput:focus + label {
-  background-color: #DB504A;
-  transform: translateY(-80%);
-}
-
-.forminput:valid {
-  font-size: clamp(0.9em, 10%, 1.25em);
-  letter-spacing: 0.15em;
-  outline: none;
-  padding: 0.5em;
-}
-
-.forminput:valid + label {
-  background-color: #DB504A;
-  transform: translateY(-80%);
+  opacity: 0;
 }
 
 .label {

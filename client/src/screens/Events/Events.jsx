@@ -27,8 +27,8 @@ export default function Resources(props) {
     <>
       <img src='https://res.cloudinary.com/dedlhqhuk/image/upload/v1636252683/On%20the%20Move/aranxa-esteve-pOXHU0UEDcg-unsplash_p8atvd.jpg' alt='community event' className='CommunityEvent' />
       <div className='Container'>
-        {getAllPosts.map((eventsPost) => (
-          <div className='postscontainer'>
+        {getAllPosts.map((eventsPost, index) => (
+          <div className='postscontainer' key={index}>
             {currentUser ? (<button onClick={() => handlePostDelete(eventsPost.id)} className='deletebutton'><FaTimes /></button>) : (<></>)}
               <div className='username'>
                 <h3>{eventsPost.username}</h3>
@@ -37,8 +37,8 @@ export default function Resources(props) {
                 <p>{eventsPost.content}</p>
               </div>
               <div className='buttoncontainer'>
-              <Link to={`/general/${eventsPost.id}`}>
-                <button className='commentbutton' style={{background: "none", border: "none", color: "#4F6D7A", fontFamily: "Shadows Into Light Two, cursive", marginRight: ".75em", marginLeft: ".75em",}}>
+              <Link to={`/posts/${eventsPost.id}`}>
+                <button className='commentbutton'>
                   <FaRegCommentAlt  /> Comment
                 </button>
               </Link>

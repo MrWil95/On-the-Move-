@@ -37,8 +37,8 @@ export default function General(props) {
                 <p>{generalPost.content}</p>
               </div>
             <div className='buttoncontainer'>
-              <Link to={`/general/${generalPost.id}`}>
-                <button className='commentbutton' style={{background: "none", border: "none", color: "#4F6D7A", fontfamily: "Shadows Into Light Two", marginRight: ".75em", marginLeft: ".75em",}}>
+              <Link to={`/posts/${generalPost.id}`}>
+                <button className='commentbutton'>
                   <FaRegCommentAlt  /> Comment
                 </button>
               </Link>

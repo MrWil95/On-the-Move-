@@ -32,12 +32,13 @@ export default function Comments() {
   }
 
   const handleCommentCreate = async (formData) => {
-    await createComment(formData)
-    const pos = post.find(p => {
-      return p.id === Number
-      (formData.post_id)
+    await createComment(id, formData)
+    setFormData({
+      content: '',
+      post_id: '',
+      user_id: '',
     })
-    history.push(`/${pos.id}`)
+    history.push('/posts/:id')
   }
 
   return (

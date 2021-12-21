@@ -10,7 +10,7 @@ import SignInUp from './screens/SignInUp/SignInUp'
 import PostCreate from './screens/PostCreate/PostCreate'
 import PostEdit from './screens/PostEdit/PostEdit'
 import { useState, useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Switch } from 'react-router-dom'
 import { 
   loginUser, 
   registerUser, 
@@ -54,38 +54,40 @@ export default function App() {
         currentUser={currentUser} 
         handleLogout={handleLogout}
       >
-        <Route exact path='/'>
-          <Home currentUser={currentUser}/>
-        </Route>
-        <Route exact path='/general'>
-          <General currentUser={currentUser}/>
-        </Route>
-        <Route exact path='/general/:id'>
-          <Comments currentUser={currentUser}/>
-        </Route>
-        <Route exact path='/resources'>
-          <Resources currentUser={currentUser}/>
-        </Route>
-        <Route exact path='/events'>
-          <Events currentUser={currentUser}/>
-        </Route>
-        <Route exact path='/about'>
-          <About />
-        </Route>
-        <Route path='/user'>
-          <SignInUp 
-            currentUser={currentUser}
-            handleLogin={handleLogin}
-            handleRegister={handleRegister}
-            handleLogout={handleLogout}
-          />
-        </Route>
-        <Route exact path='/create'>
-          <PostCreate />
-        </Route>
-        <Route exact path='/edit/:id'>
-          <PostEdit />
-        </Route>
+        <Switch>
+          <Route exact path='/'>
+            <Home currentUser={currentUser}/>
+          </Route>
+          <Route exact path='/general'>
+            <General currentUser={currentUser}/>
+          </Route>
+          <Route exact path='/posts/:id'>
+            <Comments currentUser={currentUser}/>
+          </Route>
+          <Route exact path='/resources'>
+            <Resources currentUser={currentUser}/>
+          </Route>
+          <Route exact path='/events'>
+            <Events currentUser={currentUser}/>
+          </Route>
+          <Route exact path='/about'>
+            <About />
+          </Route>
+          <Route path='/user'>
+            <SignInUp 
+              currentUser={currentUser}
+              handleLogin={handleLogin}
+              handleRegister={handleRegister}
+              handleLogout={handleLogout}
+            />
+          </Route>
+          <Route exact path='/create'>
+            <PostCreate />
+          </Route>
+          <Route exact path='/edit/:id'>
+            <PostEdit />
+          </Route>
+        </Switch>
       </Layout>
     </>
   )

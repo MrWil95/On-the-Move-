@@ -78,7 +78,6 @@ export default function PostCreate() {
           <div className='input'>
             <input 
               type='text'
-              required
               name='img_url' 
               value={img_url} 
               onChange={handleChange} 
@@ -91,7 +90,6 @@ export default function PostCreate() {
           <div className='input'>
             <input 
               type='text'
-              required
               name='link_url' 
               value={link_url} 
               onChange={handleChange} 
