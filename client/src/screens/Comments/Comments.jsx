@@ -1,11 +1,13 @@
 import './Comments.css'
 import { useState, useEffect } from 'react'
-import { useParams, useHistory } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { getOnePost } from '../../services/posts'
 import { createComment } from '../../services/comments'
 
-export default function Comments() {
+export default function Comments(props) {
   const [post, setPost] = useState(null)
+  const [comments, setComments] = useState([])
+  const [commentToggle, setCommentToggle] = useState(true)
   const [formData, setFormData] = useState({
     content: '',
     post_id: '',
@@ -13,32 +15,36 @@ export default function Comments() {
   })
   const { content } = formData
   const { id } = useParams()
-  const history = useHistory()
+  const { currentUser } = props
 
   useEffect(() => {
     const fetchPost = async () => {
       const postDetails = await getOnePost(id)
       setPost(postDetails)
+      setComments(postDetails.comments)
     }
     fetchPost()
-  }, [id])
+  }, [id, commentToggle])
 
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }))
-  }
-
+  
   const handleCommentCreate = async (formData) => {
-    await createComment(id, formData)
+    const newComment = await createComment(id, formData)
+    setComments((prevState) => [...prevState, newComment])
+    setCommentToggle((prevState) => !prevState)
     setFormData({
       content: '',
       post_id: '',
       user_id: '',
     })
-    history.push('/posts/:id')
+  }
+
+  const handleChange = (e) => {
+    const { value } = e.target
+    setFormData({
+      content: value,
+      post_id: id,
+      user_id: currentUser.id,
+    })
   }
 
   return (
@@ -72,8 +78,9 @@ export default function Comments() {
             <button className='commentbtn'>Comment</button>
           </form>
         </div>
-        {post?.comments?.map((comment, index) => (
+        {comments?.map((comment, index) => (
           <div className='commentcontainer' key={index}>
+            <h5 className='commentusername'>{comment.username}</h5>
             <p className='commentcontent'>{comment.content}</p>
           </div>
         ))}

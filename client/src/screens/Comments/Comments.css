@@ -107,10 +107,11 @@
 }
 
 .commentcontainer {
-  align-items: center;
+  align-items: baseline;
   background-color: white;
   border-radius: 10px;
   display: flex;
+  flex-flow: column;
   height: max-content;
   justify-content: center;
   margin-bottom: 0.5em;
@@ -120,6 +121,12 @@
   width: 85%;
 }
 
+.commentusername {
+  margin: 0.5em 0;
+}
+
 .commentcontent {
+  margin-bottom: 0.5em;
+  margin-top: 0;
   text-align: left;
 }

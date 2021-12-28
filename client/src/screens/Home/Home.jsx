@@ -1,24 +1,20 @@
 import './Home.css'
 import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { fetchAllPosts, deletePost, getOnePost } from '../../services/posts'
+import { fetchAllPosts, deletePost } from '../../services/posts'
 import { FaRegCommentAlt, FaEdit, FaTimes } from 'react-icons/fa'
 
 export default function Home(props) {
   const [getAllPosts, setGetAllPosts] = useState([])
-  const [post, setPost] = useState(null)
-  const [userid, setUserId] = useState({user_id:''})
   const { currentUser } = props
   const { id } = useParams()
 
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetchAllPosts()
-      const postData = getOnePost(id)
       setGetAllPosts(res.filter(post => {
         return post.category.title === 'general'
       }))
-      setPost(postData)
     }
     fetchData()
   }, [id])
@@ -34,7 +30,7 @@ export default function Home(props) {
       <div className='Container' >
         {getAllPosts.map((generalPost, index) => (
           <div className='postscontainer' key={index}>
-            {currentUser.id === post.user_id ? (<button onClick={() => handlePostDelete(generalPost.id)} className='deletebutton'><FaTimes /></button>) : (<></>)}
+            {currentUser ? (<button onClick={() => handlePostDelete(generalPost.id)} className='deletebutton'><FaTimes /></button>) : (<></>)}
               <div className='username'>
                 <h3>{generalPost.username}</h3>
               </div>
