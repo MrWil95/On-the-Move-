@@ -2,7 +2,8 @@ import './Comments.css'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { getOnePost } from '../../services/posts'
-import { createComment } from '../../services/comments'
+import { createComment, deleteComment } from '../../services/comments'
+import { FaTimes } from 'react-icons/fa'
 
 export default function Comments(props) {
   const [post, setPost] = useState(null)
@@ -47,6 +48,11 @@ export default function Comments(props) {
     })
   }
 
+  const handleCommentDelete = async (id) => {
+    await deleteComment(id)
+    setComments((prevState) => prevState.filter((comment) => comment.id !== id))
+  }
+
   return (
     <div className='CommentsContainer'>
       <div className='postcontainer'>
@@ -80,7 +86,12 @@ export default function Comments(props) {
         </div>
         {comments?.map((comment, index) => (
           <div className='commentcontainer' key={index}>
-            <h5 className='commentusername'>{comment.username}</h5>
+            <div className='commentsubcontent'>
+              <h5 className='commentusername'>{comment.username}</h5>
+              <button onClick={() => handleCommentDelete(comment.id)} className='commentdelete'>
+                <FaTimes />
+              </button>
+            </div>
             <p className='commentcontent'>{comment.content}</p>
           </div>
         ))}

@@ -16,6 +16,7 @@
   border-radius: 10px;
   display: flex;
   flex-flow: column;
+  height: 24em;
   justify-content: flex-end;
   margin-top: 2em;
   max-width: 40em;

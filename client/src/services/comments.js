@@ -5,12 +5,12 @@ export const createComment = async (postId, commentData) => {
   return res.data
 }
 
-export const editComment = async (id, commentData) => {
-  const res = await api.put(`/comments/${id}`, { comment: commentData })
+export const editComment = async (postId, id, commentData) => {
+  const res = await api.put(`posts/${postId}/comments/${id}`, { comment: commentData })
   return res.data
 }
 
 export const deleteComment = async (id) => {
-  const res = await api.delete(`/comments/${id}`)
+  const res = await api.delete(`posts/${id}`)
   return res
 }

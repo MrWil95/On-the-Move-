@@ -121,6 +121,21 @@
   width: 85%;
 }
 
+.commentsubcontent {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.commentdelete {
+  background: none;
+  border: none;
+  position: absolute;
+  right: -0.75em;
+  top: 0.5em;
+}
+
 .commentusername {
   margin: 0.5em 0;
 }
