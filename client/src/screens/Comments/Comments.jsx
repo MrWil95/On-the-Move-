@@ -8,7 +8,6 @@ import { FaTimes } from 'react-icons/fa'
 export default function Comments(props) {
   const [post, setPost] = useState(null)
   const [comments, setComments] = useState([])
-  const [commentToggle, setCommentToggle] = useState(true)
   const [formData, setFormData] = useState({
     content: '',
     post_id: '',
@@ -25,13 +24,12 @@ export default function Comments(props) {
       setComments(postDetails.comments)
     }
     fetchPost()
-  }, [id, commentToggle])
+  }, [id])
 
   
   const handleCommentCreate = async (formData) => {
     const newComment = await createComment(id, formData)
     setComments((prevState) => [...prevState, newComment])
-    setCommentToggle((prevState) => !prevState)
     setFormData({
       content: '',
       post_id: '',
@@ -48,8 +46,8 @@ export default function Comments(props) {
     })
   }
 
-  const handleCommentDelete = async (postid, commentid) => {
-    await deleteComment(postid, commentid)
+  const handleCommentDelete = async (id, commentid) => {
+    await deleteComment(id, commentid)
     setComments((prevState) => prevState.filter((comment) => comment.id !== commentid))
   }
 
@@ -88,9 +86,9 @@ export default function Comments(props) {
           <div className='commentcontainer' key={index}>
             <div className='commentsubcontent'>
               <h5 className='commentusername'>{comment.username}</h5>
-              <button onClick={() => handleCommentDelete(comment.id)} className='commentdelete'>
+              {currentUser.id === comment.user_id && (<button onClick={() => handleCommentDelete(id, comment.id)} className='commentdelete'>
                 <FaTimes />
-              </button>
+              </button>)}
             </div>
             <p className='commentcontent'>{comment.content}</p>
           </div>
