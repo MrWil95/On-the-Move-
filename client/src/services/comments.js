@@ -10,7 +10,7 @@ export const editComment = async (postId, id, commentData) => {
   return res.data
 }
 
-export const deleteComment = async (id) => {
-  const res = await api.delete(`posts/${id}`)
+export const deleteComment = async (postId, id) => {
+  const res = await api.delete(`posts/${postId}/comments/${id}`)
   return res
 }

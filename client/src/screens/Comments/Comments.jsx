@@ -48,9 +48,9 @@ export default function Comments(props) {
     })
   }
 
-  const handleCommentDelete = async (id) => {
-    await deleteComment(id)
-    setComments((prevState) => prevState.filter((comment) => comment.id !== id))
+  const handleCommentDelete = async (postid, commentid) => {
+    await deleteComment(postid, commentid)
+    setComments((prevState) => prevState.filter((comment) => comment.id !== commentid))
   }
 
   return (

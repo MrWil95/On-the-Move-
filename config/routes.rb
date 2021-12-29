@@ -11,8 +11,9 @@ Rails.application.routes.draw do
     resources :posts
   end
 
-  post '/posts/:post_id/comments', to: 'comments#create'
-
   post '/auth/login', to: 'authentications#login'
   get '/auth/verify', to: 'authentications#verify'
+  
+  # post '/posts/:post_id/comments', to: 'comments#create'
+  # destroy 'posts/:post_id/comments/:id', to: 'comments#destroy'
 end

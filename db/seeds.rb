@@ -37,10 +37,10 @@ puts "#{Category.count} categories created"
 
 puts "#{Post.count} posts created"
 
-Comment.create!(content: 'Seattle is such an exciting place, congrats!', post: @post1, user: @admin0)
-Comment.create!(content: 'Thanks, my wife and I are excited!', post: @post1, user: @admin1)
-Comment.create!(content: 'Banana boats bring beautiful ballerina\'s', post: @post1, user: @admin0)
-Comment.create!(content: 'We are glad to help. #keeponmoving', post: @post2, user: @admin0)
-Comment.create!(content: 'I paw-sitively love this!', post: @post3, user: @admin0)
+Comment.create!(content: 'Seattle is such an exciting place, congrats!', post: @post1, user: @admin0, username: @admin0.username)
+Comment.create!(content: 'Thanks, my wife and I are excited!', post: @post1, user: @admin1, username: @admin1.username)
+Comment.create!(content: 'Banana boats bring beautiful ballerina\'s', post: @post1, user: @admin0, username: @admin0.username)
+Comment.create!(content: 'We are glad to help. #keeponmoving', post: @post2, user: @admin0, username: @admin0.username)
+Comment.create!(content: 'I paw-sitively love this!', post: @post3, user: @admin0, username: @admin0.username)
 
 puts "#{Comment.count} comments created"
