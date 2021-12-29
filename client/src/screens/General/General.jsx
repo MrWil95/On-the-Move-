@@ -1,12 +1,13 @@
 import './General.css'
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { fetchAllPosts, deletePost } from '../../services/posts'
 import { FaRegCommentAlt, FaEdit, FaTimes } from 'react-icons/fa'
 
-export default function General(props) {
+export default function Home(props) {
   const [getAllPosts, setGetAllPosts] = useState([])
   const { currentUser } = props
+  const { id } = useParams()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,20 +17,20 @@ export default function General(props) {
       }))
     }
     fetchData()
-  }, [])
+  }, [id])
 
   const handlePostDelete = async (id) => {
-    await deletePost(id);
+    await deletePost(id)
     setGetAllPosts((prevState) => prevState.filter((post) => post.id !== id))
   }
 
   return (
     <>
       <img src='https://res.cloudinary.com/dedlhqhuk/image/upload/v1636257157/On%20the%20Move/vwbus_ob5ucd.png' alt='VW Bus' className='vwbus' />
-      <div className='Container' style={{width: "100vw"}}>
+      <div className='Container' >
         {getAllPosts.map((generalPost, index) => (
           <div className='postscontainer' key={index}>
-            {currentUser ? (<button onClick={() => handlePostDelete(generalPost.id)} className='deletebutton'><FaTimes /></button>) : (<></>)}
+            {currentUser.id === generalPost.user_id && (<button onClick={() => handlePostDelete(generalPost.id)} className='deletebutton'><FaTimes /></button>)}
               <div className='username'>
                 <h3>{generalPost.username}</h3>
               </div>
@@ -42,10 +43,10 @@ export default function General(props) {
                   <FaRegCommentAlt  /> Comment
                 </button>
               </Link>
-              <Link to={`/edit/${generalPost.id}`}>
+              {currentUser.id === generalPost.user_id && (<Link to={`/edit/${generalPost.id}`}>
                 <button className='editbutton'><FaEdit /> 
                 Edit</button>
-              </Link>
+              </Link>)}
             </div>
           </div>
         ))}
