@@ -63,7 +63,9 @@
   font-family: 'Shadows Into Light Two', cursive;
   height: 2em;
   padding-bottom: 0.25em;
+  position: relative;
   width: 100%;
+  z-index: 1;
 }
 
 .commentbutton {
@@ -79,7 +81,8 @@
   border: none; 
   color: #4F6D7A; 
   font-family: 'Shadows Into Light Two', cursive;
-  margin: .75em;
+  margin: 0.5em 0;
+  width: fit-content;
 }
 
 @media (min-width: 360px) {

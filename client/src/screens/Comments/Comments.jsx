@@ -2,8 +2,8 @@ import './Comments.css'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { getOnePost } from '../../services/posts'
-import { createComment, deleteComment } from '../../services/comments'
-import { FaTimes } from 'react-icons/fa'
+import { createComment } from '../../services/comments'
+import CommentEdit from '../../components/CommentEdit/CommentEdit'
 
 export default function Comments(props) {
   const [post, setPost] = useState(null)
@@ -13,9 +13,10 @@ export default function Comments(props) {
     post_id: '',
     user_id: '',
   })
-  const { content } = formData
   const { id } = useParams()
   const { currentUser } = props
+  
+  const { content } = formData
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -44,11 +45,6 @@ export default function Comments(props) {
       post_id: id,
       user_id: currentUser.id,
     })
-  }
-
-  const handleCommentDelete = async (id, commentid) => {
-    await deleteComment(id, commentid)
-    setComments((prevState) => prevState.filter((comment) => comment.id !== commentid))
   }
 
   return (
@@ -82,16 +78,14 @@ export default function Comments(props) {
             <button className='commentbtn'>Comment</button>
           </form>
         </div>
-        {comments?.map((comment, index) => (
-          <div className='commentcontainer' key={index}>
-            <div className='commentsubcontent'>
-              <h5 className='commentusername'>{comment.username}</h5>
-              {currentUser.id === comment.user_id && (<button onClick={() => handleCommentDelete(id, comment.id)} className='commentdelete'>
-                <FaTimes />
-              </button>)}
-            </div>
-            <p className='commentcontent'>{comment.content}</p>
-          </div>
+        {comments?.map((comment) => (
+          <CommentEdit
+            key={comment?.id}
+            comment={comment}
+            currentUser={currentUser}
+            id={id}
+            setComments={setComments}
+          />
         ))}
       </div>
     </div>

@@ -30,7 +30,7 @@ export default function Home(props) {
       <div className='Container' >
         {getAllPosts.map((generalPost, index) => (
           <div className='postscontainer' key={index}>
-            {currentUser.id === generalPost.user_id && (<button onClick={() => handlePostDelete(generalPost.id)} className='deletebutton'><FaTimes /></button>)}
+            {currentUser?.id === generalPost?.user_id && (<button onClick={() => handlePostDelete(generalPost.id)} className='deletebutton'><FaTimes /></button>)}
               <div className='username'>
                 <h3>{generalPost.username}</h3>
               </div>
