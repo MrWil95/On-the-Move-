@@ -13,6 +13,8 @@ export default function CommentEdit(props) {
   const [toggleForm, setToggleForm] = useState(false)
   const [toggleContainer, setToggleContainer] = useState(false)
   const [toggleIcon, setToggleIcon] = useState(false)
+  const [toggleFlagged, setToggleFlagged] = useState(false)
+  const [toggleLiked, setToggleLiked] = useState(false)
 
   const { content } = editedComment;
 
@@ -37,6 +39,14 @@ export default function CommentEdit(props) {
     setToggleIcon((prevState) => !prevState)
   }
 
+  const handleToggleFlagged = () => {
+    setToggleFlagged((prevState) => !prevState)
+  }
+
+  const handleToggleLiked = () => {
+    setToggleLiked((prevState) => !prevState)
+  }
+
   const handleCommentEdit = async (comment, editedComment) => {
     const updateComment = await editComment(id, comment, editedComment)
     setComments((prevState) => {
@@ -54,21 +64,27 @@ export default function CommentEdit(props) {
       {toggleForm ? (
         <>
           {currentUser?.id === comment?.user_id && (
-            <form onSubmit={(e) => {
-              e.preventDefault()
-              handleCommentEdit(comment?.id, editedComment)
-              }
-            }>
-              <textarea 
-                 type='text'
-                 autoFocus
-                 value={content}
-                 name='content'
-                 onChange={handleChange}
-                 className='commenttext'
-              />
-              <button className='commentbtn'>Edit</button>
-            </form>
+            <>
+              <form onSubmit={(e) => {
+                e.preventDefault()
+                handleCommentEdit(comment?.id, editedComment)
+                }
+              }>
+                <textarea 
+                  type='text'
+                  autoFocus
+                  value={content}
+                  name='content'
+                  onChange={handleChange}
+                  className='commenttext'
+                />
+                <button className='commentbtn'>Edit</button>
+              </form>
+              <button className='commentbtn' id='cancel' onClick={(e) => {
+                e.preventDefault()
+                handleToggleForm()
+              }}>Cancel</button>
+            </>
           )}
         </>
       ) : (
@@ -87,7 +103,10 @@ export default function CommentEdit(props) {
             </>
             <p className='commentcontent'>{comment?.content}</p>
             <div className='buttoncontainer'>
-              <button className='editbutton'>
+              <button className='editbutton' id={toggleLiked ? 'liked' : ''} onClick={(e) => {
+                e.preventDefault()
+                handleToggleLiked()
+              }}>
                 <FaStar /> Like
               </button>
               <button className='editbutton'>
@@ -116,7 +135,10 @@ export default function CommentEdit(props) {
                     }}>
                       {toggleIcon ? (<FaUserCheck />) : (<FaUserPlus />)}
                     </button>
-                    <button className='editbutton'>
+                    <button className='editbutton' id={toggleFlagged ? 'flagged' : ''}onClick={(e) => {
+                      e.preventDefault()
+                      handleToggleFlagged()
+                    }}>
                       <FaFlag />
                     </button>
                   </>

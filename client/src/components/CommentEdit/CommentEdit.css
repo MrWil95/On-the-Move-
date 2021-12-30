@@ -14,6 +14,10 @@
   width: 85%;
 }
 
+#cancel {
+  align-self: center;
+}
+
 .comments {
   display: flex;
   flex-flow: column;
@@ -61,4 +65,12 @@
   opacity: 1;
   transform: translateX(0%);
   transition: transform 1s ease, opacity 1s linear;
+}
+
+#flagged {
+  color: red;
+}
+
+#liked svg {
+  color: yellow;
 }
