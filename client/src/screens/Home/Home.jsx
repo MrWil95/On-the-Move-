@@ -1,11 +1,13 @@
 import './Home.css'
 import { useState, useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { fetchAllPosts, deletePost } from '../../services/posts'
-import { FaRegCommentAlt, FaEdit, FaTimes } from 'react-icons/fa'
+import { FaTimes } from 'react-icons/fa'
+import ButtonContainer from '../../components/ButtonContainer/ButtonContainer'
 
 export default function Home(props) {
   const [getAllPosts, setGetAllPosts] = useState([])
+
   const { currentUser } = props
   const { id } = useParams()
 
@@ -30,25 +32,21 @@ export default function Home(props) {
       <div className='Container' >
         {getAllPosts.map((generalPost, index) => (
           <div className='postscontainer' key={index}>
-            {currentUser?.id === generalPost?.user_id && (<button onClick={() => handlePostDelete(generalPost.id)} className='deletebutton'><FaTimes /></button>)}
-              <div className='username'>
-                <h3>{generalPost.username}</h3>
-              </div>
-              <div className='postscontent'>
-                <p>{generalPost.content}</p>
-              </div>
-            <div className='buttoncontainer'>
-              <Link to={`/posts/${generalPost.id}`}>
-                <button className='commentbutton'>
-                  <FaRegCommentAlt  /> Comment
-                </button>
-              </Link>
-              {currentUser.id === generalPost.user_id && (<Link to={`/edit/${generalPost.id}`}>
-                <button className='editbutton'>
-                  <FaEdit /> Edit
-                </button>
-              </Link>)}
+            {currentUser?.id === generalPost?.user_id && (
+              <button onClick={() => handlePostDelete(generalPost.id)} className='deletebutton'>
+                <FaTimes />
+              </button>
+            )}
+            <div className='username'>
+              <h3>{generalPost.username}</h3>
             </div>
+            <div className='postscontent'>
+              <p>{generalPost.content}</p>
+            </div>
+            <ButtonContainer 
+              generalPost={generalPost}
+              currentUser={currentUser}
+            />
           </div>
         ))}
       </div>

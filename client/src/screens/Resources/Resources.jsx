@@ -1,8 +1,8 @@
 import './Resources.css'
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import { fetchAllPosts, deletePost } from '../../services/posts'
-import { FaRegCommentAlt, FaEdit, FaTimes } from 'react-icons/fa'
+import { FaTimes } from 'react-icons/fa'
+import ButtonContainer from '../../components/ButtonContainer/ButtonContainer'
 
 export default function Resources(props) {
   const [getAllPosts, setGetAllPosts] = useState([])
@@ -33,29 +33,24 @@ export default function Resources(props) {
       <div className='Container'>
         {getAllPosts.map((resourcePost, index) => (
           <div className='postscontainer' key={index}>
-            {currentUser ? (<button onClick={() => handlePostDelete(resourcePost.id)} className='deletebutton'><FaTimes /></button>) : (<></>)}
-              <div className='username'>
-                <h3>{resourcePost.username}</h3>
-              </div>
-              <div className='postscontent'>
-                <p>{resourcePost.content}</p>
-              </div>
-              <div className='buttoncontainer'>
-              <Link to={`/posts/${resourcePost.id}`}>
-                <button className='commentbutton'>
-                  <FaRegCommentAlt  /> Comment
-                </button>
-              </Link>
-              <Link to={`/edit/${resourcePost.id}`}>
-                <button className='editbutton'>
-                  <FaEdit /> 
-                  Edit
-                </button>
-              </Link>
+            {currentUser?.id === resourcePost?.user_id ? (
+              <button onClick={() => handlePostDelete(resourcePost.id)} className='deletebutton'>
+                <FaTimes />
+              </button>
+            ) : (<></>)}
+            <div className='username'>
+              <h3>{resourcePost.username}</h3>
             </div>
-        </div>
+            <div className='postscontent'>
+              <p>{resourcePost.content}</p>
+            </div>
+            <ButtonContainer 
+              resourcePost={resourcePost} 
+              currentUser={currentUser}
+            />
+          </div>
         ))}
-    </div>
+      </div>
     </>
   )
 }

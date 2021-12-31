@@ -1,7 +1,14 @@
 import './CommentEdit.css'
 import { useState } from 'react'
 import { editComment, deleteComment } from '../../services/comments'
-import { FaTimes, FaEdit, FaShare, FaStar, FaUserPlus, FaUserCheck, FaEllipsisH, FaFlag } from 'react-icons/fa'
+import { 
+  FaTimes, FaEdit, 
+  FaShare, FaStar, 
+  FaUserPlus, 
+  FaUserCheck, 
+  FaEllipsisH, 
+  FaFlag 
+} from 'react-icons/fa'
 
 export default function CommentEdit(props) {
   const { currentUser, id, comment, setComments } = props
@@ -102,25 +109,25 @@ export default function CommentEdit(props) {
               <h5 className='commentusername'>{comment?.username}</h5>
             </>
             <p className='commentcontent'>{comment?.content}</p>
-            <div className='buttoncontainer'>
-              <button className='editbutton' id={toggleLiked ? 'liked' : ''} onClick={(e) => {
+            <div className='commentbuttoncontainer'>
+              <button className='iconbutton' id={toggleLiked ? 'liked' : ''} onClick={(e) => {
                 e.preventDefault()
                 handleToggleLiked()
               }}>
                 <FaStar /> Like
               </button>
-              <button className='editbutton'>
+              <button className='iconbutton'>
                 <FaShare /> Share
               </button>
-              <button className='editbutton' onClick={(e) => {
+              <button className='iconbutton' onClick={(e) => {
                 e.preventDefault()
                 handleToggleContainer()
               }}>
                 <FaEllipsisH /> More
               </button>
-              <div className={`buttoncontainerhidden ${toggleContainer ? 'show' : ''}`}>
+              <div className={`commentbuttoncontainerhidden ${toggleContainer ? 'show' : ''}`}>
                 {currentUser?.id === comment?.user_id && (
-                  <button className='editbutton' onClick={(e) => {
+                  <button className='iconbutton' onClick={(e) => {
                     e.preventDefault()
                     handleToggleForm()
                   }}>
@@ -129,13 +136,13 @@ export default function CommentEdit(props) {
                 )}
                 {currentUser?.id !== comment?.user_id && (
                   <>
-                    <button className='editbutton' onClick={(e) => {
+                    <button className='iconbutton' onClick={(e) => {
                       e.preventDefault()
                       handleToggleIcon()
                     }}>
                       {toggleIcon ? (<FaUserCheck />) : (<FaUserPlus />)}
                     </button>
-                    <button className='editbutton' id={toggleFlagged ? 'flagged' : ''}onClick={(e) => {
+                    <button className='iconbutton' id={toggleFlagged ? 'flagged' : ''}onClick={(e) => {
                       e.preventDefault()
                       handleToggleFlagged()
                     }}>

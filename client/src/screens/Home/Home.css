@@ -55,36 +55,6 @@
   width: 85%;
 }
 
-.buttoncontainer {
-  align-self: center;
-  background-color: #ffffff;
-  border-radius: 5px;
-  color: #4F6D7A;
-  font-family: 'Shadows Into Light Two', cursive;
-  height: 2em;
-  padding-bottom: 0.25em;
-  position: relative;
-  width: 100%;
-  z-index: 1;
-}
-
-.commentbutton {
-  background: none;
-  border: none;
-  color: #4F6D7A;
-  font-family: 'Shadows Into Light Two', cursive;
-  margin: 0 .75em;
-}
-
-.editbutton {
-  background: none; 
-  border: none; 
-  color: #4F6D7A; 
-  font-family: 'Shadows Into Light Two', cursive;
-  margin: 0.5em 0;
-  width: fit-content;
-}
-
 @media (min-width: 360px) {
   .postscontainer {
     min-width: 16em;
@@ -103,28 +73,14 @@
   }
 }
 
-@media (min-width: 540px) {
-  .buttoncontainer {
-    width: 96%;
-  }
-}
-
 @media (min-width: 768px) {
   .postscontainer {
     min-width: 25em;
-  }
-
-  .buttoncontainer {
-    width: 94%;
   }
 }
 
 @media (min-width: 1280px) {
   .postscontainer {
     min-width: 25em;
-  }
-
-  .buttoncontainer {
-    width: 92%;
   }
 }

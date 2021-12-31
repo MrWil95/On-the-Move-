@@ -1,6 +1,7 @@
 import './NavBar.css'
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 // import { fetchAllPosts } from '../../services/posts'
 
 export default function NavBar(props) {
@@ -8,6 +9,7 @@ export default function NavBar(props) {
   const [open, setOpen] = useState(false)
   const { currentUser, handleLogout } = props
   const location = useLocation()
+  const { id } = useParams()
   
   // useEffect(() => {
   //     const fetchData = async () => {
@@ -55,7 +57,7 @@ export default function NavBar(props) {
           {currentUser ? (
             <li className='links'>{currentUser.username}</li>
           ) : (<li className='links'>Welcome</li>)}
-          {location.pathname === '/user' || location.pathname === '/about' || location.pathname === '/create' || location.pathname === '/posts/:id' ? (<></>) : (<div className={open ? 'RegisterContainerMobileOpen' : 'RegisterContainerMobile'}>
+          {location.pathname === '/user' || location.pathname === '/about' || location.pathname === '/create' || location.pathname === `/posts/${id}` ? (<></>) : (<div className={open ? 'RegisterContainerMobileOpen' : 'RegisterContainerMobile'}>
             {currentUser ? (
               <button onClick={handleLogout} className='logoutmobile'>Logout</button>
               ) : (
@@ -66,7 +68,7 @@ export default function NavBar(props) {
           </div>)}
         </div>
       </div>
-      {location.pathname === '/user' || location.pathname === '/about' || location.pathname === '/create' || location.pathname === '/posts/:id' ? (<></>) : (<>{currentUser ? (
+      {location.pathname === '/user' || location.pathname === '/about' || location.pathname === '/create' || location.pathname === `/posts/${id}` ? (<></>) : (<>{currentUser ? (
         <div className='maincontainermobile'>
           <div className='containermobile'>
             <div className='contentmobile'>
