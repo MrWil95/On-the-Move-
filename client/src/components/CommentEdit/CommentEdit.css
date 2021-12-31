@@ -56,6 +56,15 @@
   z-index: 1;
 }
 
+.commenticonbutton {
+  background: none; 
+  border: none; 
+  color: #4F6D7A; 
+  font-family: 'Shadows Into Light Two', cursive;
+  margin: 0.5em 0;
+  width: max-content;
+}
+
 .commentbuttoncontainerhidden {
   align-items: center;
   background-color: white;
@@ -76,14 +85,6 @@
   opacity: 1;
   transform: translateX(0%);
   transition: transform 1s ease, opacity 1s linear;
-}
-
-#flagged {
-  color: red;
-}
-
-#liked svg {
-  color: yellow;
 }
 
 @media (min-width: 540px) {

@@ -110,16 +110,16 @@ export default function CommentEdit(props) {
             </>
             <p className='commentcontent'>{comment?.content}</p>
             <div className='commentbuttoncontainer'>
-              <button className='iconbutton' id={toggleLiked ? 'liked' : ''} onClick={(e) => {
+              <button className='commenticonbutton' id={toggleLiked ? 'liked' : ''} onClick={(e) => {
                 e.preventDefault()
                 handleToggleLiked()
               }}>
                 <FaStar /> Like
               </button>
-              <button className='iconbutton'>
+              <button className='commenticonbutton'>
                 <FaShare /> Share
               </button>
-              <button className='iconbutton' onClick={(e) => {
+              <button className='commenticonbutton' onClick={(e) => {
                 e.preventDefault()
                 handleToggleContainer()
               }}>
@@ -127,7 +127,7 @@ export default function CommentEdit(props) {
               </button>
               <div className={`commentbuttoncontainerhidden ${toggleContainer ? 'show' : ''}`}>
                 {currentUser?.id === comment?.user_id && (
-                  <button className='iconbutton' onClick={(e) => {
+                  <button className='commenticonbutton' onClick={(e) => {
                     e.preventDefault()
                     handleToggleForm()
                   }}>
@@ -136,13 +136,13 @@ export default function CommentEdit(props) {
                 )}
                 {currentUser?.id !== comment?.user_id && (
                   <>
-                    <button className='iconbutton' onClick={(e) => {
+                    <button className='commenticonbutton' onClick={(e) => {
                       e.preventDefault()
                       handleToggleIcon()
                     }}>
                       {toggleIcon ? (<FaUserCheck />) : (<FaUserPlus />)}
                     </button>
-                    <button className='iconbutton' id={toggleFlagged ? 'flagged' : ''}onClick={(e) => {
+                    <button className='commenticonbutton' id={toggleFlagged ? 'flagged' : ''}onClick={(e) => {
                       e.preventDefault()
                       handleToggleFlagged()
                     }}>
