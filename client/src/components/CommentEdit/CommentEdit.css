@@ -56,15 +56,6 @@
   z-index: 1;
 }
 
-.iconbutton {
-  background: none; 
-  border: none; 
-  color: #4F6D7A; 
-  font-family: 'Shadows Into Light Two', cursive;
-  margin: 0.5em 0;
-  width: fit-content;
-}
-
 .commentbuttoncontainerhidden {
   align-items: center;
   background-color: white;

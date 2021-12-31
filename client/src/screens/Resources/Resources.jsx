@@ -33,11 +33,11 @@ export default function Resources(props) {
       <div className='Container'>
         {getAllPosts.map((resourcePost, index) => (
           <div className='postscontainer' key={index}>
-            {currentUser?.id === resourcePost?.user_id ? (
+            {currentUser?.id === resourcePost?.user_id && (
               <button onClick={() => handlePostDelete(resourcePost.id)} className='deletebutton'>
                 <FaTimes />
-              </button>
-            ) : (<></>)}
+              </button>)
+            }
             <div className='username'>
               <h3>{resourcePost.username}</h3>
             </div>

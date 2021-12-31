@@ -35,8 +35,8 @@ export default function Home(props) {
             {currentUser?.id === generalPost?.user_id && (
               <button onClick={() => handlePostDelete(generalPost.id)} className='deletebutton'>
                 <FaTimes />
-              </button>
-            )}
+              </button>)
+            }
             <div className='username'>
               <h3>{generalPost.username}</h3>
             </div>
