@@ -52,7 +52,7 @@
   height: 2em;
   padding-bottom: 0.25em;
   position: relative;
-  width: 100%;
+  width: 102%;
   z-index: 1;
 }
 
@@ -81,7 +81,7 @@
   width: 2.15em;
 }
 
-.show {
+.showcomment {
   opacity: 1;
   transform: translateX(0%);
   transition: transform 1s ease, opacity 1s linear;
@@ -91,6 +91,19 @@
   .commentbuttoncontainer {
     width: 96%;
   }
+
+  .commentbuttoncontainerhidden {
+    flex-flow: row;
+    right: 3.25em;
+    width: max-content;
+    z-index: -1;
+  }
+
+  /* .showcomment {
+    opacity: 1;
+    transform: translateX(0%);
+    transition: transform 1s ease, opacity 1s linear;
+  } */
 }
 
 @media (min-width: 768px) {

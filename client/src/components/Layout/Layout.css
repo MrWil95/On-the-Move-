@@ -1,14 +1,5 @@
 .layoutchildren {
-  position: absolute;
   height: 100%;
-  top: 6em;
+  position: relative;
   width: 100%;
-}
-
-@media (min-width: 375px) {
-  @media (min-height: 812px) {
-    .layoutchildren {
-      height: 80%;
-    }
-  }
 }

@@ -16,6 +16,7 @@ export default function ButtonContainer(props) {
   const [toggleContainer, setToggleContainer] = useState(false)
   const [toggleIcon, setToggleIcon] = useState(false)
   const [toggleFlagged, setToggleFlagged] = useState(false)
+  const [toggleFlaggedDesktop, setToggleFlaggedDesktop] = useState(false)
   const [toggleLiked, setToggleLiked] = useState(false)
 
   const location = useLocation()
@@ -32,6 +33,10 @@ export default function ButtonContainer(props) {
 
   const handleToggleFlagged = () => {
     setToggleFlagged((prevState) => !prevState)
+  }
+
+  const handleToggleFlaggedDesktop = () => {
+    setToggleFlaggedDesktop((prevState) => !prevState)
   }
 
   const handleToggleLiked = () => {
@@ -61,15 +66,25 @@ export default function ButtonContainer(props) {
           </button>
         </Link>) : (<></>)
       }
-      <button className='iconbutton' id={toggleLiked ? 'liked' : ''} 
-        onClick={(e) => {
-          e.preventDefault()
-          handleToggleLiked()}
-        }
-      >
-        <FaStar /> Like
-      </button>
-      <button className='iconbutton' 
+      {toggleLiked ? 
+        (<button className='iconbutton' id='liked'
+          onClick={(e) => {
+            e.preventDefault()
+            handleToggleLiked()}
+          }
+        >
+          <FaStar /> Liked
+        </button>) :
+        (<button className='iconbutton'
+          onClick={(e) => {
+            e.preventDefault()
+            handleToggleLiked()}
+          }
+        >
+          <FaStar /> Like
+        </button>)
+      }
+      <button className='iconbutton' id='more'
         onClick={(e) => {
           e.preventDefault()
           handleToggleContainer()}
@@ -77,55 +92,132 @@ export default function ButtonContainer(props) {
       >
         <FaEllipsisH /> More
       </button>
-      <div className={`postbuttoncontainerhidden ${toggleContainer ? 'show' : ''}`}>
-        {currentUser?.id === generalPost?.user_id && location.pathname === '/' ? 
+      {currentUser?.id === generalPost?.user_id && location.pathname === '/' ? 
           (<Link to={`/edit/${generalPost.id}`}>
-            <button className='iconbutton'>
-              <FaEdit />
+            <button className='iconbutton' id='editdesktop'>
+              <FaEdit /> Edit
             </button>
           </Link>) : (<></>)
         }
         {currentUser?.id === generalPost?.user_id && location.pathname === '/general' ? 
           (<Link to={`/edit/${generalPost.id}`}>
-            <button className='iconbutton'>
-              <FaEdit />
+            <button className='iconbutton' id='editdesktop'>
+              <FaEdit /> Edit
             </button>
           </Link>) : (<></>)
         }
         {currentUser?.id === resourcePost?.user_id && location.pathname === '/resources' ? 
           (<Link to={`/edit/${resourcePost.id}`}>
-            <button className='iconbutton'>
-              <FaEdit />
+            <button className='iconbutton' id='editdesktop'>
+              <FaEdit /> Edit
             </button>
           </Link>) : (<></>)
         }
         {currentUser?.id === eventsPost?.user_id && location.pathname === '/events' ? 
           (<Link to={`/edit/${eventsPost.id}`}>
-            <button className='iconbutton'>
-              <FaEdit />
+            <button className='iconbutton' id='editdesktop'>
+              <FaEdit /> Edit
             </button>
           </Link>) : (<></>)
         }
-        <button className='iconbutton'>
-          <FaShare />
+        <button className='iconbutton' id='sharedesktop'>
+          <FaShare /> Share
         </button>
         {currentUser?.id !== generalPost?.user_id && (
           <>
-            <button className='iconbutton' 
+            {toggleIcon ?(<button className='iconbutton' id='followdesktop'
               onClick={(e) => {
                 e.preventDefault()
                 handleToggleIcon()
               }}
             >
-              {toggleIcon ? (<FaUserCheck />) : (<FaUserPlus />)}
+              <FaUserCheck /> Following
+            </button>) :
+            (<button className='iconbutton' id='followdesktop'
+              onClick={(e) => {
+                e.preventDefault()
+                handleToggleIcon()
+              }}
+            >
+              <FaUserPlus /> Follow
+            </button>)}
+            <button className='iconbutton' id={toggleFlaggedDesktop ? 'flagged' : 'flagdesktop'}
+              onClick={(e) => {
+                e.preventDefault()
+                handleToggleFlaggedDesktop()
+              }}
+            >
+              <FaFlag /> Flag
             </button>
-            <button className='iconbutton' id={toggleFlagged ? 'flagged' : ''}
+            <button className='iconbutton' id='moredesktop'
+              onClick={(e) => {
+                e.preventDefault()
+                handleToggleContainer()}
+              }
+            >
+              <FaEllipsisH /> More
+            </button>
+          </>)
+        }
+      <div className={`postbuttoncontainerhidden ${toggleContainer ? 'show' : ''}`}>
+        {currentUser?.id === generalPost?.user_id && location.pathname === '/' ? 
+          (<Link to={`/edit/${generalPost.id}`}>
+            <button className='iconbutton' id='edit'>
+              <FaEdit /> Edit
+            </button>
+          </Link>) : (<></>)
+        }
+        {currentUser?.id === generalPost?.user_id && location.pathname === '/general' ? 
+          (<Link to={`/edit/${generalPost.id}`}>
+            <button className='iconbutton' id='edit'>
+              <FaEdit /> Edit
+            </button>
+          </Link>) : (<></>)
+        }
+        {currentUser?.id === resourcePost?.user_id && location.pathname === '/resources' ? 
+          (<Link to={`/edit/${resourcePost.id}`}>
+            <button className='iconbutton' id='edit'>
+              <FaEdit /> Edit
+            </button>
+          </Link>) : (<></>)
+        }
+        {currentUser?.id === eventsPost?.user_id && location.pathname === '/events' ? 
+          (<Link to={`/edit/${eventsPost.id}`}>
+            <button className='iconbutton' id='edit'>
+              <FaEdit /> Edit
+            </button>
+          </Link>) : (<></>)
+        }
+        <button className='iconbutton' id='share'>
+          <FaShare /> Share
+        </button>
+        {currentUser?.id !== generalPost?.user_id && (
+          <>
+            {toggleIcon ? 
+              (<button className='iconbutton' id='follow'
+                onClick={(e) => {
+                  e.preventDefault()
+                  handleToggleIcon()
+                }}
+              >
+                <FaUserCheck /> Following
+              </button>) :
+              (<button className='iconbutton' id='follow'
+                onClick={(e) => {
+                  e.preventDefault()
+                  handleToggleIcon()
+                }}
+              >
+                <FaUserPlus /> Follow
+              </button>)
+            }
+            <button className='iconbutton' id={toggleFlagged ? 'flagged' : 'flag'}
               onClick={(e) => {
                 e.preventDefault()
                 handleToggleFlagged()
               }}
             >
-              <FaFlag />
+              <FaFlag /> Flag
             </button>
           </>)
         }

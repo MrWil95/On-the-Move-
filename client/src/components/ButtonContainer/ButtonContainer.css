@@ -2,7 +2,9 @@
   align-self: center;
   background-color: #ffffff;
   border-radius: 5px;
+  display: flex;
   height: 2em;
+  justify-content: center;
   padding-bottom: 0.25em;
   position: relative;
   width: 100%;
@@ -19,7 +21,6 @@
 }
 
 .postbuttoncontainerhidden {
-  align-items: center;
   background-color: white;
   border-radius: 5px;
   bottom: 0em;
@@ -33,8 +34,28 @@
   top: 1.75em;
   transform: translateY(-82%);
   transition: transform 1s ease, opacity 1s linear;
-  width: max-content;
+  width: 100%;
   z-index: -1;
+}
+
+#editdesktop {
+  display: none;
+}
+
+#sharedesktop {
+  display: none;
+}
+
+#moredesktop {
+  display: none;
+}
+
+#followdesktop {
+  display: none;
+}
+
+#flagdesktop {
+  display: none;
 }
 
 .show {
@@ -51,6 +72,33 @@
   color: yellow;
 }
 
+@media (min-width: 375px) {
+  .postbuttoncontainerhidden {
+    justify-content: center;
+  }
+
+  #more {
+    display: none;
+  }
+
+  #share {
+    display: none;
+  }
+
+  #editdesktop {
+    display: unset;
+  }
+  
+  #sharedesktop {
+    display: unset;
+  }
+
+  #moredesktop {
+    display: unset;
+  }
+
+}
+
 @media (min-width: 540px) {
   .postbuttoncontainer {
     width: 96%;
@@ -59,7 +107,28 @@
 
 @media (min-width: 768px) {
   .postbuttoncontainer {
+    justify-content: space-evenly;
     width: 94%;
+  }
+
+  #flag {
+    display: none;
+  }
+
+  #flagdesktop {
+    display: unset;
+  }
+
+  #moredesktop {
+    display: none;
+  }
+
+  #follow {
+    display: none;
+  }
+
+  #followdesktop {
+    display: unset;
   }
 }
 
