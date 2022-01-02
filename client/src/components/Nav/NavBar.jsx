@@ -33,9 +33,9 @@ export default function NavBar(props) {
         <Link to='/'>
           <img src='https://res.cloudinary.com/dedlhqhuk/image/upload/v1636059840/On%20the%20Move/6290871299_a12ded4b-aebd-4a54-8cba-f869b55139f0_rs9bfc.png' alt='logo' className='logo'/>
         </Link>
-        {currentUser ? (
-            <li className='linksmobile'>{currentUser.username}</li>
-          ) : (<></>)}
+        {currentUser ? 
+          (<li className='linksmobile'>{currentUser.username}</li>) : (<></>)
+        }
         <div
           onClick={toggleOpen}
           className={open ? 'burgeropen' : 'burger'}
@@ -54,35 +54,40 @@ export default function NavBar(props) {
           <Link to='/about' className='link'>
             <li className={open ? 'linksopen' : 'links'}>About</li>
           </Link>
-          {currentUser ? (
-            <li className='links'>{currentUser.username}</li>
-          ) : (<li className='links'>Welcome</li>)}
-          {location.pathname === '/user' || location.pathname === '/about' || location.pathname === '/create' || location.pathname === `/posts/${id}` ? (<></>) : (<div className={open ? 'RegisterContainerMobileOpen' : 'RegisterContainerMobile'}>
-            {currentUser ? (
-              <button onClick={handleLogout} className='logoutmobile'>Logout</button>
-              ) : (
-              <Link to='/user' className='resgisterlinkmobile'>
-                <button className='registermobile'>Signin/Signup</button>
-              </Link>
-            )}
-          </div>)}
+          {currentUser ? 
+            (<li className='links'>{currentUser.username}</li>) : (<li className='links'>Welcome</li>)
+          }
+          {location.pathname === '/user' || location.pathname === '/about' || location.pathname === '/create' || location.pathname === `/posts/${id}` ? (<></>) : 
+            (<div className={open ? 'RegisterContainerMobileOpen' : 'RegisterContainerMobile'}>
+              {currentUser ? 
+                (<button onClick={handleLogout} className='logoutmobile'>Logout</button>) : 
+                (<Link to='/user' className='resgisterlinkmobile'>
+                  <button className='registermobile'>Signin/Signup</button>
+                </Link>)
+              }
+            </div>)
+          }
         </div>
       </div>
-      {location.pathname === '/user' || location.pathname === '/about' || location.pathname === '/create' || location.pathname === `/posts/${id}` ? (<></>) : (<>{currentUser ? (
-        <div className='maincontainermobile'>
-          <div className='containermobile'>
-            <div className='contentmobile'>
-              <Link to='/create' className='postbarlinkmobile'>
-                <input placeholder='Post' className='inputmobile' />
-              </Link>
-            </div>
-          </div>
-          <button onClick={handleLogout} className='logout'>Logout</button>
-        </div>
-      ) : (<Link to='/user' className='registerlink'>
-            <button className='register'>Signin/Signup</button>
-          </Link>
-      )}</>)}
+      {location.pathname === '/user' || location.pathname === '/about' || location.pathname === '/create' || location.pathname === `/posts/${id}` ? (<></>) : 
+        (<>
+          {currentUser ? (
+            <div className='maincontainermobile'>
+              <div className='containermobile'>
+                <div className='contentmobile'>
+                  <Link to='/create' className='postbarlinkmobile'>
+                    <input placeholder='Post' className='inputmobile' />
+                  </Link>
+                </div>
+              </div>
+              <button onClick={handleLogout} className='logout'>Logout</button>
+            </div>) : 
+            (<Link to='/user' className='registerlink'>
+              <button className='register'>Signin/Signup</button>
+            </Link>)
+          }
+        </>)
+      }
     </>
   )
 }

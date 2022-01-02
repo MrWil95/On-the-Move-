@@ -1,14 +1,8 @@
 import './CommentEdit.css'
 import { useState } from 'react'
 import { editComment, deleteComment } from '../../services/comments'
-import { 
-  FaTimes, FaEdit, 
-  FaShare, FaStar, 
-  FaUserPlus, 
-  FaUserCheck, 
-  FaEllipsisH, 
-  FaFlag 
-} from 'react-icons/fa'
+import Comment from '../Comment/Comment'
+import CommentButtons from '../CommentButtons/CommentButtons'
 
 export default function CommentEdit(props) {
   const { currentUser, id, comment, setComments } = props
@@ -18,11 +12,6 @@ export default function CommentEdit(props) {
     user_id: comment.user_id,
   })
   const [toggleForm, setToggleForm] = useState(false)
-  const [toggleContainer, setToggleContainer] = useState(false)
-  const [toggleIcon, setToggleIcon] = useState(false)
-  const [toggleFlagged, setToggleFlagged] = useState(false)
-  const [toggleFlaggedDesktop, setToggleFlaggedDesktop] = useState(false)
-  const [toggleLiked, setToggleLiked] = useState(false)
 
   const { content } = editedComment;
 
@@ -37,26 +26,6 @@ export default function CommentEdit(props) {
 
   const handleToggleForm = () => {
     setToggleForm((prevState) => !prevState)
-  }
-
-  const handleToggleContainer = () => {
-    setToggleContainer((prevState) => !prevState)
-  }
-
-  const handleToggleIcon = () => {
-    setToggleIcon((prevState) => !prevState)
-  }
-
-  const handleToggleFlagged = () => {
-    setToggleFlagged((prevState) => !prevState)
-  }
-
-  const handleToggleFlaggedDesktop = () => {
-    setToggleFlaggedDesktop((prevState) => !prevState)
-  }
-
-  const handleToggleLiked = () => {
-    setToggleLiked((prevState) => !prevState)
   }
 
   const handleCommentEdit = async (comment, editedComment) => {
@@ -77,9 +46,10 @@ export default function CommentEdit(props) {
         (<>
           {currentUser?.id === comment?.user_id && (
             <>
-              <form onSubmit={(e) => {
-                e.preventDefault()
-                handleCommentEdit(comment?.id, editedComment)
+              <form 
+                onSubmit={(e) => {
+                  e.preventDefault()
+                  handleCommentEdit(comment?.id, editedComment)
                 }}
               >
                 <textarea 
@@ -105,141 +75,17 @@ export default function CommentEdit(props) {
         </>) : 
         (<>
           <div className='comments'>
-            <>
-              {currentUser?.id === comment?.user_id && 
-                (<button className='commentdelete' 
-                  onClick={(e) => {
-                    e.preventDefault()
-                    handleCommentDelete(id, comment.id)
-                  }}
-                >
-                  <FaTimes />
-                </button>)
-              }
-              <h5 className='commentusername'>{comment?.username}</h5>
-            </>
-            <p className='commentcontent'>{comment?.content}</p>
-            <div className='commentbuttoncontainer'>
-              {toggleLiked ? 
-                (<button className='commenticonbutton' id='liked'     
-                  onClick={(e) => {
-                    e.preventDefault()
-                    handleToggleLiked()
-                  }}
-                >
-                  <FaStar /> Liked
-                </button>) :
-                (<button className='commenticonbutton'       
-                  onClick={(e) => {
-                    e.preventDefault()
-                    handleToggleLiked()
-                  }}
-                >
-                  <FaStar /> Like
-                </button>)
-              }
-              <button className='commenticonbutton'>
-                <FaShare /> Share
-              </button>
-              {currentUser?.id === comment?.user_id && 
-                (<button className='commenticonbutton' id='editdesktop'
-                  onClick={(e) => {
-                    e.preventDefault()
-                    handleToggleForm()
-                  }}
-                >
-                  <FaEdit /> Edit
-                </button>)
-              }
-              {currentUser?.id !== comment?.user_id && 
-                (<>
-                  {toggleIcon ?
-                    (<button className='commenticonbutton' id='followdesktop'
-                      onClick={(e) => {
-                        e.preventDefault()
-                        handleToggleIcon()
-                      }}
-                    >
-                      <FaUserCheck /> Following
-                    </button>) :
-                    (<button className='commenticonbutton' id='followdesktop'
-                      onClick={(e) => {
-                        e.preventDefault()
-                        handleToggleIcon()
-                      }}
-                    >
-                      <FaUserPlus /> Follow
-                    </button>)
-                  }
-                  <button className='commenticonbutton' id={toggleFlaggedDesktop ? 'flagged' : 'flagdesktop'}
-                    onClick={(e) => {
-                      e.preventDefault()
-                      handleToggleFlaggedDesktop()
-                    }}
-                  >
-                    <FaFlag />
-                  </button>
-                  <button className='iconbutton' id='moredesktop'
-                    onClick={(e) => {
-                      e.preventDefault()
-                      handleToggleContainer()
-                    }}
-                  >
-                    <FaEllipsisH /> More
-                  </button>
-                </>)
-              }
-              <button className='commenticonbutton' id='more'
-                onClick={(e) => {
-                  e.preventDefault()
-                  handleToggleContainer()
-                }}
-              >
-                <FaEllipsisH /> More
-              </button>
-              <div className={`commentbuttoncontainerhidden ${toggleContainer ? 'showcomment' : ''}`}>
-                {currentUser?.id === comment?.user_id && 
-                  (<button className='commenticonbutton' id='edit'
-                    onClick={(e) => {
-                      e.preventDefault()
-                      handleToggleForm()
-                    }}
-                  >
-                    <FaEdit />
-                  </button>)
-                }
-                {currentUser?.id !== comment?.user_id && 
-                  (<>
-                    {toggleIcon ?
-                      (<button className='commenticonbutton' id='follow'
-                        onClick={(e) => {
-                          e.preventDefault()
-                          handleToggleIcon()
-                        }}
-                      >
-                        <FaUserCheck />
-                      </button>) :
-                      (<button className='commenticonbutton' id='follow'
-                        onClick={(e) => {
-                          e.preventDefault()
-                          handleToggleIcon()
-                        }}
-                      >
-                        <FaUserPlus />
-                      </button>)
-                    }
-                    <button className='commenticonbutton' id={toggleFlagged ? 'flagged' : 'flag'}
-                      onClick={(e) => {
-                        e.preventDefault()
-                        handleToggleFlagged()
-                      }}
-                    >
-                      <FaFlag />
-                    </button>
-                  </>)
-                }
-              </div>
-            </div>
+            <Comment 
+              currentUser={currentUser} 
+              comment={comment} 
+              handleCommentDelete={handleCommentDelete}
+              id={id}
+            />
+            <CommentButtons 
+              currentUser={currentUser} 
+              comment={comment} 
+              handleToggleForm={handleToggleForm}
+            />
           </div>
         </>)
       }

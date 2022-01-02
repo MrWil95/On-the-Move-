@@ -1,0 +1,18 @@
+.commentdelete {
+  background: none;
+  border: none;
+  position: absolute;
+  right: -0.75em;
+  top: 0.5em;
+}
+
+.commentusername {
+  margin: 0.5em 0;
+}
+
+.commentcontent {
+  color: #4F6D7A;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  text-align: left;
+}
