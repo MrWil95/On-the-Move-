@@ -25,6 +25,4 @@ Rails.application.routes.draw do
 
   post '/auth/login', to: 'authentications#login'
   get '/auth/verify', to: 'authentications#verify'
-  put '/posts/:id/like', to: 'posts#like', as: 'like'
-  put '/posts/:id/comment/:id/like', to: 'comments#like', as: 'like'
 end

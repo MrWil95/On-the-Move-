@@ -1,18 +1,59 @@
 .AboutContainer {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  margin: 6em 0 0 2em;
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  height: 84vh;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .aboutcontent {
   color: #4F6D7A;
   font-family: 'Shadows Into Light Two', cursive;
-  font-size: 2em;
-  padding: .25em;
-  width: 45vw;
+  font-size: clamp(0.95em, 5vw, 1.5em);
+  justify-self: baseline;
+  width: 95%;
 }
 
 .aboutimage {
-  margin: 3em 1em 0 2em;
+  max-width: 35em;
+  min-width: 15em;
   width: 45vw;
+}
+
+@media (min-width: 375px) {
+  .aboutimage {
+    min-width: 20em;
+  }
+}
+
+@media (min-width: 540px) {
+  .aboutcontent {
+    font-size: clamp(1.25em, 4vw, 1.5em);
+    width: 73%;
+  }
+}
+
+@media (min-width: 768px) {
+  .aboutcontent {
+    padding: 1em;
+    width: 88%;
+  }
+
+  .aboutimage {
+    padding: 1em;
+    min-width: 30em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .AboutContainer {
+    flex-flow: row;
+  }
+}
+
+@media (min-width: 1400px) {
+  .aboutcontent {
+    width: 50%;
+  }
 }

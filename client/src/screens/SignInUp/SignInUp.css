@@ -4,6 +4,7 @@
   flex-flow: column;
   height: 100%; 
   justify-content: center;
+  margin-top: 4em;
   position: relative;
   width: 100%;
 }
@@ -14,7 +15,7 @@
   height: max-content;
   justify-content: center;
   position: absolute;
-  top: 9em;
+  top: 0em;
   width: 100%;
   z-index: 2;
 }
@@ -34,84 +35,27 @@
   height: 2em;
 }
 
-@media (min-width: 320px) {
-  .btnContainer {
-    top: 6.25em;
-  }
-}
-
-@media (min-width: 360px) {
-  .btnContainer {
-    top: 8.25em;
-  }
-}
-
-@media (min-width: 375px) {
-  @media (min-height: 667px) {
-    .btnContainer {
-      top: 9em;
-    }
-  }
-}
-
-@media (min-width: 411px) {
-  @media (min-height: 731px) {
-    .btnContainer {
-      top: 11em;
-    }
-  }
-}
-
-@media (min-width: 411px) {
-  @media (min-height: 823px) {
-    .btnContainer {
-      top: 9em;
-    }
-  }
-}
-
-@media (min-width: 540px) {
-  .btnContainer {
-    top: 11em;
-  }
-}
-
 @media (min-width: 768px) {
   .UserContainer {
+    margin-top: 15em;
     justify-content: flex-start;
-  }
-
-  .btnContainer {
-    top: 14em;
   }
 }
 
 @media (min-width: 1024px) {
-  @media (min-height: 600px) {
-    .btnContainer {
-      top: 7em;
-    }
+  .UserContainer {
+    margin-top: 4em;
   }
 }
 
 @media (min-width: 1280px) {
-  .btnContainer {
-    top: 10em;
-  }
-}
-
-@media (min-width: 1400px) {
-  .btnContainer {
-    top: 7em;
+  .UserContainer {
+    margin-top: 8.5em;
   }
 }
 
 @media (min-width: 1500px) {
   .UserContainer {
     justify-content: center;
-  }
-
-  .btnContainer {
-    top: 12em;
   }
 }

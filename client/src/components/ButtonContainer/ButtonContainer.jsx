@@ -45,26 +45,53 @@ export default function ButtonContainer(props) {
 
   return (
     <div className='postbuttoncontainer'>
-      {location.pathname === '/' || location.pathname === '/general' ? 
-        (<Link to={`/posts/${generalPost.id}`}>
-          <button className='iconbutton'>
-            <FaRegCommentAlt  /> Comment
-          </button>
-        </Link>) : (<></>)
-      }
-      {location.pathname === '/resources' ? 
-        (<Link to={`/posts/${resourcePost?.id}`}>
-          <button className='iconbutton'>
-            <FaRegCommentAlt  /> Comment
-          </button>
-        </Link>) : (<></>)
-      }
-      {location.pathname === '/events' ? 
-        (<Link to={`/posts/${eventsPost?.id}`}>
-          <button className='iconbutton'>
-            <FaRegCommentAlt  /> Comment
-          </button>
-        </Link>) : (<></>)
+      {currentUser ?
+        (<>
+          {location.pathname === '/' || location.pathname === '/general' ? 
+            (<Link to={`/posts/${generalPost.id}`}>
+              <button className='iconbutton'>
+                <FaRegCommentAlt  /> Comment
+              </button>
+            </Link>) : (<></>)
+          }
+          {location.pathname === '/resources' ? 
+            (<Link to={`/posts/${resourcePost?.id}`}>
+              <button className='iconbutton'>
+                <FaRegCommentAlt  /> Comment
+              </button>
+            </Link>) : (<></>)
+          }
+          {location.pathname === '/events' ? 
+            (<Link to={`/posts/${eventsPost?.id}`}>
+              <button className='iconbutton'>
+                <FaRegCommentAlt  /> Comment
+              </button>
+            </Link>) : (<></>)
+          }
+        </>) : 
+        (<>
+          {location.pathname === '/' || location.pathname === '/general' ? 
+            (<Link to='/user'>
+              <button className='iconbutton'>
+                <FaRegCommentAlt  /> Comment
+              </button>
+            </Link>) : (<></>)
+          }
+          {location.pathname === '/resources' ? 
+            (<Link to='/user'>
+              <button className='iconbutton'>
+                <FaRegCommentAlt  /> Comment
+              </button>
+            </Link>) : (<></>)
+          }
+          {location.pathname === '/events' ? 
+            (<Link to='/user'>
+              <button className='iconbutton'>
+                <FaRegCommentAlt  /> Comment
+              </button>
+            </Link>) : (<></>)
+          }
+        </>)
       }
       {toggleLiked ? 
         (<button className='iconbutton' id='liked'
@@ -93,39 +120,40 @@ export default function ButtonContainer(props) {
         <FaEllipsisH /> More
       </button>
       {currentUser?.id === generalPost?.user_id && location.pathname === '/' ? 
-          (<Link to={`/edit/${generalPost.id}`}>
-            <button className='iconbutton' id='editdesktop'>
-              <FaEdit /> Edit
-            </button>
-          </Link>) : (<></>)
-        }
-        {currentUser?.id === generalPost?.user_id && location.pathname === '/general' ? 
-          (<Link to={`/edit/${generalPost.id}`}>
-            <button className='iconbutton' id='editdesktop'>
-              <FaEdit /> Edit
-            </button>
-          </Link>) : (<></>)
-        }
-        {currentUser?.id === resourcePost?.user_id && location.pathname === '/resources' ? 
-          (<Link to={`/edit/${resourcePost.id}`}>
-            <button className='iconbutton' id='editdesktop'>
-              <FaEdit /> Edit
-            </button>
-          </Link>) : (<></>)
-        }
-        {currentUser?.id === eventsPost?.user_id && location.pathname === '/events' ? 
-          (<Link to={`/edit/${eventsPost.id}`}>
-            <button className='iconbutton' id='editdesktop'>
-              <FaEdit /> Edit
-            </button>
-          </Link>) : (<></>)
-        }
-        <button className='iconbutton' id='sharedesktop'>
-          <FaShare /> Share
-        </button>
-        {currentUser?.id !== generalPost?.user_id && (
-          <>
-            {toggleIcon ?(<button className='iconbutton' id='followdesktop'
+        (<Link to={`/edit/${generalPost.id}`}>
+          <button className='iconbutton' id='editdesktop'>
+            <FaEdit /> Edit
+          </button>
+        </Link>) : (<></>)
+      }
+      {currentUser?.id === generalPost?.user_id && location.pathname === '/general' ? 
+        (<Link to={`/edit/${generalPost.id}`}>
+          <button className='iconbutton' id='editdesktop'>
+            <FaEdit /> Edit
+          </button>
+        </Link>) : (<></>)
+      }
+      {currentUser?.id === resourcePost?.user_id && location.pathname === '/resources' ? 
+        (<Link to={`/edit/${resourcePost.id}`}>
+          <button className='iconbutton' id='editdesktop'>
+            <FaEdit /> Edit
+          </button>
+        </Link>) : (<></>)
+      }
+      {currentUser?.id === eventsPost?.user_id && location.pathname === '/events' ? 
+        (<Link to={`/edit/${eventsPost.id}`}>
+          <button className='iconbutton' id='editdesktop'>
+            <FaEdit /> Edit
+          </button>
+        </Link>) : (<></>)
+      }
+      <button className='iconbutton' id='sharedesktop'>
+        <FaShare /> Share
+      </button>
+      {currentUser?.id !== generalPost?.user_id && 
+        (<>
+          {toggleIcon ?
+            (<button className='iconbutton' id='followdesktop'
               onClick={(e) => {
                 e.preventDefault()
                 handleToggleIcon()
@@ -140,25 +168,26 @@ export default function ButtonContainer(props) {
               }}
             >
               <FaUserPlus /> Follow
-            </button>)}
-            <button className='iconbutton' id={toggleFlaggedDesktop ? 'flagged' : 'flagdesktop'}
-              onClick={(e) => {
-                e.preventDefault()
-                handleToggleFlaggedDesktop()
-              }}
-            >
-              <FaFlag /> Flag
-            </button>
-            <button className='iconbutton' id='moredesktop'
-              onClick={(e) => {
-                e.preventDefault()
-                handleToggleContainer()}
-              }
-            >
-              <FaEllipsisH /> More
-            </button>
-          </>)
-        }
+            </button>)
+          }
+          <button className='iconbutton' id={toggleFlaggedDesktop ? 'flagged' : 'flagdesktop'}
+            onClick={(e) => {
+              e.preventDefault()
+              handleToggleFlaggedDesktop()
+            }}
+          >
+            <FaFlag /> Flag
+          </button>
+          <button className='iconbutton' id='moredesktop'
+            onClick={(e) => {
+              e.preventDefault()
+              handleToggleContainer()
+            }}
+          >
+            <FaEllipsisH /> More
+          </button>
+        </>)
+      }
       <div className={`postbuttoncontainerhidden ${toggleContainer ? 'show' : ''}`}>
         {currentUser?.id === generalPost?.user_id && location.pathname === '/' ? 
           (<Link to={`/edit/${generalPost.id}`}>
