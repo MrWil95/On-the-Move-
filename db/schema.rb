@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_03_042600) do
+ActiveRecord::Schema.define(version: 2022_01_04_034013) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,16 @@ ActiveRecord::Schema.define(version: 2022_01_03_042600) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+  create_table "photos", force: :cascade do |t|
+    t.string "content"
+    t.bigint "profile_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_photos_on_profile_id"
+    t.index ["user_id"], name: "index_photos_on_user_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "content"
     t.string "img_url"
@@ -85,6 +95,14 @@ ActiveRecord::Schema.define(version: 2022_01_03_042600) do
     t.string "username"
     t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "avatar"
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -103,6 +121,9 @@ ActiveRecord::Schema.define(version: 2022_01_03_042600) do
   add_foreign_key "likes", "comments"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
+  add_foreign_key "photos", "profiles"
+  add_foreign_key "photos", "users"
   add_foreign_key "posts", "categories"
   add_foreign_key "posts", "users"
+  add_foreign_key "profiles", "users"
 end
