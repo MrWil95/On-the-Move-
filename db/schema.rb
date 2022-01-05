@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_04_034013) do
+ActiveRecord::Schema.define(version: 2022_01_04_221444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,12 +57,12 @@ ActiveRecord::Schema.define(version: 2022_01_04_034013) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "username"
     t.string "image"
+    t.string "likes"
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "likes", force: :cascade do |t|
-    t.integer "count"
     t.bigint "comment_id", null: false
     t.bigint "post_id", null: false
     t.bigint "user_id", null: false
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 2022_01_04_034013) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "username"
+    t.string "likes"
     t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
@@ -102,6 +103,8 @@ ActiveRecord::Schema.define(version: 2022_01_04_034013) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "avatar"
+    t.string "username"
+    t.string "email"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 

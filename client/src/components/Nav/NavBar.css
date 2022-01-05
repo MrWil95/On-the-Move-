@@ -289,12 +289,16 @@ li {
     position: unset;
   }
 
-  .registerlink {
+  .registerlinkcontainer {
     display: flex;
     justify-content: flex-end;
     position: relative;
     width: 100%;
     z-index: 5;
+  }
+
+  .registerlink {
+    width: max-content;
   }
 
   .register {

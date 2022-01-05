@@ -20,9 +20,11 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:create, :update, :destroy] do
-    resources :likes, only: [:create, :destroy]
+    resources :profiles, only: [:update, :destroy]
   end
 
   post '/auth/login', to: 'authentications#login'
   get '/auth/verify', to: 'authentications#verify'
+  # put '/posts/:id/like', to: 'posts#like', as: 'post_likes'
+  # put '/posts/:id/comments/:id/like', to: 'comments#like', as: 'comment_likes'
 end

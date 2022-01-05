@@ -82,9 +82,11 @@ export default function NavBar(props) {
               </div>
               <button onClick={handleLogout} className='logout'>Logout</button>
             </div>) : 
-            (<Link to='/user' className='registerlink'>
-              <button className='register'>Signin/Signup</button>
-            </Link>)
+            (<div className='registerlinkcontainer'>
+              <Link to='/user' className='registerlink'>
+                <button className='register'>Signin/Signup</button>
+              </Link>
+            </div>)
           }
         </>)
       }

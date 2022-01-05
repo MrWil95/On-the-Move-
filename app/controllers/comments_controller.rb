@@ -42,6 +42,12 @@ class CommentsController < ApplicationController
     @comment.destroy
   end
 
+  def like
+    @comment = Comment.find.all(params[:id])
+    Like.create(user_id: @current_user.id, comment_id: @comment.id)
+    redirect_to comment_path(@comment)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
