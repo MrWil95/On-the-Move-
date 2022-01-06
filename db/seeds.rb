@@ -24,39 +24,11 @@ puts "#{User.count} users created"
 
 puts "#{Category.count} categories created"
 
-@like0 = Like.create!(
-  user: @admin0,
-  post: @post3,
-  comment: @comment1,
-  username: @admin0.username
-)
-@like1 = Like.create!(
-  user: @admin1,
-  post: @post0,
-  comment: @comment0,
-  username: @admin1.username
-)
-@like2 = Like.create!(
-  user: @admin2,
-  post: @post3,
-  comment: @comment4,
-  username: @admin2.username
-)
-@like3 = Like.create!(
-  user: @admin3,
-  post: @post5,
-  comment: @comment1,
-  username: @admin3.username
-)
-
-puts "#{Like.count} likes created"
-
 @post0 = Post.create!(
   content: 'Welcome to On the Move, here you can find everything you\'ll need to make your move more enjoyable and easier',
   category: @general,
   user: @admin0,
   username: @admin0.username,
-  likes: @like1
 )
 @post1 = Post.create!(
   content: 'It\'s official! Got the call today that I will be starting at Amazon in a few weeks. Time to start packing! Watch out Seattle, here we come. #seeyouinseattle #onthemove',
@@ -68,14 +40,13 @@ puts "#{Like.count} likes created"
   content: 'I have lived all over and this blog has helped make each and every move ten times easier than I ever could have imagined. Thanks to all my fellow movers for all the support!',
   category: @general,
   user: @admin2,
-  username: @admin2.username
+  username: @admin2.username,
 )
 @post3 = Post.create!(
   content: 'Bark, bark, bark bark, bark. #traveling',
   category: @general,
   user: @admin3,
   username: @admin3.username,
-  likes: @like0
 )
 @post4 = Post.create!(
   content: 'Anyone in the Seattle area know of any reliable movers that can help my wife and I once we arrive? We\'ve got a lot to move',
@@ -87,15 +58,13 @@ puts "#{Like.count} likes created"
   content: 'Moving in two weeks! Anyone in Kansas City know the best deals on equipment rentals?',
   category: @resources,
   user: @admin2,
-  username: @admin2.username,
-  likes: @like3
+  username: @admin2.username
 )
 @post6 = Post.create!(
   content: 'Bark, bark bark, bark. Bark bark. Bark',
   category: @resources,
   user: @admin3,
-  username: @admin3.username,
-  likes: @like0 & @like1 & @like3
+  username: @admin3.username
 )
 @post7 = Post.create!(
   content: 'What are some fun activities to do in the Seattle area? We love exploring the outdoors, nigthlife, and city setting.',
@@ -107,15 +76,13 @@ puts "#{Like.count} likes created"
   content: 'If anyone coming to Kansas City is interested I\'m hosting a huge going away party before I move. Come make some connections to make your move better!',
   category: @events,
   user: @admin2,
-  username: @admin2.username,
-  likes: @like0 & @like3
+  username: @admin2.username
 )
 @post9 = Post.create!(
   content: 'Bark bark bark bark bark bark bark! #adayatthepark',
   category: @events,
   user: @admin3,
-  username: @admin3.username,
-  likes: @like0 & @like2
+  username: @admin3.username
 )
 
 puts "#{Post.count} posts created"
@@ -124,15 +91,13 @@ puts "#{Post.count} posts created"
   content: 'Seattle is such an exciting place, congrats!',
   post: @post1,
   user: @admin0,
-  username: @admin0.username,
-  likes: @like1
+  username: @admin0.username
 )
 @comment1 = Comment.create!(
   content: 'Thanks, my wife and I are excited!',
   post: @post1,
   user: @admin1,
-  username: @admin1.username,
-  likes: @like0 & @like3
+  username: @admin1.username
 )
 @comment2 = Comment.create!(
   content: 'Banana boats bring beautiful ballerina\'s',
@@ -150,8 +115,83 @@ puts "#{Post.count} posts created"
   content: 'I paw-sitively love this!',
   post: @post3,
   user: @admin0,
-  username: @admin0.username,
-  likes: @like2
+  username: @admin0.username
 )
 
 puts "#{Comment.count} comments created"
+
+[@post1, @post2,
+ @post4, @post5,
+ @post7, @post8,
+ @post9, @comment1,
+ @comment2].each { |post, comment|
+  Like.create!(
+    user: @admin0,
+    post: post,
+    comment_id: comment,
+    username: @admin0.username
+  )
+}
+[@post0, @post2,
+ @post3, @post5,
+ @comment0, @comment1,
+ @comment3, @comment4].each { |post, comment|
+  Like.create!(
+    user: @admin1,
+    post: post,
+    comment_id: comment,
+    username: @admin1.username
+  )
+}
+[@post0, @post1,
+ @post2, @post3,
+ @post4, @post7,
+ @comment1, @comment2].each { |post, comment|
+  Like.create!(
+    user: @admin2,
+    post: post,
+    comment_id: comment,
+    username: @admin2.username
+  )
+}
+[@post0, @post2,
+ @post4, @post5,
+ @post9, @comment0,
+ @comment3, @comment4].each { |post, comment|
+  Like.create!(
+    user: @admin3,
+    post: post,
+    comment_id: comment,
+    username: @admin3.username
+  )
+}
+# [@comment1, @comment2].each { |comment|
+#   Like.create!(
+#     user: @admin0,
+#     comment_id: comment.comment_id,
+#     username: @admin0.username
+#   )
+# }
+# [@comment0, @comment1, @comment3, @comment4].each { |comment|
+#   Like.create!(
+#     user: @admin1,
+#     comment_id: comment.comment_id,
+#     username: @admin1.username
+#   )
+# }
+# [@comment1, @comment2].each { |comment|
+#   Like.create!(
+#     user: @admin2,
+#     comment_id: comment.comment_id,
+#     username: @admin2.username
+#   )
+# }
+# [@comment0, @comment3, @comment4].each { |comment|
+#   Like.create!(
+#     user: @admin3,
+#     comment_id: comment.comment_id,
+#     username: @admin3.username
+#   )
+# }
+
+puts "#{Like.count} likes created"
