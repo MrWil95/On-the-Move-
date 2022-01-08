@@ -123,75 +123,66 @@ puts "#{Comment.count} comments created"
 [@post1, @post2,
  @post4, @post5,
  @post7, @post8,
- @post9, @comment1,
- @comment2].each { |post, comment|
+ @post9].each { |post|
   Like.create!(
-    user: @admin0,
     post: post,
-    comment_id: comment,
+    user: @admin0,
     username: @admin0.username
   )
 }
 [@post0, @post2,
- @post3, @post5,
- @comment0, @comment1,
- @comment3, @comment4].each { |post, comment|
+ @post3, @post5].each { |post|
   Like.create!(
-    user: @admin1,
     post: post,
-    comment_id: comment,
+    user: @admin1,
     username: @admin1.username
   )
 }
 [@post0, @post1,
  @post2, @post3,
- @post4, @post7,
- @comment1, @comment2].each { |post, comment|
+ @post4, @post7].each { |post|
   Like.create!(
-    user: @admin2,
     post: post,
-    comment_id: comment,
+    user: @admin2,
     username: @admin2.username
   )
 }
 [@post0, @post2,
  @post4, @post5,
- @post9, @comment0,
- @comment3, @comment4].each { |post, comment|
+ @post9].each { |post|
   Like.create!(
-    user: @admin3,
     post: post,
-    comment_id: comment,
+    user: @admin3,
     username: @admin3.username
   )
 }
-# [@comment1, @comment2].each { |comment|
-#   Like.create!(
-#     user: @admin0,
-#     comment_id: comment.comment_id,
-#     username: @admin0.username
-#   )
-# }
-# [@comment0, @comment1, @comment3, @comment4].each { |comment|
-#   Like.create!(
-#     user: @admin1,
-#     comment_id: comment.comment_id,
-#     username: @admin1.username
-#   )
-# }
-# [@comment1, @comment2].each { |comment|
-#   Like.create!(
-#     user: @admin2,
-#     comment_id: comment.comment_id,
-#     username: @admin2.username
-#   )
-# }
-# [@comment0, @comment3, @comment4].each { |comment|
-#   Like.create!(
-#     user: @admin3,
-#     comment_id: comment.comment_id,
-#     username: @admin3.username
-#   )
-# }
+[@comment1, @comment2].each { |comment|
+  Like.create!(
+    user: @admin0,
+    comment: comment,
+    username: @admin0.username
+  )
+}
+[@comment0, @comment1, @comment3, @comment4].each { |comment|
+  Like.create!(
+    user: @admin1,
+    comment: comment,
+    username: @admin1.username
+  )
+}
+[@comment1, @comment2].each { |comment|
+  Like.create!(
+    user: @admin2,
+    comment_id: comment,
+    username: @admin2.username
+  )
+}
+[@comment0, @comment3, @comment4].each { |comment|
+  Like.create!(
+    user: @admin3,
+    comment: comment,
+    username: @admin3.username
+  )
+}
 
 puts "#{Like.count} likes created"

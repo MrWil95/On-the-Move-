@@ -30,10 +30,10 @@ export default function Home(props) {
     <>
       <img src='https://res.cloudinary.com/dedlhqhuk/image/upload/v1636257157/On%20the%20Move/vwbus_ob5ucd.png' alt='VW Bus' className='vwbus' />
       <div className='Container' >
-        {getAllPosts.map((generalPost, index) => (
-          <div className='postscontainer' id='postscontainer' key={index}>
-            {currentUser?.id === generalPost?.user_id && (
-              <button onClick={() => handlePostDelete(generalPost.id)} className='deletebutton'>
+        {getAllPosts.map((generalPost, index) => 
+          (<div className='postscontainer' id='postscontainer' key={index}>
+            {currentUser?.id === generalPost?.user_id && 
+              (<button onClick={() => handlePostDelete(generalPost.id)} className='deletebutton'>
                 <FaTimes />
               </button>)
             }
@@ -42,13 +42,14 @@ export default function Home(props) {
             </div>
             <div className='postscontent'>
               <p>{generalPost.content}</p>
+              <p>{generalPost.likes.post_id}</p>
             </div>
             <ButtonContainer 
               generalPost={generalPost}
               currentUser={currentUser}
             />
-          </div>
-        ))}
+          </div>))
+        }
       </div>
     </>
   )
